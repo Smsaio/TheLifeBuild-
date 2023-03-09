@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237093121e236e044ae1ee6db0ff68a3, type: 3}
+  m_Name: BossDefeat
+  m_EditorClassIdentifier: 
+  gameMode: 2
+  gameModeText: "\u30C8\u30E9\u30A6\u30DE\u3092\u5012\u3057\u305F\u51FA\u53E3\u3078\u6025\u3054\u3046"
+  sceneName: GameExampleScene

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 058c4644b8111ed4d9441575b0d2520e, type: 3}
+  m_Name: EXP
+  m_EditorClassIdentifier: 
+  enemyName: EXPEnemy
+  maxHP: 1500
+  attackP: 0
+  defenceP: 20000
+  agentWalkSpeed: 30
+  agentAngularSpeed: 120
+  agentAcceleration: 20
+  enemyNo: 9
+  startEXP: 120
