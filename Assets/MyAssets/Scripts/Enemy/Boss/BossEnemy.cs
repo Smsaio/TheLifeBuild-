@@ -90,6 +90,7 @@ namespace EnemySpace
         private AttackVariation attackVariation = AttackVariation.Tail;
         //ファイアボールの速さ
         private const float fireBallSpeed = 15.0f;
+
         protected override void Awake()
         {
             base.Awake();

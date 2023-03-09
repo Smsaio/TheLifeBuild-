@@ -15,8 +15,8 @@ public class PlayerCanvasController : ReactivePropertyController
     //使用可能な特技テキスト
     [NamedArray(new string[] { "停滞", "拒絶", "転換" })]
     [Header("使用可能判別"), SerializeField] private TextMeshProUGUI[] canSpecialityTexts;
-    [NamedArray(new string[] { "記憶停滞", "記憶拒絶", "記憶転換" })]
-    [Header("特技を使用可能になった場合、波紋を表示するための画像"), SerializeField]
+    [Header("特技を使用可能になった場合、波紋を表示するための画像"),
+        NamedArray(new string[] { "記憶停滞", "記憶拒絶", "記憶転換" }), SerializeField]
     private Image[] canSpecialityImage = new Image[Enum.GetValues(typeof(Attach.Speciality)).Length];
     //使用した特技の種類
     [Header("使用した特技の把握"), SerializeField] private TextMeshProUGUI playSpecialityText;
@@ -66,7 +66,6 @@ public class PlayerCanvasController : ReactivePropertyController
     public Slider DeathBlowSlider { get { return deathBlowSlider; }  } 
     //何が上がったかを示す
     private string[] statusUPType = { "攻撃力", "防御力", "逆時間発動中" };
-    private float[] beforeValue = { 0, 0, 0 };
     private PlayerSpecialityController specialityController;
     private PlayerMove playerMove;
     private Player currentPlayer;
@@ -111,7 +110,9 @@ public class PlayerCanvasController : ReactivePropertyController
         role.CurrentPlayerLevel.Subscribe(level => { currentPlayerLevel = level; }).AddTo(this);
         role.CurrentPlayer.Subscribe(player => { currentPlayer = player; }).AddTo(this);
     }
-    //使用した特技表示
+    /// <summary>
+    /// 使用した特技表示
+    /// </summary>
     private void UseSpecialityText()
     {
         var specialityType = (Attach.Speciality)specialityController.NextSpeciality;
@@ -129,7 +130,9 @@ public class PlayerCanvasController : ReactivePropertyController
         }
     }
 
-    //負の記憶受け入れた回数スライダー表示
+    /// <summary>
+    /// 負の記憶受け入れた回数スライダー表示
+    /// </summary>
     private void SpecialityDetailDisplay()
     {
         float validValue;
@@ -145,7 +148,6 @@ public class PlayerCanvasController : ReactivePropertyController
                 {
                     //波紋を画面に表示して使用可能を表現する
                     canSpecialityImage[i].gameObject.SetActive(true);
-                    Destroy(canSpecialityImage[i].gameObject, 1.5f);
                 }
                 else
                 {
@@ -180,6 +182,9 @@ public class PlayerCanvasController : ReactivePropertyController
         //必殺技のクールタイム表示
         deathBlowSlider.value = playerMove.DeathBlowCoolTime / playerMove.DeathBlowCoolMaxTime;
     }
+    /// <summary>
+    /// ステータスメニューでの特技使用判断表示
+    /// </summary>
     private void CanSpecialityText()
     {
         string speciality;
