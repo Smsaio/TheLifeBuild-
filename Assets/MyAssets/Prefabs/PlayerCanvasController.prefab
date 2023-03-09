@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &319336350479713180
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 319336350479713181}
+  - component: {fileID: 319336350479713178}
+  m_Layer: 0
+  m_Name: PlayerCanvasController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &319336350479713181
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319336350479713180}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -466.76947, y: -533.5958, z: 556.42816}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &319336350479713178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319336350479713180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8db253d88526db349890cbb4206c29cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canSpecialityTexts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  canSpecialityImage:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  playSpecialityText: {fileID: 0}
+  specialityValidSlider: {fileID: 0}
+  specialityCoolSliders:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  specialityCoolSlidersFill:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  statusLevelText: {fileID: 0}
+  statusAttackPointText: {fileID: 0}
+  statusDefencePointText: {fileID: 0}
+  statusHPText: {fileID: 0}
+  statusRoleText: {fileID: 0}
+  expSlider: {fileID: 0}
+  expText: {fileID: 0}
+  expMaxText: {fileID: 0}
+  currentLevelText: {fileID: 0}
+  currentMaxHPText: {fileID: 0}
+  currentHPText: {fileID: 0}
+  plusHPText: {fileID: 0}
+  statusUPText:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  roleText: {fileID: 0}
+  stagnationPanel: {fileID: 0}
+  deathBlowSlider: {fileID: 0}
