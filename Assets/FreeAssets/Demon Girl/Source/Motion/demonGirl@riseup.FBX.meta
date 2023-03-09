@@ -1,0 +1,1150 @@
+fileFormatVersion: 2
+guid: 3a3c7ea4b8ea46a4a83fbe1c03ca66af
+ModelImporter:
+  serializedVersion: 21202
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: DemonGirl
+  - first:
+      1: 100002
+    second: //RootNode
+  - first:
+      1: 100004
+    second: DemonGirlHead
+  - first:
+      1: 100006
+    second: DemonGirlLCalf
+  - first:
+      1: 100008
+    second: DemonGirlLCollarbone
+  - first:
+      1: 100010
+    second: DemonGirlLDigit11
+  - first:
+      1: 100012
+    second: DemonGirlLDigit12
+  - first:
+      1: 100014
+    second: DemonGirlLDigit13
+  - first:
+      1: 100016
+    second: DemonGirlLDigit21
+  - first:
+      1: 100018
+    second: DemonGirlLDigit22
+  - first:
+      1: 100020
+    second: DemonGirlLDigit23
+  - first:
+      1: 100022
+    second: DemonGirlLDigit31
+  - first:
+      1: 100024
+    second: DemonGirlLDigit32
+  - first:
+      1: 100026
+    second: DemonGirlLDigit33
+  - first:
+      1: 100028
+    second: DemonGirlLDigit41
+  - first:
+      1: 100030
+    second: DemonGirlLDigit42
+  - first:
+      1: 100032
+    second: DemonGirlLDigit43
+  - first:
+      1: 100034
+    second: DemonGirlLFoot
+  - first:
+      1: 100036
+    second: DemonGirlLForearm
+  - first:
+      1: 100038
+    second: DemonGirlLPalm
+  - first:
+      1: 100040
+    second: DemonGirlLPlatform
+  - first:
+      1: 100042
+    second: DemonGirlLThigh
+  - first:
+      1: 100044
+    second: DemonGirlLUpperarm
+  - first:
+      1: 100046
+    second: DemonGirlNeck1
+  - first:
+      1: 100048
+    second: DemonGirlNeck2
+  - first:
+      1: 100050
+    second: DemonGirlPelvis
+  - first:
+      1: 100052
+    second: DemonGirlRArmCollarbone
+  - first:
+      1: 100054
+    second: DemonGirlRArmDigit11
+  - first:
+      1: 100056
+    second: DemonGirlRArmDigit12
+  - first:
+      1: 100058
+    second: DemonGirlRArmDigit13
+  - first:
+      1: 100060
+    second: DemonGirlRArmDigit21
+  - first:
+      1: 100062
+    second: DemonGirlRArmDigit22
+  - first:
+      1: 100064
+    second: DemonGirlRArmDigit23
+  - first:
+      1: 100066
+    second: DemonGirlRArmDigit31
+  - first:
+      1: 100068
+    second: DemonGirlRArmDigit32
+  - first:
+      1: 100070
+    second: DemonGirlRArmDigit33
+  - first:
+      1: 100072
+    second: DemonGirlRArmDigit41
+  - first:
+      1: 100074
+    second: DemonGirlRArmDigit42
+  - first:
+      1: 100076
+    second: DemonGirlRArmDigit43
+  - first:
+      1: 100078
+    second: DemonGirlRArmForearm
+  - first:
+      1: 100080
+    second: DemonGirlRArmPalm
+  - first:
+      1: 100082
+    second: DemonGirlRArmUpperarm
+  - first:
+      1: 100084
+    second: DemonGirlRibcage
+  - first:
+      1: 100086
+    second: DemonGirlRLegCalf
+  - first:
+      1: 100088
+    second: DemonGirlRLegFoot
+  - first:
+      1: 100090
+    second: DemonGirlRLegPlatform
+  - first:
+      1: 100092
+    second: DemonGirlRLegThigh
+  - first:
+      1: 100094
+    second: DemonGirlSpine1
+  - first:
+      1: 100096
+    second: DemonGirlSpine2
+  - first:
+      1: 100098
+    second: DemonGirlSpine3
+  - first:
+      1: 100100
+    second: DemonGirlSpine4
+  - first:
+      1: 100102
+    second: DemonGirlTail1
+  - first:
+      1: 100104
+    second: DemonGirlTail1 1
+  - first:
+      1: 100106
+    second: DemonGirlTail2
+  - first:
+      1: 100108
+    second: DemonGirlTail2 1
+  - first:
+      1: 100110
+    second: DemonGirlTail3
+  - first:
+      1: 100112
+    second: DemonGirlTail4
+  - first:
+      1: 100114
+    second: DemonGirlTail5
+  - first:
+      4: 400000
+    second: DemonGirl
+  - first:
+      4: 400002
+    second: //RootNode
+  - first:
+      4: 400004
+    second: DemonGirlHead
+  - first:
+      4: 400006
+    second: DemonGirlLCalf
+  - first:
+      4: 400008
+    second: DemonGirlLCollarbone
+  - first:
+      4: 400010
+    second: DemonGirlLDigit11
+  - first:
+      4: 400012
+    second: DemonGirlLDigit12
+  - first:
+      4: 400014
+    second: DemonGirlLDigit13
+  - first:
+      4: 400016
+    second: DemonGirlLDigit21
+  - first:
+      4: 400018
+    second: DemonGirlLDigit22
+  - first:
+      4: 400020
+    second: DemonGirlLDigit23
+  - first:
+      4: 400022
+    second: DemonGirlLDigit31
+  - first:
+      4: 400024
+    second: DemonGirlLDigit32
+  - first:
+      4: 400026
+    second: DemonGirlLDigit33
+  - first:
+      4: 400028
+    second: DemonGirlLDigit41
+  - first:
+      4: 400030
+    second: DemonGirlLDigit42
+  - first:
+      4: 400032
+    second: DemonGirlLDigit43
+  - first:
+      4: 400034
+    second: DemonGirlLFoot
+  - first:
+      4: 400036
+    second: DemonGirlLForearm
+  - first:
+      4: 400038
+    second: DemonGirlLPalm
+  - first:
+      4: 400040
+    second: DemonGirlLPlatform
+  - first:
+      4: 400042
+    second: DemonGirlLThigh
+  - first:
+      4: 400044
+    second: DemonGirlLUpperarm
+  - first:
+      4: 400046
+    second: DemonGirlNeck1
+  - first:
+      4: 400048
+    second: DemonGirlNeck2
+  - first:
+      4: 400050
+    second: DemonGirlPelvis
+  - first:
+      4: 400052
+    second: DemonGirlRArmCollarbone
+  - first:
+      4: 400054
+    second: DemonGirlRArmDigit11
+  - first:
+      4: 400056
+    second: DemonGirlRArmDigit12
+  - first:
+      4: 400058
+    second: DemonGirlRArmDigit13
+  - first:
+      4: 400060
+    second: DemonGirlRArmDigit21
+  - first:
+      4: 400062
+    second: DemonGirlRArmDigit22
+  - first:
+      4: 400064
+    second: DemonGirlRArmDigit23
+  - first:
+      4: 400066
+    second: DemonGirlRArmDigit31
+  - first:
+      4: 400068
+    second: DemonGirlRArmDigit32
+  - first:
+      4: 400070
+    second: DemonGirlRArmDigit33
+  - first:
+      4: 400072
+    second: DemonGirlRArmDigit41
+  - first:
+      4: 400074
+    second: DemonGirlRArmDigit42
+  - first:
+      4: 400076
+    second: DemonGirlRArmDigit43
+  - first:
+      4: 400078
+    second: DemonGirlRArmForearm
+  - first:
+      4: 400080
+    second: DemonGirlRArmPalm
+  - first:
+      4: 400082
+    second: DemonGirlRArmUpperarm
+  - first:
+      4: 400084
+    second: DemonGirlRibcage
+  - first:
+      4: 400086
+    second: DemonGirlRLegCalf
+  - first:
+      4: 400088
+    second: DemonGirlRLegFoot
+  - first:
+      4: 400090
+    second: DemonGirlRLegPlatform
+  - first:
+      4: 400092
+    second: DemonGirlRLegThigh
+  - first:
+      4: 400094
+    second: DemonGirlSpine1
+  - first:
+      4: 400096
+    second: DemonGirlSpine2
+  - first:
+      4: 400098
+    second: DemonGirlSpine3
+  - first:
+      4: 400100
+    second: DemonGirlSpine4
+  - first:
+      4: 400102
+    second: DemonGirlTail1
+  - first:
+      4: 400104
+    second: DemonGirlTail1 1
+  - first:
+      4: 400106
+    second: DemonGirlTail2
+  - first:
+      4: 400108
+    second: DemonGirlTail2 1
+  - first:
+      4: 400110
+    second: DemonGirlTail3
+  - first:
+      4: 400112
+    second: DemonGirlTail4
+  - first:
+      4: 400114
+    second: DemonGirlTail5
+  - first:
+      74: 7400000
+    second: riseup
+  - first:
+      95: 9500000
+    second: //RootNode
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'DemonGirlLFoot' has scale animation that
+      will be discarded.\n\t'DemonGirlSpine4' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'DemonGirlRibcage' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\t'DemonGirlLDigit13'
+      has scale animation that will be discarded.\n\t'DemonGirlLDigit23' has scale
+      animation that will be discarded.\n\t'DemonGirlLDigit33' has scale animation
+      that will be discarded.\n\t'DemonGirlLDigit43' has scale animation that will
+      be discarded.\n\t'DemonGirlNeck2' is inbetween humanoid transforms and has
+      rotation animation that will be discarded.\n\t'DemonGirlRArmDigit13' has scale
+      animation that will be discarded.\n\t'DemonGirlRLegFoot' has scale animation
+      that will be discarded.\n"
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: riseup
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 25
+      lastFrame: 66
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.23
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human:
+    - boneName: DemonGirlPelvis
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DemonGirlLThigh
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DemonGirlRLegThigh
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DemonGirlLCalf
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DemonGirlRLegCalf
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DemonGirlLFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DemonGirlRLegFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DemonGirlSpine1
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DemonGirlSpine2
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DemonGirlNeck1
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DemonGirlHead
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DemonGirlLCollarbone
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DemonGirlRArmCollarbone
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DemonGirlLUpperarm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DemonGirlRArmUpperarm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DemonGirlLForearm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DemonGirlRArmForearm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DemonGirlLPalm
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DemonGirlRArmPalm
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DemonGirlTail1 1
+      humanName: RightEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DemonGirlLDigit11
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DemonGirlLDigit12
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DemonGirlLDigit13
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DemonGirlLDigit21
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DemonGirlLDigit22
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DemonGirlLDigit23
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DemonGirlLDigit31
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DemonGirlLDigit32
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DemonGirlLDigit33
+      humanName: Left Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DemonGirlLDigit41
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DemonGirlLDigit42
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DemonGirlLDigit43
+      humanName: Left Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DemonGirlRArmDigit11
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DemonGirlRArmDigit12
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DemonGirlRArmDigit13
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DemonGirlRArmDigit21
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DemonGirlRArmDigit22
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DemonGirlRArmDigit23
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DemonGirlRArmDigit31
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DemonGirlRArmDigit32
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DemonGirlRArmDigit33
+      humanName: Right Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DemonGirlRArmDigit41
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DemonGirlRArmDigit42
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DemonGirlRArmDigit43
+      humanName: Right Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DemonGirlSpine3
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: demonGirl@fall&riseup00 1(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: DemonGirl
+      parentName: demonGirl@fall&riseup00 1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.50000006, y: -0.5, z: -0.4999999, w: 0.5}
+      scale: {x: 1, y: 1, z: 1}
+    - name: DemonGirlPelvis
+      parentName: demonGirl@fall&riseup00 1(Clone)
+      position: {x: 0.009803238, y: 1.0211675, z: -0.13117903}
+      rotation: {x: 0.5539284, y: -0.52083224, z: -0.48543426, w: 0.4315679}
+      scale: {x: 1.0000004, y: 1.0000002, z: 0.9999995}
+    - name: DemonGirlLThigh
+      parentName: DemonGirlPelvis
+      position: {x: -0.01795208, y: 0.048949957, z: 0.09172059}
+      rotation: {x: -0.14021088, y: 0.94544, z: 0.29279104, w: -0.02752524}
+      scale: {x: 0.99999994, y: 0.99999815, z: 0.9999998}
+    - name: DemonGirlLCalf
+      parentName: DemonGirlLThigh
+      position: {x: -0.47060248, y: 0.00000084996225, z: -0.0000004386902}
+      rotation: {x: 0.2098755, y: -0.0062530446, z: 0.2003721, w: 0.95695573}
+      scale: {x: 1.0000201, y: 0.9999766, z: 1.0000103}
+    - name: DemonGirlLFoot
+      parentName: DemonGirlLCalf
+      position: {x: -0.5692009, y: 0.0000000068545343, z: -0.0000000068545343}
+      rotation: {x: 0.07944422, y: 0.032084707, z: -0.75945705, w: 0.64489084}
+      scale: {x: 1.0000429, y: 0.99995637, z: 1.0000006}
+    - name: DemonGirlSpine1
+      parentName: DemonGirlPelvis
+      position: {x: -0.047656998, y: -0.0036462557, z: -0.0000000068545343}
+      rotation: {x: -0.0034262862, y: 0.018875604, z: -0.19038193, w: 0.9815227}
+      scale: {x: 1.0000001, y: 1.0000001, z: 0.9999998}
+    - name: DemonGirlSpine2
+      parentName: DemonGirlSpine1
+      position: {x: -0.122123234, y: 0, z: -0.0000000017136336}
+      rotation: {x: -0.0043674433, y: 0.010798122, z: 0.18054695, w: 0.98349744}
+      scale: {x: 1.0000004, y: 1.0000005, z: 0.99999994}
+    - name: DemonGirlSpine3
+      parentName: DemonGirlSpine2
+      position: {x: -0.10403286, y: -0.0000000137090685, z: -0.0000000034272671}
+      rotation: {x: -0.004153783, y: -0.0019127069, z: 0.14296149, w: 0.9897177}
+      scale: {x: 1.0000001, y: 1.0000004, z: 1.0000001}
+    - name: DemonGirlSpine4
+      parentName: DemonGirlSpine3
+      position: {x: -0.11072694, y: 0, z: 0}
+      rotation: {x: -0.01019318, y: -0.019876359, z: 0.015776066, w: 0.99962604}
+      scale: {x: 1.0000002, y: 1.0000005, z: 0.99999994}
+    - name: DemonGirlRibcage
+      parentName: DemonGirlSpine4
+      position: {x: -0.15174359, y: -0.000000027418137, z: 0}
+      rotation: {x: -0.010951716, y: -0.03027616, z: 0.067457974, w: 0.9972025}
+      scale: {x: 0.99999934, y: 0.9999991, z: 1.0000001}
+    - name: DemonGirlLCollarbone
+      parentName: DemonGirlRibcage
+      position: {x: 0.01809948, y: 0.062197797, z: 0.03139988}
+      rotation: {x: 0.0998814, y: 0.7941275, z: 0.10250846, w: 0.5906583}
+      scale: {x: 0.9999997, y: 1, z: 0.9999998}
+    - name: DemonGirlLUpperarm
+      parentName: DemonGirlLCollarbone
+      position: {x: -0.12729402, y: -0.000000027418137, z: 0}
+      rotation: {x: 0.2183411, y: -0.11794754, z: -0.09763654, w: 0.9637856}
+      scale: {x: 1.0000006, y: 1.0000002, z: 0.99999964}
+    - name: DemonGirlLForearm
+      parentName: DemonGirlLUpperarm
+      position: {x: -0.2850157, y: 0, z: 0}
+      rotation: {x: -0.051247478, y: 0.009162175, z: -0.026161179, w: 0.9983013}
+      scale: {x: 1, y: 0.99999994, z: 0.9999998}
+    - name: DemonGirlLPalm
+      parentName: DemonGirlLForearm
+      position: {x: -0.27262518, y: 0.000000027418137, z: 0}
+      rotation: {x: -0.717239, y: -0.08528649, z: -0.036787976, w: 0.6906092}
+      scale: {x: 0.999998, y: 1.000001, z: 0.99999696}
+    - name: DemonGirlLDigit11
+      parentName: DemonGirlLPalm
+      position: {x: -0.0028267002, y: -0.020969665, z: 0.023969702}
+      rotation: {x: -0.04245076, y: 0.10207214, z: 0.079446346, w: 0.9906904}
+      scale: {x: 0.9999959, y: 1.0000029, z: 0.99999803}
+    - name: DemonGirlLDigit12
+      parentName: DemonGirlLDigit11
+      position: {x: -0.04229741, y: 0.0000000137090685, z: -0.000000027418137}
+      rotation: {x: 0.0080952495, y: 0.008539025, z: 0.038974106, w: 0.999171}
+      scale: {x: 0.99999213, y: 1.0000055, z: 0.9999955}
+    - name: DemonGirlLDigit13
+      parentName: DemonGirlLDigit12
+      position: {x: -0.026699178, y: 0, z: 0}
+      rotation: {x: -0.03494613, y: -0.11416985, z: -0.24029383, w: 0.9633291}
+      scale: {x: 0.999983, y: 1.0000124, z: 0.9999912}
+    - name: DemonGirlLDigit21
+      parentName: DemonGirlLPalm
+      position: {x: -0.107984684, y: -0.0024194312, z: 0.029180877}
+      rotation: {x: -0.05536849, y: 0.11645425, z: 0.08852421, w: 0.9876924}
+      scale: {x: 0.99999607, y: 1.0000025, z: 0.999998}
+    - name: DemonGirlLDigit22
+      parentName: DemonGirlLDigit21
+      position: {x: -0.042377032, y: -0.000000054836274, z: -0.000000027418137}
+      rotation: {x: -0.008742584, y: -0.017674765, z: 0.032029714, w: 0.9992925}
+      scale: {x: 0.99999493, y: 1.0000014, z: 0.9999971}
+    - name: DemonGirlLDigit23
+      parentName: DemonGirlLDigit22
+      position: {x: -0.025252433, y: 0.000000027418137, z: 0}
+      rotation: {x: 0.000000031778075, y: -0.00000014634584, z: 0.1139092, w: 0.9934912}
+      scale: {x: 0.99999, y: 1.000004, z: 0.9999926}
+    - name: DemonGirlLDigit31
+      parentName: DemonGirlLPalm
+      position: {x: -0.10809913, y: 0.005829151, z: -0.0114414515}
+      rotation: {x: -0.040045884, y: 0.10594739, z: 0.084782496, w: 0.9899412}
+      scale: {x: 0.99999803, y: 1.0000012, z: 0.9999977}
+    - name: DemonGirlLDigit32
+      parentName: DemonGirlLDigit31
+      position: {x: -0.04212687, y: -0.0000000137090685, z: 0.000000027418137}
+      rotation: {x: -0.00080570136, y: -0.006193521, z: 0.031464867, w: 0.99948543}
+      scale: {x: 0.99999666, y: 1.0000018, z: 0.9999953}
+    - name: DemonGirlLDigit33
+      parentName: DemonGirlLDigit32
+      position: {x: -0.037681844, y: -0.000000054836274, z: -0.000000027418137}
+      rotation: {x: 0.00049609866, y: 0.013815997, z: 0.07195116, w: 0.99731237}
+      scale: {x: 0.9999913, y: 1.0000048, z: 0.99999124}
+    - name: DemonGirlLDigit41
+      parentName: DemonGirlLPalm
+      position: {x: -0.09848392, y: -0.0024521686, z: -0.045647718}
+      rotation: {x: -0.019315468, y: 0.08068893, z: 0.062253818, w: 0.99460584}
+      scale: {x: 0.99999875, y: 1.0000019, z: 0.9999962}
+    - name: DemonGirlLDigit42
+      parentName: DemonGirlLDigit41
+      position: {x: -0.027438097, y: 0.000000027418137, z: -0.0000000068545343}
+      rotation: {x: 0.020350123, y: 0.006671146, z: 0.027217092, w: 0.99940014}
+      scale: {x: 0.9999948, y: 1.0000051, z: 0.9999938}
+    - name: DemonGirlLDigit43
+      parentName: DemonGirlLDigit42
+      position: {x: -0.025720516, y: 0, z: -0.0000000137090685}
+      rotation: {x: 0.000000012594235, y: -0.000000118542935, z: 0.1056474, w: 0.99440366}
+      scale: {x: 0.9999934, y: 1.0000063, z: 0.99998784}
+    - name: DemonGirlNeck1
+      parentName: DemonGirlRibcage
+      position: {x: -0.0008282471, y: -0.0036462557, z: 0}
+      rotation: {x: -0.0090292925, y: 0.056818064, z: -0.26520854, w: 0.96247315}
+      scale: {x: 1, y: 1.0000004, z: 1}
+    - name: DemonGirlNeck2
+      parentName: DemonGirlNeck1
+      position: {x: -0.0600353, y: 0.000000027418137, z: 0}
+      rotation: {x: 0.010479779, y: 0.026389942, z: 0.11079433, w: 0.99343765}
+      scale: {x: 1, y: 1.0000002, z: 1.0000004}
+    - name: DemonGirlHead
+      parentName: DemonGirlNeck2
+      position: {x: -0.081968054, y: 0, z: 0}
+      rotation: {x: 0.01803779, y: -0.04156217, z: -0.10463759, w: 0.9934778}
+      scale: {x: 0.99999976, y: 0.99999934, z: 0.9999997}
+    - name: DemonGirlTail1 1
+      parentName: DemonGirlHead
+      position: {x: -0.14051664, y: -0.049999826, z: 0.000000015422701}
+      rotation: {x: 0.000000028837494, y: 0.00000004324822, z: 0.62108004, w: 0.78374714}
+      scale: {x: 1, y: 1.0000011, z: 0.99999994}
+    - name: DemonGirlTail2 1
+      parentName: DemonGirlTail1 1
+      position: {x: -0.09895425, y: 0.0000002193451, z: -0.0000000034272671}
+      rotation: {x: 0.000000025865747, y: 0.0000000043767363, z: 0.37869143, w: 0.92552304}
+      scale: {x: 1.0000005, y: 1.0000018, z: 0.9999998}
+    - name: DemonGirlTail3
+      parentName: DemonGirlTail2 1
+      position: {x: -0.06937348, y: 0.00000010967255, z: 0.0000000017136336}
+      rotation: {x: 0.000000015840403, y: 0.00000001432097, z: 0.3656196, w: 0.9307644}
+      scale: {x: 1.0000007, y: 1.0000035, z: 0.9999995}
+    - name: DemonGirlTail4
+      parentName: DemonGirlTail3
+      position: {x: -0.10399809, y: 0.00000010967255, z: 0.0000000017136336}
+      rotation: {x: 0.000000012395218, y: -0.0000000019182749, z: -0.0360854, w: 0.9993487}
+      scale: {x: 1.0000029, y: 1.0000058, z: 0.99999905}
+    - name: DemonGirlTail5
+      parentName: DemonGirlTail4
+      position: {x: -0.083582655, y: 0, z: 0.0000000017136336}
+      rotation: {x: -0.00000008274963, y: -0.00000013426252, z: -0.5097543, w: 0.86032003}
+      scale: {x: 1.0000013, y: 1.000016, z: 0.9999982}
+    - name: DemonGirlRArmCollarbone
+      parentName: DemonGirlRibcage
+      position: {x: 0.0180997, y: 0.06219791, z: -0.031399846}
+      rotation: {x: -0.08623847, y: -0.7440115, z: 0.070926644, w: 0.658771}
+      scale: {x: 0.99999976, y: 1.0000004, z: 0.9999999}
+    - name: DemonGirlRArmUpperarm
+      parentName: DemonGirlRArmCollarbone
+      position: {x: -0.12729402, y: 0, z: 0}
+      rotation: {x: -0.21053614, y: 0.11183848, z: -0.10381914, w: 0.9656026}
+      scale: {x: 1.0000004, y: 1.0000004, z: 0.9999996}
+    - name: DemonGirlRArmForearm
+      parentName: DemonGirlRArmUpperarm
+      position: {x: -0.28501558, y: 0.0000000068545343, z: -0.000000054836274}
+      rotation: {x: 0.1352635, y: 0.0018669358, z: -0.034634, w: 0.99020237}
+      scale: {x: 0.9999998, y: 0.99999994, z: 0.99999976}
+    - name: DemonGirlRArmPalm
+      parentName: DemonGirlRArmForearm
+      position: {x: -0.27262512, y: 0, z: 0}
+      rotation: {x: 0.6792758, y: 0.026153885, z: 0.109076485, w: 0.72526044}
+      scale: {x: 0.99999976, y: 0.9999993, z: 0.9999973}
+    - name: DemonGirlRArmDigit11
+      parentName: DemonGirlRArmPalm
+      position: {x: -0.0028265906, y: -0.02096972, z: -0.023969648}
+      rotation: {x: 0.04244995, y: -0.102070846, z: 0.07944934, w: 0.99069035}
+      scale: {x: 1.0000027, y: 0.99999696, z: 0.99999815}
+    - name: DemonGirlRArmDigit12
+      parentName: DemonGirlRArmDigit11
+      position: {x: -0.04229741, y: 0.000000054836274, z: 0}
+      rotation: {x: -0.008095228, y: -0.008537707, z: 0.038974002, w: 0.999171}
+      scale: {x: 1.0000056, y: 0.9999937, z: 0.9999967}
+    - name: DemonGirlRArmDigit13
+      parentName: DemonGirlRArmDigit12
+      position: {x: -0.026699124, y: 0, z: 0}
+      rotation: {x: 0.03494734, y: 0.11417063, z: -0.24030145, w: 0.96332705}
+      scale: {x: 1.0000124, y: 0.9999863, z: 0.99999267}
+    - name: DemonGirlRArmDigit21
+      parentName: DemonGirlRArmPalm
+      position: {x: -0.107984856, y: -0.0024194312, z: -0.02918078}
+      rotation: {x: 0.055367764, y: -0.11645427, z: 0.08852722, w: 0.9876922}
+      scale: {x: 1.0000027, y: 0.99999726, z: 0.99999815}
+    - name: DemonGirlRArmDigit22
+      parentName: DemonGirlRArmDigit21
+      position: {x: -0.042377032, y: -0.000000027418137, z: 0}
+      rotation: {x: 0.008742416, y: 0.017675791, z: 0.032032594, w: 0.9992923}
+      scale: {x: 1.0000031, y: 0.9999952, z: 0.9999979}
+    - name: DemonGirlRArmDigit23
+      parentName: DemonGirlRArmDigit22
+      position: {x: -0.025252378, y: 0, z: 0}
+      rotation: {x: -0.000000019968608, y: 0.00000023956449, z: 0.113912016, w: 0.9934909}
+      scale: {x: 1.0000061, y: 0.9999917, z: 0.9999947}
+    - name: DemonGirlRArmDigit31
+      parentName: DemonGirlRArmPalm
+      position: {x: -0.108099245, y: 0.005829096, z: 0.0114414515}
+      rotation: {x: 0.04004521, y: -0.105948925, z: 0.08478286, w: 0.98994094}
+      scale: {x: 1.0000007, y: 0.9999988, z: 0.99999845}
+    - name: DemonGirlRArmDigit32
+      parentName: DemonGirlRArmDigit31
+      position: {x: -0.042126928, y: -0.000000027418137, z: -0.0000000137090685}
+      rotation: {x: 0.00080516894, y: 0.0061936276, z: 0.031465523, w: 0.9994853}
+      scale: {x: 1.0000014, y: 0.99999785, z: 0.99999696}
+    - name: DemonGirlRArmDigit33
+      parentName: DemonGirlRArmDigit32
+      position: {x: -0.037681844, y: -0.00000010967255, z: 0}
+      rotation: {x: -0.00049607555, y: -0.0138160605, z: 0.07195205, w: 0.9973123}
+      scale: {x: 1.0000049, y: 0.99999404, z: 0.99999326}
+    - name: DemonGirlRArmDigit41
+      parentName: DemonGirlRArmPalm
+      position: {x: -0.098484084, y: -0.0024521137, z: 0.045647673}
+      rotation: {x: 0.01931574, y: -0.08068719, z: 0.062254455, w: 0.99460596}
+      scale: {x: 1.0000004, y: 0.99999785, z: 1}
+    - name: DemonGirlRArmDigit42
+      parentName: DemonGirlRArmDigit41
+      position: {x: -0.027438153, y: 0.000000054836274, z: 0}
+      rotation: {x: -0.020349197, y: -0.0066729146, z: 0.027214326, w: 0.99940026}
+      scale: {x: 0.9999994, y: 0.9999977, z: 0.99999845}
+    - name: DemonGirlRArmDigit43
+      parentName: DemonGirlRArmDigit42
+      position: {x: -0.025720516, y: 0, z: -0.0000000017136336}
+      rotation: {x: 0.000000019956346, y: 0.0000000061006333, z: 0.10564891, w: 0.99440354}
+      scale: {x: 0.999999, y: 0.99999577, z: 0.999997}
+    - name: DemonGirlTail1
+      parentName: DemonGirlPelvis
+      position: {x: -0.060368046, y: -0.070931435, z: 0.0000000068545343}
+      rotation: {x: 0.00000019858106, y: -0.00000011611737, z: 0.861201, w: 0.50826454}
+      scale: {x: 1.0000005, y: 0.9999999, z: 0.9999995}
+    - name: DemonGirlTail2
+      parentName: DemonGirlTail1
+      position: {x: -0.10369433, y: 0, z: 0}
+      rotation: {x: -0.00000015668155, y: 0.00000029521001, z: -0.2902634, w: 0.9569468}
+      scale: {x: 1.0000011, y: 1.0000001, z: 0.99999905}
+    - name: DemonGirlRLegThigh
+      parentName: DemonGirlPelvis
+      position: {x: -0.017952189, y: 0.048949957, z: -0.09172059}
+      rotation: {x: -0.16809446, y: 0.9186286, z: -0.35636452, w: -0.029499268}
+      scale: {x: 1, y: 0.9999981, z: 0.99999964}
+    - name: DemonGirlRLegCalf
+      parentName: DemonGirlRLegThigh
+      position: {x: -0.47060242, y: 0.0000008225441, z: 0.0000004455447}
+      rotation: {x: -0.20891607, y: 0.0072029238, z: 0.22161345, w: 0.95246506}
+      scale: {x: 0.99999446, y: 1.0000093, z: 0.9999992}
+    - name: DemonGirlRLegFoot
+      parentName: DemonGirlRLegCalf
+      position: {x: -0.5692009, y: 0.0000000137090685, z: 0.0000000137090685}
+      rotation: {x: -0.12267779, y: -0.097148985, z: -0.7556404, w: 0.63601875}
+      scale: {x: 0.9999876, y: 1.0000131, z: 0.99999917}
+    - name: DemonGirlLPlatform
+      parentName: demonGirl@fall&riseup00 1(Clone)
+      position: {x: -0.08257529, y: -0.0037077134, z: 0.024144216}
+      rotation: {x: 0.5381952, y: -0.5381945, z: -0.458635, w: 0.4586356}
+      scale: {x: 1.0000001, y: 1, z: 0.9999995}
+    - name: DemonGirlRLegPlatform
+      parentName: demonGirl@fall&riseup00 1(Clone)
+      position: {x: 0.10206297, y: -0.0037079193, z: 0.05380603}
+      rotation: {x: 0.53819513, y: -0.5381944, z: -0.45863506, w: 0.4586357}
+      scale: {x: 1.0000001, y: 1, z: 0.9999995}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 0.23
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 3
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
