@@ -1,0 +1,710 @@
+fileFormatVersion: 2
+guid: 3fd80404506c6734282c368b3d3b36f0
+ModelImporter:
+  serializedVersion: 21100
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: Chest
+  - first:
+      1: 100004
+    second: DragonBoar
+  - first:
+      1: 100006
+    second: Head
+  - first:
+      1: 100008
+    second: Jaw1
+  - first:
+      1: 100010
+    second: Jaw2
+  - first:
+      1: 100012
+    second: Jaw3
+  - first:
+      1: 100014
+    second: joint5
+  - first:
+      1: 100016
+    second: joint6
+  - first:
+      1: 100018
+    second: joint7
+  - first:
+      1: 100020
+    second: joint8
+  - first:
+      1: 100022
+    second: L_Feet
+  - first:
+      1: 100024
+    second: L_Fingers
+  - first:
+      1: 100026
+    second: L_Hand
+  - first:
+      1: 100028
+    second: L_Horn1
+  - first:
+      1: 100030
+    second: L_Horn2
+  - first:
+      1: 100032
+    second: L_LowerArm
+  - first:
+      1: 100034
+    second: L_LowerEye
+  - first:
+      1: 100036
+    second: L_LowerLeg
+  - first:
+      1: 100038
+    second: L_Toes
+  - first:
+      1: 100040
+    second: L_UpperArm
+  - first:
+      1: 100042
+    second: L_UpperEye
+  - first:
+      1: 100044
+    second: L_UpperLeg
+  - first:
+      1: 100046
+    second: R_Feet
+  - first:
+      1: 100048
+    second: R_Fingers
+  - first:
+      1: 100050
+    second: R_Hand
+  - first:
+      1: 100052
+    second: R_Horn1
+  - first:
+      1: 100054
+    second: R_Horn2
+  - first:
+      1: 100056
+    second: R_LowerEye
+  - first:
+      1: 100058
+    second: R_RowerArm
+  - first:
+      1: 100060
+    second: R_RowerReg
+  - first:
+      1: 100062
+    second: R_Toes
+  - first:
+      1: 100064
+    second: R_UpperArm
+  - first:
+      1: 100066
+    second: R_UpperEye
+  - first:
+      1: 100068
+    second: R_UpperReg
+  - first:
+      1: 100070
+    second: Root
+  - first:
+      1: 100072
+    second: Root_CTRL
+  - first:
+      1: 100074
+    second: Spine1
+  - first:
+      1: 100076
+    second: Tongue1
+  - first:
+      1: 100078
+    second: Tongue2
+  - first:
+      1: 100080
+    second: Tongue3
+  - first:
+      1: 100082
+    second: UpperMouth1
+  - first:
+      1: 100084
+    second: UpperMouth2
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: Chest
+  - first:
+      4: 400004
+    second: DragonBoar
+  - first:
+      4: 400006
+    second: Head
+  - first:
+      4: 400008
+    second: Jaw1
+  - first:
+      4: 400010
+    second: Jaw2
+  - first:
+      4: 400012
+    second: Jaw3
+  - first:
+      4: 400014
+    second: joint5
+  - first:
+      4: 400016
+    second: joint6
+  - first:
+      4: 400018
+    second: joint7
+  - first:
+      4: 400020
+    second: joint8
+  - first:
+      4: 400022
+    second: L_Feet
+  - first:
+      4: 400024
+    second: L_Fingers
+  - first:
+      4: 400026
+    second: L_Hand
+  - first:
+      4: 400028
+    second: L_Horn1
+  - first:
+      4: 400030
+    second: L_Horn2
+  - first:
+      4: 400032
+    second: L_LowerArm
+  - first:
+      4: 400034
+    second: L_LowerEye
+  - first:
+      4: 400036
+    second: L_LowerLeg
+  - first:
+      4: 400038
+    second: L_Toes
+  - first:
+      4: 400040
+    second: L_UpperArm
+  - first:
+      4: 400042
+    second: L_UpperEye
+  - first:
+      4: 400044
+    second: L_UpperLeg
+  - first:
+      4: 400046
+    second: R_Feet
+  - first:
+      4: 400048
+    second: R_Fingers
+  - first:
+      4: 400050
+    second: R_Hand
+  - first:
+      4: 400052
+    second: R_Horn1
+  - first:
+      4: 400054
+    second: R_Horn2
+  - first:
+      4: 400056
+    second: R_LowerEye
+  - first:
+      4: 400058
+    second: R_RowerArm
+  - first:
+      4: 400060
+    second: R_RowerReg
+  - first:
+      4: 400062
+    second: R_Toes
+  - first:
+      4: 400064
+    second: R_UpperArm
+  - first:
+      4: 400066
+    second: R_UpperEye
+  - first:
+      4: 400068
+    second: R_UpperReg
+  - first:
+      4: 400070
+    second: Root
+  - first:
+      4: 400072
+    second: Root_CTRL
+  - first:
+      4: 400074
+    second: Spine1
+  - first:
+      4: 400076
+    second: Tongue1
+  - first:
+      4: 400078
+    second: Tongue2
+  - first:
+      4: 400080
+    second: Tongue3
+  - first:
+      4: 400082
+    second: UpperMouth1
+  - first:
+      4: 400084
+    second: UpperMouth2
+  - first:
+      43: 4300000
+    second: DragonBoar
+  - first:
+      74: 7400000
+    second: Basic Attack
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: DragonBoar
+  externalObjects: {}
+  materials:
+    materialImportMode: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Chest' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n\t'Head' has translation
+      animation that will be discarded.\n\t'UpperMouth1' has translation animation
+      that will be discarded.\n\t'UpperMouth1' is inbetween humanoid transforms and
+      has rotation animation that will be discarded.\n\t'L_LowerEye' has translation
+      animation that will be discarded.\n\t'R_LowerEye' has translation animation
+      that will be discarded.\n\t'Jaw1' has translation animation that will be discarded.\n"
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Basic Attack
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: DragonBoar
+        weight: 1
+      - path: Root
+        weight: 1
+      - path: Root/joint5
+        weight: 1
+      - path: Root/joint5/joint6
+        weight: 1
+      - path: Root/joint5/joint6/joint7
+        weight: 1
+      - path: Root/joint5/joint6/joint7/joint8
+        weight: 1
+      - path: Root/L_UpperLeg
+        weight: 1
+      - path: Root/L_UpperLeg/L_LowerLeg
+        weight: 1
+      - path: Root/L_UpperLeg/L_LowerLeg/L_Feet
+        weight: 1
+      - path: Root/L_UpperLeg/L_LowerLeg/L_Feet/L_Toes
+        weight: 1
+      - path: Root/R_UpperReg
+        weight: 1
+      - path: Root/R_UpperReg/R_RowerReg
+        weight: 1
+      - path: Root/R_UpperReg/R_RowerReg/R_Feet
+        weight: 1
+      - path: Root/R_UpperReg/R_RowerReg/R_Feet/R_Toes
+        weight: 1
+      - path: Root/Spine1
+        weight: 1
+      - path: Root/Spine1/Chest
+        weight: 1
+      - path: Root/Spine1/Chest/Head
+        weight: 1
+      - path: Root/Spine1/Chest/Head/Jaw1
+        weight: 1
+      - path: Root/Spine1/Chest/Head/Jaw1/Jaw2
+        weight: 1
+      - path: Root/Spine1/Chest/Head/Jaw1/Jaw2/Jaw3
+        weight: 1
+      - path: Root/Spine1/Chest/Head/L_Horn1
+        weight: 1
+      - path: Root/Spine1/Chest/Head/L_Horn1/L_Horn2
+        weight: 1
+      - path: Root/Spine1/Chest/Head/R_Horn1
+        weight: 1
+      - path: Root/Spine1/Chest/Head/R_Horn1/R_Horn2
+        weight: 1
+      - path: Root/Spine1/Chest/Head/Tongue1
+        weight: 1
+      - path: Root/Spine1/Chest/Head/Tongue1/Tongue2
+        weight: 1
+      - path: Root/Spine1/Chest/Head/Tongue1/Tongue2/Tongue3
+        weight: 1
+      - path: Root/Spine1/Chest/Head/UpperMouth1
+        weight: 1
+      - path: Root/Spine1/Chest/Head/UpperMouth1/L_LowerEye
+        weight: 1
+      - path: Root/Spine1/Chest/Head/UpperMouth1/L_UpperEye
+        weight: 1
+      - path: Root/Spine1/Chest/Head/UpperMouth1/R_LowerEye
+        weight: 1
+      - path: Root/Spine1/Chest/Head/UpperMouth1/R_UpperEye
+        weight: 1
+      - path: Root/Spine1/Chest/Head/UpperMouth1/UpperMouth2
+        weight: 1
+      - path: Root/Spine1/Chest/L_UpperArm
+        weight: 1
+      - path: Root/Spine1/Chest/L_UpperArm/L_LowerArm
+        weight: 1
+      - path: Root/Spine1/Chest/L_UpperArm/L_LowerArm/L_Hand
+        weight: 1
+      - path: Root/Spine1/Chest/L_UpperArm/L_LowerArm/L_Hand/L_Fingers
+        weight: 1
+      - path: Root/Spine1/Chest/R_UpperArm
+        weight: 1
+      - path: Root/Spine1/Chest/R_UpperArm/R_RowerArm
+        weight: 1
+      - path: Root/Spine1/Chest/R_UpperArm/R_RowerArm/R_Hand
+        weight: 1
+      - path: Root/Spine1/Chest/R_UpperArm/R_RowerArm/R_Hand/R_Fingers
+        weight: 1
+      - path: Root_CTRL
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    fileIdsGeneration: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton:
+    - name: attack(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: DragonBoar
+      parentName: attack(Clone)
+      position: {x: 112.28471, y: -19.06134, z: -167.88983}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.01, y: 0.01, z: 0.01}
+    - name: Root_CTRL
+      parentName: attack(Clone)
+      position: {x: -0, y: 1.6901164, z: -0.56466067}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.01, y: 0.01, z: 0.01}
+    - name: Root
+      parentName: attack(Clone)
+      position: {x: 0, y: 0.6193247, z: -0.7252724}
+      rotation: {x: -0.60477597, y: 0.36639503, z: -0.6047769, w: 0.3663956}
+      scale: {x: 0.01, y: 0.01, z: 0.01}
+    - name: Spine1
+      parentName: Root
+      position: {x: -94.41445, y: 5.684342e-14, z: 4.7331654e-30}
+      rotation: {x: -1.3877788e-17, y: -1.2663481e-16, z: 0.14606345, w: 0.9892752}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chest
+      parentName: Spine1
+      position: {x: -93.45327, y: 5.684342e-14, z: 6.7464595e-15}
+      rotation: {x: -4.8572254e-17, y: -1.1861172e-16, z: 0.10828254, w: 0.9941202}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Head
+      parentName: Chest
+      position: {x: -86.84262, y: -1.4210855e-13, z: 1.0593324e-14}
+      rotation: {x: -4.2500725e-17, y: 5.14996e-19, z: -0.041650876, w: 0.9991322}
+      scale: {x: 1, y: 1, z: 1}
+    - name: UpperMouth1
+      parentName: Head
+      position: {x: -67.29943, y: 8.526513e-14, z: 6.9598694e-15}
+      rotation: {x: 0, y: 0, z: 0.017199585, w: 0.9998521}
+      scale: {x: 1, y: 1, z: 1}
+    - name: UpperMouth2
+      parentName: UpperMouth1
+      position: {x: -51.237434, y: 0.092507355, z: 6.215433e-15}
+      rotation: {x: 0.032367058, y: -0.70636564, z: 0.032367058, w: 0.70636564}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_UpperEye
+      parentName: UpperMouth1
+      position: {x: -9.351012, y: 14.503892, z: -28.283401}
+      rotation: {x: 0.032367058, y: -0.70636564, z: 0.032367058, w: 0.70636564}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_LowerEye
+      parentName: UpperMouth1
+      position: {x: -3.2676337, y: -2.3336165, z: -33.489536}
+      rotation: {x: 0.032367058, y: -0.70636564, z: 0.032367058, w: 0.70636564}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_UpperEye
+      parentName: UpperMouth1
+      position: {x: -9.350816, y: 14.504367, z: 28.2834}
+      rotation: {x: 0.70636564, y: 0.03236701, z: 0.70636564, w: -0.03236701}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_LowerEye
+      parentName: UpperMouth1
+      position: {x: -3.2674363, y: -2.3338573, z: 33.4895}
+      rotation: {x: 0.70636564, y: 0.03236701, z: 0.70636564, w: -0.03236701}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Jaw1
+      parentName: Head
+      position: {x: -13.065828, y: -43.754913, z: 1.1300551e-14}
+      rotation: {x: 0, y: 0, z: 0.31260526, w: 0.94988316}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Jaw2
+      parentName: Jaw1
+      position: {x: -61.337563, y: 0, z: 1.3619675e-14}
+      rotation: {x: 0, y: -0, z: -0.410345, w: 0.9119304}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Jaw3
+      parentName: Jaw2
+      position: {x: -73.26134, y: 3.4961689, z: 2.0172078e-14}
+      rotation: {x: -0.17086771, y: -0.68615174, z: -0.17086771, w: 0.68615174}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Horn1
+      parentName: Head
+      position: {x: -2.9658153, y: 44.251938, z: -24.789577}
+      rotation: {x: -0.33348662, y: 0.9148021, z: 0.06625391, w: -0.21802352}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Horn2
+      parentName: L_Horn1
+      position: {x: -69.88746, y: 0, z: 0}
+      rotation: {x: 0.13578254, y: -0.18299435, z: 0.0060621784, w: 0.97367316}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tongue1
+      parentName: Head
+      position: {x: -43.30238, y: -42.433662, z: -1.7339784e-14}
+      rotation: {x: 0, y: -0, z: -0.05325899, w: 0.99858075}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tongue2
+      parentName: Tongue1
+      position: {x: -37.610462, y: -2.3874236e-12, z: -3.427547e-16}
+      rotation: {x: 0, y: -0, z: -0.035375625, w: 0.9993741}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tongue3
+      parentName: Tongue2
+      position: {x: -40.45182, y: 2.842171e-14, z: 7.984626e-17}
+      rotation: {x: -0.030805, y: -0.7064355, z: -0.030805, w: 0.7064355}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Horn1
+      parentName: Head
+      position: {x: -2.9659271, y: 44.251667, z: 24.7896}
+      rotation: {x: -0.3334898, y: 0.914801, z: -0.066254586, w: 0.21802303}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Horn2
+      parentName: R_Horn1
+      position: {x: -69.88794, y: 0, z: 1.4210855e-14}
+      rotation: {x: 0.18299374, y: 0.13578305, z: 0.9736732, w: -0.006065499}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_UpperArm
+      parentName: Chest
+      position: {x: 5.3608994, y: -68.16634, z: -63.230366}
+      rotation: {x: 0.11593427, y: 0.7007694, z: 0.09996091, w: -0.6967706}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_LowerArm
+      parentName: L_UpperArm
+      position: {x: -98.02088, y: 4.2632564e-14, z: 2.842171e-14}
+      rotation: {x: 0.61631185, y: 0.026897723, z: -0.017016802, w: 0.78685874}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hand
+      parentName: L_LowerArm
+      position: {x: -61.12222, y: 0, z: -1.4210855e-14}
+      rotation: {x: 0.107493386, y: 0.0014892796, z: -0.06549118, w: 0.9920453}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Fingers
+      parentName: L_Hand
+      position: {x: -36.333042, y: -2.842171e-14, z: 1.4210855e-14}
+      rotation: {x: -0.025879456, y: -0.6546004, z: -0.029846445, w: 0.75494224}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_UpperArm
+      parentName: Chest
+      position: {x: 5.361254, y: -68.1659, z: 63.2304}
+      rotation: {x: 0.115927055, y: 0.7007701, z: -0.09995635, w: 0.6967718}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_RowerArm
+      parentName: R_UpperArm
+      position: {x: -98.02125, y: -2.842171e-14, z: -4.2632564e-14}
+      rotation: {x: -0.6162963, y: -0.026898112, z: -0.017016789, w: 0.7868709}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hand
+      parentName: R_RowerArm
+      position: {x: -61.12191, y: 0, z: 3.907985e-14}
+      rotation: {x: -0.1418431, y: 0.000785604, z: -0.06550424, w: 0.9877192}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Fingers
+      parentName: R_Hand
+      position: {x: -36.333668, y: 3.5527137e-15, z: 1.4210855e-14}
+      rotation: {x: 0.65459895, y: -0.025878498, z: 0.75494355, w: 0.02984546}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint5
+      parentName: Root
+      position: {x: 80.14654, y: -14.499245, z: 3.621914e-15}
+      rotation: {x: -0.008774673, y: 0.9954994, z: -0.04461089, w: -0.08314964}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint6
+      parentName: joint5
+      position: {x: -78.75991, y: -2.842171e-14, z: -1.7488213e-14}
+      rotation: {x: 0.034003817, y: 0.087677486, z: -0.102883734, w: 0.990238}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint7
+      parentName: joint6
+      position: {x: -78.00609, y: 5.684342e-14, z: -1.874224e-14}
+      rotation: {x: 0.016607922, y: 0.09239397, z: -0.07791428, w: 0.9925306}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint8
+      parentName: joint7
+      position: {x: -87.18551, y: 4.2632564e-14, z: -2.1542774e-14}
+      rotation: {x: 0.03295829, y: 0.7063383, z: -0.03295829, w: 0.7063383}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_UpperLeg
+      parentName: Root
+      position: {x: 34.79974, y: -63.647976, z: -70.98306}
+      rotation: {x: -0.14335544, y: 0.98207945, z: -0.1145924, w: -0.042870577}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_LowerLeg
+      parentName: L_UpperLeg
+      position: {x: -66.21609, y: 1.4210855e-14, z: 7.1054274e-15}
+      rotation: {x: 0.6345488, y: -0.044327885, z: 0.011683335, w: 0.7715222}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Feet
+      parentName: L_LowerLeg
+      position: {x: -35.19601, y: 0, z: 2.842171e-14}
+      rotation: {x: -0.024904978, y: 0.96034175, z: -0.19538236, w: 0.19735597}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Toes
+      parentName: L_Feet
+      position: {x: -41.618404, y: 1.9539925e-14, z: 0}
+      rotation: {x: -0.005962262, y: -0.6163785, z: -0.007616472, w: 0.78739065}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_UpperReg
+      parentName: Root
+      position: {x: 34.79974, y: -63.648003, z: 70.9831}
+      rotation: {x: -0.14335561, y: 0.98207945, z: 0.11459175, w: 0.042870607}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_RowerReg
+      parentName: R_UpperReg
+      position: {x: -66.216064, y: -1.4210855e-14, z: -2.842171e-14}
+      rotation: {x: 0.7715105, y: 0.01168391, z: -0.044328224, w: 0.63456285}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Feet
+      parentName: R_RowerReg
+      position: {x: -35.196022, y: 2.842171e-14, z: 1.4210855e-14}
+      rotation: {x: 0.19779955, y: 0.21378195, z: -0.9564134, w: -0.021119434}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Toes
+      parentName: R_Feet
+      position: {x: -41.618374, y: 1.4210855e-14, z: 1.4210855e-14}
+      rotation: {x: 0.6163759, y: -0.005962226, z: 0.7873927, w: 0.0076164776}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
