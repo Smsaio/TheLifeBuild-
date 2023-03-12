@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.SceneManagement;
 using Ability;
 #if UNITY_EDITOR
@@ -15,7 +15,7 @@ public class ConvertEditor : Editor
     {
         _target = target as Convert;
     }
-    //ƒCƒ“ƒXƒyƒNƒ^[•\¦
+    //ã‚¤ãƒ³ã‚¹ãƒšã‚¯ã‚¿ãƒ¼è¡¨ç¤º
     public override void OnInspectorGUI()
     {
         //base.OnInspectorGUI();
@@ -26,7 +26,7 @@ public class ConvertEditor : Editor
         EditorGUI.BeginChangeCheck();
         _target.AnuvisWeapon = (GameObject)EditorGUILayout.ObjectField("AnuvisWeapon", _target.AnuvisWeapon,typeof(GameObject),true);
         _target.MaxFollowCharaCount = EditorGUILayout.IntSlider("MaxFollowCharaCount", _target.MaxFollowCharaCount,1,5);
-        //GUI‚ÌXV‚ª‚ ‚Á‚½‚çÀs
+        //GUIã®æ›´æ–°ãŒã‚ã£ãŸã‚‰å®Ÿè¡Œ
         if (EditorGUI.EndChangeCheck())
         {
             var scene = SceneManager.GetActiveScene();

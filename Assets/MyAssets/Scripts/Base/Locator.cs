@@ -1,8 +1,8 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
-/// ƒCƒ“ƒ^[ƒtƒFƒCƒX‚Æ‡‚í‚¹‚é‚Æ‚È‚¨—Ç‚¢
+/// ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã¨åˆã‚ã›ã‚‹ã¨ãªãŠè‰¯ã„(ã‚µãƒ¼ãƒ“ã‚¹ãƒ­ã‚±ãƒ¼ã‚¿)
 /// </summary>
 /// <typeparam name="T"></typeparam>
 public static class Locator<T> where T : class

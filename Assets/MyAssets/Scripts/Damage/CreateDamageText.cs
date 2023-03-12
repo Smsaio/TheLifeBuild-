@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-//文字列を一文字に変え、その文字をアニメーションする
+/// <summary>
+/// 文字列を一文字に変え、その文字をアニメーションする
+/// </summary>
 public class CreateDamageText : MonoBehaviour
 {
     [SerializeField]

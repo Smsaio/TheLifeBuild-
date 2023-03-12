@@ -1,13 +1,13 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
-/// ReactiveProperty—pŠÖ”’è‹`ƒNƒ‰ƒX
+/// ReactivePropertyç”¨é–¢æ•°å®šç¾©ã‚¯ãƒ©ã‚¹
 /// </summary>
 public class ReactivePropertyController: MonoBehaviour
 {
     /// <summary>
-    /// ƒvƒŒƒCƒ„[ŠÖ˜AƒNƒ‰ƒXŠÄ‹—pŠÖ”
+    /// ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼é–¢é€£ã‚¯ãƒ©ã‚¹ç›£è¦–ç”¨é–¢æ•°
     /// </summary>
     /// <param name="role"></param>
     public virtual void ReactivePlayer(IRole role)

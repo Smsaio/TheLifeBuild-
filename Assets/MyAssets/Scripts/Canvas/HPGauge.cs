@@ -5,6 +5,9 @@ using TMPro;
 using System.Collections;
 using Zenject;
 
+/// <summary>
+/// 体力ゲージ管理、制御クラス
+/// </summary>
 public class HPGauge : MonoBehaviour
 {
     //色を変化させるオブジェクトと色

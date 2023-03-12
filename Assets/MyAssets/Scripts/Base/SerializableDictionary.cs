@@ -2,7 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-//連想配列をインスペクターで制御できるように
+/// <summary>
+/// 連想配列をインスペクターで制御できるように
+/// </summary>
 namespace Serialize
 {
     /// <summary>

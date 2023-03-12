@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MenuManager : SingletonMonoBehaviour<MenuManager>
+/// <summary>
+/// メニュー画面
+/// </summary>
+public class MenuManager : MonoBehaviour
 {
     //メニュー画面
     [Header("メニューボタンのパネル")]

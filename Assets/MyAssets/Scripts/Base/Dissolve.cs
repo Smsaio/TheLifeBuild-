@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// メッシュをフェードアウト、インさせる
+/// </summary>
 public class Dissolve : MonoBehaviour
 {
     public enum FadeType

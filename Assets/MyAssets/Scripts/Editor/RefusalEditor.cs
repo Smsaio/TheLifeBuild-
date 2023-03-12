@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.SceneManagement;
 using Ability;
 #if UNITY_EDITOR
@@ -15,10 +15,10 @@ public class RefusalEditor : Editor
     {
         _target = target as Refusal;
     }
-    //ƒCƒ“ƒXƒyƒNƒ^[•\¦
+    //ã‚¤ãƒ³ã‚¹ãƒšã‚¯ã‚¿ãƒ¼è¡¨ç¤º
     public override void OnInspectorGUI()
     {
-        //ƒXƒNƒŠƒvƒg‚Ö‚ÌˆÚ“®
+        //ã‚¹ã‚¯ãƒªãƒ—ãƒˆã¸ã®ç§»å‹•
         using (new EditorGUI.DisabledGroupScope(true))
         {
             EditorGUILayout.ObjectField("Script", MonoScript.FromMonoBehaviour((MonoBehaviour)target), typeof(MonoScript), false);
@@ -28,7 +28,7 @@ public class RefusalEditor : Editor
         _target.RefusalArea = (GameObject)EditorGUILayout.ObjectField("RefusalArea", _target.RefusalArea, typeof(GameObject), true);
         _target.RefusalLimitSlowSpeed = EditorGUILayout.Slider("RefusalLimitSlowSpeed", _target.RefusalLimitSlowSpeed,0.1f,0.7f);
 
-        //GUI‚ÌXV‚ª‚ ‚Á‚½‚çÀs
+        //GUIã®æ›´æ–°ãŒã‚ã£ãŸã‚‰å®Ÿè¡Œ
         if (EditorGUI.EndChangeCheck())
         {
             var scene = SceneManager.GetActiveScene();

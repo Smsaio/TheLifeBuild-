@@ -3,6 +3,9 @@ using System.Collections;
 using UnityEngine.UI;
 using TMPro;
 
+/// <summary>
+/// ダメージテキスト
+/// </summary>
 public class DamageUI : MonoBehaviour
 {
 	[SerializeField] private TextMeshPro damageText;

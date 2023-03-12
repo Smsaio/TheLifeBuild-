@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// 画面遷移した後のフェードアウト
+/// </summary>
 public class FadeImage : MonoBehaviour
 {
     [Header("最初からフェードインが完了しているかどうか")] public bool firstFadeInComp;
