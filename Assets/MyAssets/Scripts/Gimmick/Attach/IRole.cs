@@ -14,7 +14,7 @@ public interface IRole
     public ReactiveProperty<Transform> CurrentPlayerTransform { get; }
     public ReactiveProperty<Player> CurrentPlayer { get; }
     public ReactiveProperty<PlayerSpecialityController> CurrentPlayerSpController { get; }
-    public ReactiveProperty<PlayerMove> CurrentPlayerMove { get; }
+    public ReactiveProperty<PlayerMove> CurrentPlayerMove { get; }         
     //プレイヤーの最大ステータス
     public PlayerParamater[] PlayerParamaters { get; }
     //プレイヤーのレベルの配列

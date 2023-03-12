@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using EnemySpace;
+using GameManagerSpace;
 namespace EnemySpace
 {
     public enum CharacterState
@@ -20,7 +21,10 @@ namespace EnemySpace
         Run,//逃走
     };
 }
-public class Character : ReactivePropertyController
+/// <summary>
+/// 敵と味方とプレイヤーの基本変数や関数
+/// </summary>
+public class Character : MonoBehaviour,IReactiveProperty
 {
     protected int currentHP = 0;
     public int CurrentHP { get { return currentHP; } set { currentHP = value; } }
@@ -32,6 +36,9 @@ public class Character : ReactivePropertyController
     public int DefenceP { get { return defenceP; } set { defenceP = value; } }
     protected IRole role = default;
     public IRole Role { set { role = value; } }
+    protected IGameManager gameManager = default;
+    public IGameManager GameManager { set { gameManager = value; } get { return gameManager; } }
+//-----------------敵や味方用の関数------------
     /// <summary>
     /// 状態を設定
     /// </summary>
@@ -45,6 +52,10 @@ public class Character : ReactivePropertyController
     /// updateの中での動き
     /// </summary>
     protected virtual void StateMove()
+    {
+
+    }
+    public virtual void ReactivePlayer(IRole Irole)
     {
 
     }

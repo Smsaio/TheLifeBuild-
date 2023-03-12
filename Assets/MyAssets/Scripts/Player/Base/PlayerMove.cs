@@ -50,8 +50,6 @@ namespace PlayerSpace
         [SerializeField] protected float upwards = 0;
         //壁で重力技が敵に利かないようにする時のレイヤー
         [SerializeField] protected int wallLayer = 12;
-        //メニューを開く
-        [SerializeField] private MenuManager menuManager;
         #endregion
         //歩行スピード
         protected float moveSpeed = 5f;
@@ -164,20 +162,16 @@ namespace PlayerSpace
         }
         protected virtual void Update()
         {
-            if (gameManager.IsStageClear || gameManager.IsGameOver) return;
+            if (gameManager.IsStageClear || gameManager.IsGameOver || gameManager.IsMenu.Value) return;
             DeathBlowCool();
         }
         
         // Update is called once per frame
         protected virtual void FixedUpdate()
         {
-            if (gameManager.IsStageClear || gameManager.IsGameOver) return;
+            if (gameManager.IsStageClear || gameManager.IsGameOver || gameManager.IsMenu.Value) return;
             JumpUpdate();
-            //ゲームオーバーではないとき
-            if (!gameManager.IsGameOver)
-            {
-                rb.AddForce(Vector3.up * (gravityPower * 100));
-            }
+            rb.AddForce(Vector3.up * (gravityPower * 100));
             //スクリーム状態だと動きが止まる。
             if (player.IsScream)
             {
@@ -281,10 +275,10 @@ namespace PlayerSpace
             if (specialityController.AttachSpeciality == Attach.Speciality.Convert)
             {
                 //味方がいれば
-                if (specialityController.SpecialityBases[(int)Ability.Attach.Speciality.Convert].FellowCount > 0)
+                if (specialityController.SpecialityBases[(int)Attach.Speciality.Convert].FellowCount > 0)
                 {
                     //味方を集合させる
-                    specialityController.SpecialityBases[(int)Ability.Attach.Speciality.Convert].Assembly();
+                    specialityController.SpecialityBases[(int)Attach.Speciality.Convert].Assembly();
                 }
                 else
                 {
@@ -311,8 +305,11 @@ namespace PlayerSpace
         private void OnMenuOpen(InputAction.CallbackContext context)
         {
             if (!context.performed) return;
-            if (menuManager != null)
-                menuManager.Menu();
+            if (gameManager != null)
+            {
+                //メニュー画面を開く
+                gameManager.IsMenu.Value = !gameManager.IsMenu.Value;
+            }
         }
 
         /// <summary>
@@ -333,7 +330,7 @@ namespace PlayerSpace
         private void OnFire(InputAction.CallbackContext context)
         {
             // 発動の障害になる何かの途中では起きないように
-            if (player.IsDamage || player.IsDown) return;
+            if (player.IsDamage || player.IsDown || gameManager.IsMenu.Value) return;
             if (context.started)
             {
                 if (!isFire)

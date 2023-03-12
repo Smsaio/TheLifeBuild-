@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+ï»¿using UniRx;
 namespace GameManagerSpace
 {
-    //ƒQ[ƒ€ƒ‚[ƒhİ’è
+    //ã‚²ãƒ¼ãƒ ãƒ¢ãƒ¼ãƒ‰è¨­å®š
     public enum GameMode : int
     {
         Title,
@@ -17,6 +15,7 @@ namespace GameManagerSpace
         public GameMode CurrentGameMode { get; set; }
         public bool IsGameOver { get;  }
         public bool IsStageClear { get; set; }
+        public ReactiveProperty<bool> IsMenu { get; set; }
         public GameModeTextScriptable[] GameModeScriptable { get; }
         public int StageNum { get; set; }
         public void StateReset();

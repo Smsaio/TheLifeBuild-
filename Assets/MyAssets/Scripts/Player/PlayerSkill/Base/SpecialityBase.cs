@@ -11,7 +11,7 @@ namespace Ability
     /// <summary>
     /// 特技のベースクラス
     /// </summary>
-    public class SpecialityBase : ReactivePropertyController
+    public class SpecialityBase : MonoBehaviour,IReactiveProperty
     {
         //------共通-------------
 
@@ -54,6 +54,10 @@ namespace Ability
             role = Irole;
         }
         private void Update()
+        {
+
+        }
+        public virtual void ReactivePlayer(IRole Irole)
         {
 
         }

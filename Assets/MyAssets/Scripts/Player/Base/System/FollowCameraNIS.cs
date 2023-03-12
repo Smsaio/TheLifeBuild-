@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 using Zenject;
 using UniRx;
 
-public class FollowCameraNIS : ReactivePropertyController
+public class FollowCameraNIS : MonoBehaviour,IReactiveProperty
 {
     // 単一のパーリンノイズ情報を格納する構造体
     [Serializable]
@@ -121,6 +121,12 @@ public class FollowCameraNIS : ReactivePropertyController
     private PlayerInputAction playerInputs;
     private Player currentPlayer;
     private Vector2 cameraRotateMoveAxis;
+    private IRole role = default;
+    [Inject]
+    public void Construct(IRole Irole)
+    {
+        role = Irole;
+    }
     public virtual void Awake()
     {
         // Input Actionインスタンス生成
@@ -136,7 +142,7 @@ public class FollowCameraNIS : ReactivePropertyController
     }
     void Start()
     {
-        //ReactivePlayer(role);
+        ReactivePlayer(role);
         //縦と横の角度設定
         Vector3 angles = transform.eulerAngles;
         horizontalAngle = angles.x;
@@ -154,9 +160,8 @@ public class FollowCameraNIS : ReactivePropertyController
     {
         
     }
-    public override void ReactivePlayer(IRole role)
+    public void ReactivePlayer(IRole role)
     {
-        base.ReactivePlayer(role);
         if (role == null) return;
         role.CurrentPlayerTransform.Subscribe(playerTransform => { target = playerTransform; }).AddTo(this);
         role.CurrentPlayer.Subscribe(player => { currentPlayer = player; }).AddTo(this);

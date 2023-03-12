@@ -213,13 +213,12 @@ namespace EnemySpace
         private Vector3 beforeScale;
         protected IAudioSourceManager audioSourceManager = default;
         public IAudioSourceManager AudioSourceManager { set { audioSourceManager = value; } get { return audioSourceManager; } }
-        protected IGameManager gameManager = default;
-        public IGameManager GameManager { set { gameManager = value; } }
         [Inject]
-        public void Construct(IAudioSourceManager IaudioSourceManager,IGameManager IgameManager)
+        public void Construct(IAudioSourceManager IaudioSourceManager,IGameManager IgameManager, IRole Irole)
         {
             audioSourceManager = IaudioSourceManager;
             gameManager = IgameManager;
+            role = Irole;
         }
 
         //スクリプトが非アクティブでも実行
@@ -230,7 +229,7 @@ namespace EnemySpace
 
         protected virtual void Start()
         {
-            
+            ReactivePlayer(role);
         }
 
         protected virtual void Update()
@@ -451,7 +450,7 @@ namespace EnemySpace
                     //味方のクラスをオンに
                     followChara.enabled = true;
                     //味方にステータスを引き継ぎ
-                    followChara.StatusInitialization(attackP, defenceP, currentHP, currentMaxHP);
+                    followChara.StatusInitialization(attackP, defenceP, currentHP, currentMaxHP,gameManager);
                     //自分をオフにする
                     this.enabled = false;
                 }

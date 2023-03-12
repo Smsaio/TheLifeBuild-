@@ -53,6 +53,8 @@ namespace PlayerSpace
         public ReactiveProperty<PlayerSpecialityController> CurrentPlayerSpController { get { return currentPlayerSpController; } }
         private ReactiveProperty<Transform> currentPlayerTransform = new();
         public ReactiveProperty<Transform> CurrentPlayerTransform { get { return currentPlayerTransform; } }
+        private ReactiveProperty<bool> playerIsMenu = new();
+        public ReactiveProperty<bool> PlayerIsMenu { get { return playerIsMenu; } }
         //役割が変わったか
         private bool isRoleChange = false;
         public bool IsRoleChange { set { isRoleChange = value; } get { return isRoleChange; } }
@@ -102,14 +104,6 @@ namespace PlayerSpace
             currentPlayerMove.Value = playerMoves[roleNum];
             currentPlayerSpController.Value = playerSpecialityControllers[roleNum];
             currentPlayerTransform.Value = playerObjects[roleNum].transform;
-            //ここで一括でやるか各スクリプトでやるかは迷い中
-            //今はここで一括でやっている
-            var reactiveProperty = FindObjectsOfType<ReactivePropertyController>();
-            for (int i = 0; i < reactiveProperty.Length; i++)
-            {
-                if (reactiveProperty[i] != null)
-                    reactiveProperty[i].ReactivePlayer(this);
-            }
         }
         /// <summary>
         /// 役割をテキストに反映

@@ -40,6 +40,8 @@ public class MyProjectInstaller : MonoInstaller
         }
         if (roleObject != null)
         {
+            //Roleコンポーネント
+            //Role.csというMonoBehaviourをオブジェクトから参照する
             Container.
                 Bind<IRole>().
                 To<Role>().

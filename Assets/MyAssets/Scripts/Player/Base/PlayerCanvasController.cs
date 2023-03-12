@@ -11,7 +11,7 @@ using UniRx;
 /// <summary>
 /// プレイヤー関係のキャンバス制御
 /// </summary>
-public class PlayerCanvasController : ReactivePropertyController
+public class PlayerCanvasController : MonoBehaviour,IReactiveProperty
 {
     [Header("ステータス表示テキスト")]
     //使用可能な特技テキスト
@@ -90,7 +90,7 @@ public class PlayerCanvasController : ReactivePropertyController
             statusUPText[i].gameObject.SetActive(false);
         }
         stagnationPanel.SetActive(false);
-        //ReactivePlayer(role);
+        ReactivePlayer(role);
     }
 
     // Update is called once per frame
@@ -103,9 +103,8 @@ public class PlayerCanvasController : ReactivePropertyController
         StateCheck();
         WriteStatusUPText();
     }
-    public override void ReactivePlayer(IRole role)
+    public void ReactivePlayer(IRole role)
     {
-        base.ReactivePlayer(role);
         if (role == null) return;
         role.CurrentPlayerSpController.Subscribe(playerSp => { specialityController = playerSp; }).AddTo(this);
         role.CurrentPlayerMove.Subscribe(move => { playerMove = move; }).AddTo(this);

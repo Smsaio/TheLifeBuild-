@@ -33,20 +33,14 @@ namespace EnemySpace
             if (obj.CompareTag("Search")) return;
             if (obj.transform.root.gameObject.CompareTag("Player") || obj.transform.root.gameObject.CompareTag("Fellow"))
             {
-                Player player = obj.transform.root.gameObject.GetComponent<Player>();
                 var damage = obj.transform.root.GetComponent<IDamageble>();
-                Debug.Log("敵の攻撃が当たった");
                 //プレイヤーの場合
-                if (player != null)
+                if (damage != null)
                 {
-                    //レベルが上がっている途中ではない
-                    if (!player.IsLevelUP)
+                    if (enemyBase != null && damage != null)
                     {
-                        if (enemyBase != null && damage != null)
-                        {
-                            //プレイヤーにダメージを与える
-                            damage.ReceiveDamage(enemyBase.AttackP, true, enemyBase.MemoryClassification);
-                        }
+                        //プレイヤーにダメージを与える
+                        damage.ReceiveDamage(enemyBase.AttackP, true, enemyBase.MemoryClassification);
                     }
                 }
                 else

@@ -6,7 +6,7 @@ using EnemySpace;
 using Zenject;
 using UniRx;
 
-public class WeaponDamageStock : ReactivePropertyController
+public class WeaponDamageStock : MonoBehaviour,IReactiveProperty
 {
     [System.Serializable]
     public class BulletVersion
@@ -40,6 +40,12 @@ public class WeaponDamageStock : ReactivePropertyController
     public bool IsDeathBlow { get { return isDeathBlow; } set { isDeathBlow = value; } }
     private FollowChara followChara;
     private PlayerSpecialityController specialityController;
+    private IRole role = default;
+    [Inject]
+    public void Construct(IRole Irole)
+    {
+        role = Irole;
+    }
     private void Awake()
     {
         if(isFellow)
@@ -56,16 +62,15 @@ public class WeaponDamageStock : ReactivePropertyController
         }
         if (!isBullet)
         {
-            //ReactivePlayer(role);
+            ReactivePlayer(role);
         }
     }
     private void Update()
     {
         
     }
-    public override void ReactivePlayer(IRole role)
+    public void ReactivePlayer(IRole role)
     {
-        base.ReactivePlayer(role);
         if (role == null) return;
         role.CurrentPlayerSpController.Subscribe(spController => { specialityController = spController; }).AddTo(this);
         role.CurrentPlayer.Subscribe(value => { player = value; }).AddTo(this);

@@ -11,7 +11,7 @@ namespace Ability
     /// <summary>
     /// 記憶転換専用の武器につける。武器に引き寄せられた敵が触れた場合、味方に変わる。
     /// </summary>
-    public class Anuvis : ReactivePropertyController
+    public class Anuvis : MonoBehaviour,IReactiveProperty
     {
         //味方に変わる中心からの距離
         [Header("味方になる距離")]
@@ -24,19 +24,26 @@ namespace Ability
         //現在味方に変えた人数
         private int changeFellowCount = 0;
         private PlayerSpecialityController specialityController;
+        private IRole role = default;
+        [Inject]
+        public void Construct(IRole Irole)
+        {
+            role = Irole;
+        }
 
         // Start is called before the first frame update
 
         void Start()
         {
             rb = GetComponent<Rigidbody>();
+            ReactivePlayer(role);
         }
         // Update is called once per frame
         void Update()
         {
 
         }
-        public override void ReactivePlayer(IRole role)
+        public void ReactivePlayer(IRole role)
         {
             if (role == null) return;
             role.CurrentPlayerSpController.Subscribe(spController => { specialityController = spController; }).AddTo(this);

@@ -19,7 +19,6 @@ public class HPGauge : MonoBehaviour
     //点滅するかどうか
     [SerializeField] private bool isFlash = false;
     [SerializeField] private Slider hpSlider;
-    //[SerializeField] private GameObject fillObject;
     //dotween(後ろの体力のアニメーション)
     private Tween backGaugeTween;
     private float valueFrom = 1;
@@ -27,7 +26,12 @@ public class HPGauge : MonoBehaviour
     private float alpha_Sin = 0;
     //変化するスピード
     private float sinSpeed = 4;
-
+    private IRole role = default;
+    [Inject]
+    public void Construct(IRole Irole)
+    {
+        role = Irole;
+    }
     void Start()
     {
 

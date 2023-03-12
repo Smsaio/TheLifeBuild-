@@ -9,7 +9,7 @@ using UniRx;
 /// <summary>
 /// レベルアップしたときのテキスト制御
 /// </summary>
-public class TextScaleChange : ReactivePropertyController
+public class TextScaleChange : MonoBehaviour,IReactiveProperty
 {
     //レベルアップという文字を表示するだけのテキスト
     [Header("レベルアップ表示"), SerializeField] private TextMeshProUGUI levelUPText;
@@ -26,13 +26,19 @@ public class TextScaleChange : ReactivePropertyController
     private float beforeSize = 0.0f;
     private Player currentPlayer;
     private int playerLevel;
-    
+    private IRole role = default;
+    [Inject]
+    public void Construct(IRole Irole)
+    {
+        role = Irole;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         //前のサイズを格納
         beforeSize = levelUPText.fontSize;
-        //ReactivePlayer(role);
+        ReactivePlayer(role);
     }
 
     // Update is called once per frame
@@ -40,9 +46,8 @@ public class TextScaleChange : ReactivePropertyController
     {
         ScaleChange(currentPlayer.IsLevelUP);
     }
-    public override void ReactivePlayer(IRole role)
+    public void ReactivePlayer(IRole role)
     {
-        base.ReactivePlayer(role);
         if (role == null) return;
         role.CurrentPlayer.Subscribe(player => { currentPlayer = player; }).AddTo(this);
         role.CurrentPlayerLevel.Subscribe(level => 

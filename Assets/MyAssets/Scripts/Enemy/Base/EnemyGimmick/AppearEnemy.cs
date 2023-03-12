@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using Zenject;
 using TMPro;
+using GameManagerSpace;
 
 public class AppearEnemy : MonoBehaviour
 {
@@ -35,13 +36,15 @@ public class AppearEnemy : MonoBehaviour
 	//レイの最高飛距離
 	private readonly int maxDis = 1000;
 	IAudioSourceManager audioSourceManager = default;
+	IGameManager gameManager = default;
 	IRole role = default;
 
 	[Inject]
-	public void Construct(IAudioSourceManager IaudioSourceManager,IRole Irole)
+	public void Construct(IAudioSourceManager IaudioSourceManager,IRole Irole,IGameManager IgameManager)
 	{
 		audioSourceManager = IaudioSourceManager;
 		role = Irole;
+		gameManager = IgameManager;
 	}
 	// Use this for initialization
 	void Start()
@@ -118,6 +121,7 @@ public class AppearEnemy : MonoBehaviour
 		var enemyBase = enemy.GetComponent<EnemyBase>();
 		var followChara = enemy.GetComponent<FollowChara>();
 		enemyBase.AudioSourceManager = audioSourceManager;
+		enemyBase.GameManager = gameManager;
 		if (enemyBase != null)
 		{
 			enemyBase.ReactivePlayer(role);

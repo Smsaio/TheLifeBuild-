@@ -1,11 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-using System;
-using Ability;
-using PlayerSpace;
+using UniRx;
 using TMPro;
 using Zenject;
 
@@ -32,6 +28,8 @@ namespace GameManagerSpace
         public bool IsGameOver { get { return isGameOver; } }
         private bool isStageClear = false;
         public bool IsStageClear { get { return isStageClear; } set { isStageClear = value; } }
+        private ReactiveProperty<bool> isMenu = new();
+        public ReactiveProperty<bool> IsMenu { get { return isMenu; } set { isMenu = value; } }
         protected IAudioSourceManager audioSourceManager = default;
         [Inject]
         public void Construct(IAudioSourceManager IaudioSourceManager)

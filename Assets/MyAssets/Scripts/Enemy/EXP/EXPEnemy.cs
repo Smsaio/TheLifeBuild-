@@ -264,10 +264,6 @@ namespace EnemySpace
                         SetState(CharacterState.Guard);
                     }
                 }
-                else
-                {
-                    Debug.Log("プレイヤーはまだ近くにはいない");
-                }
             }
         }
 //--------アニメーションイベント----------

@@ -179,8 +179,6 @@ namespace PlayerSpace
 
         //完全に経験値を獲得したか
         private bool isGetEXP = false;
-        //ゲームマネージャー制御クラス
-        protected IGameManager gameManager = default;
         //音制御クラス
         protected IAudioSourceManager audioSourceManager = default;
         [Inject]
@@ -485,7 +483,7 @@ namespace PlayerSpace
         {
             int damagePoint;
             //ダウン中や無敵中、ダメージを負った後などはダメージを受けない
-            if (isDown || isInvinsibility || isDamage || gameManager.IsGameOver)
+            if (isDown || isInvinsibility || isDamage || gameManager.IsGameOver || isLevelUP)
             {
                 return;
             }

@@ -7,18 +7,12 @@ using System;
 using EnemySpace;
 using GameManagerSpace;
 using Zenject;
+using UniRx;
 
 public class PlayerSpecialityController : MonoBehaviour
 {
     [SerializeField] private SpecialityBase[] specialityBases = new SpecialityBase[Enum.GetValues(typeof(Attach.Speciality)).Length];
     public SpecialityBase[] SpecialityBases { get { return specialityBases; } }
-    ////特技のクールタイム設定
-    //[Header("記憶転換で召喚される武器"), SerializeField]
-    //private GameObject anuvisWeapon;
-
-    ////味方になる最大数
-    //[Header("味方になる最大数"), Range(1, 5), SerializeField] private int maxFollowCharaCount = 3;
-    //public int MaxFollowCharaCount { get { return maxFollowCharaCount; } }    
     [NamedArray(new string[] { "記憶停滞使用可能までの回数", "記憶拒絶使用可能までの回数", "記憶転換使用可能までの回数" })]
     [Header("負の記憶を受け入れた最高回数"), Range(10, 20), SerializeField] private int[] negativeMemoryMaxCount = new int[Enum.GetValues(typeof(Attach.Speciality)).Length];
     public int[] NegativeMemoryMaxCount { get { return negativeMemoryMaxCount; } }
@@ -54,7 +48,6 @@ public class PlayerSpecialityController : MonoBehaviour
     //最初の特技
     private int currentSpeciality = 0;
     public int CurrentSpeciality { get { return currentSpeciality; } set { currentSpeciality = value; } }
-    
     //次に使える特技の種類
     private int nextSpeciality = 0;
     public int NextSpeciality { get { return nextSpeciality; }  }
@@ -67,10 +60,12 @@ public class PlayerSpecialityController : MonoBehaviour
     //始まってからまだ特技を使用していない
     private bool playSpeciality = false;
     private IGameManager gameManager = default;
+    private IRole role = default;
     [Inject]
-    public void Construct(IGameManager IgameManager)
+    public void Construct(IGameManager IgameManager,IRole Irole)
     {
         gameManager = IgameManager;
+        role = Irole;
     }
     // Start is called before the first frame update
     void Start()
@@ -98,6 +93,7 @@ public class PlayerSpecialityController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (gameManager.IsMenu.Value) return;
         if (gameManager.CurrentGameMode == GameMode.Game)
         {
             UpdateSpeciality();

@@ -2,6 +2,9 @@
 using System.Collections;
 using EnemySpace;
 using PlayerSpace;
+using Zenject;
+using GameManagerSpace;
+
 namespace EnemySpace
 {
     /// <summary>
@@ -9,15 +12,24 @@ namespace EnemySpace
     /// </summary>
     public class SearchCharacter : MonoBehaviour
     {
+        //見つけた時に出るマーク
         [SerializeField] private FindMark findMark;
+        [SerializeField] private EnemyBase enemyBase;
+        [SerializeField] private string[] fellowHitTag = { "Enemy", "Boss" };
+        [SerializeField] private string[] enemyHitTag = { "Fellow", "Player" };
         //索敵用のコライダー
         private BoxCollider searchCollider;
         private ITargetSearch targetSearch;
         public ITargetSearch TargetSearch { get { return targetSearch; } set { targetSearch = value; } }
+                
         void Start()
         {
-            targetSearch = transform.root.gameObject.GetComponent<ITargetSearch>();
             searchCollider = GetComponent<BoxCollider>();
+            if(enemyBase == null)
+            {
+                enemyBase = transform.root.GetComponent<EnemyBase>();
+            }
+            targetSearch = enemyBase;
         }
         void Update()
         {
@@ -32,19 +44,24 @@ namespace EnemySpace
         }
         private void OnTriggerEnter(Collider other)
         {
-            if (targetSearch.MyCharacterType == CharacterType.Enemy)
+            if (this.enabled)
             {
-                if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Fellow"))
+                if (targetSearch.MyCharacterType == CharacterType.Enemy)
                 {
-                    targetSearch.TargetFind(other.gameObject);
+                    if (other.gameObject.CompareTag(enemyHitTag[0]) 
+                        || other.gameObject.CompareTag(enemyHitTag[1]))
+                    {
+                        targetSearch.TargetFind(other.gameObject);
+                    }
                 }
-            }
-            else if(targetSearch.MyCharacterType == CharacterType.Fellow)
-            {
-                if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Boss"))
+                else if (targetSearch.MyCharacterType == CharacterType.Fellow)
                 {
-                    findMark.SetSize();
-                    targetSearch.TargetFind(other.gameObject);
+                    if (other.gameObject.CompareTag(fellowHitTag[0])
+                        || other.gameObject.CompareTag(fellowHitTag[1]))
+                    {
+                        findMark.SetSize();
+                        targetSearch.TargetFind(other.gameObject);
+                    }
                 }
             }
         }
@@ -55,14 +72,16 @@ namespace EnemySpace
                 if (targetSearch.MyCharacterType == CharacterType.Enemy)
                 {
                     //　プレイヤーキャラクターを発見
-                    if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Fellow"))
+                    if (other.gameObject.CompareTag(enemyHitTag[0]) 
+                        || other.gameObject.CompareTag(enemyHitTag[1]))
                     {
                         targetSearch.TargetFind(other.gameObject);
                     }
                 }
                 else if (targetSearch.MyCharacterType == CharacterType.Fellow)
                 {
-                    if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Boss"))
+                    if (other.gameObject.CompareTag(fellowHitTag[0]) 
+                        || other.gameObject.CompareTag(fellowHitTag[1]))
                     {
                         targetSearch.TargetFind(other.gameObject);
                     }

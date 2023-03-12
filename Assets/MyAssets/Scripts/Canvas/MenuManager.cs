@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UniRx;
+using UniRx.Triggers;
+using Zenject;
+using GameManagerSpace;
 
 /// <summary>
 /// メニュー画面
@@ -29,14 +33,13 @@ public class MenuManager : MonoBehaviour
     //メニューを開いている
     private bool openMenu = false;
     public bool OpenMenu { get { return openMenu; } set { openMenu = value; } }
-    // Start is called before the first frame update
-    void Start()
+    protected IGameManager gameManager = default;
+    [Inject]
+    public void Construct(IGameManager IgameManager)
     {
-        statusButton.onClick.AddListener(StatusPanel);
-        tutorialButton.onClick.AddListener(TutorialPanel);
-        statusPanel.SetActive(false);
-        menuButtonPanel.SetActive(false);
+        gameManager = IgameManager;
     }
+    // Start is called before the first frame update
     private void StatusPanel()
     {
         PanelActive(menuButtonPanel,false);
@@ -46,6 +49,16 @@ public class MenuManager : MonoBehaviour
     {
         PanelActive(menuButtonPanel,false);
         tutorialPanel.SetActive(true);
+    }
+    void Start()
+    {
+        statusButton.onClick.AddListener(StatusPanel);
+        tutorialButton.onClick.AddListener(TutorialPanel);
+        gameManager.IsMenu
+            .SkipLatestValueOnSubscribe()
+            .Subscribe(isMenu => { openMenu = isMenu; Menu(); }).AddTo(this);
+        statusPanel.SetActive(false);
+        menuButtonPanel.SetActive(false);
     }
     // Update is called once per frame
     void Update()
@@ -68,9 +81,6 @@ public class MenuManager : MonoBehaviour
     {
         //メニューを開いていたら閉じる、閉じているなら開く
         menuButtonPanel.SetActive(!menuButtonPanel.activeSelf);
-        openMenu = !openMenu;
-        //根本から止める
-        Time.timeScale = Time.timeScale == 0.0f ? 1.0f : 0.0f;
     }
     /// <summary>
     /// リターンボタンに付与する

@@ -7,6 +7,7 @@ using PlayerSpace;
 using TMPro;
 using Zenject;
 using UniRx;
+using GameManagerSpace;
 
 /// <summary>
 /// 味方になった時の管理クラス
@@ -67,8 +68,6 @@ public class FollowChara : Character,IDamageble,ITargetSearch
     private bool isDeath = false;
     //死んだときの正面
     private Vector3 dieDirection;
-    //消えるまでの時間
-    private float deleteTime = 3.0f;
     //プレイヤー参照
     private PlayerSpecialityController specialityController;
     private Transform playerTransform;
@@ -98,8 +97,7 @@ public class FollowChara : Character,IDamageble,ITargetSearch
     }
 
     public void Start()
-    {
-        specialityController.SpecialityBases[(int)Ability.Attach.Speciality.Convert].AddFellow(gameObject);
+    {        
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         attackPoint.enabled = true;
@@ -111,11 +109,6 @@ public class FollowChara : Character,IDamageble,ITargetSearch
         {
             attackTransform[i].tag = "PlayerAttack";
         }
-        if (searchCharacter != null)
-        {
-            //索敵変更
-            searchCharacter.TargetSearch = this;            
-        }
         //アイコンのマテリアルを変える
         minimapIcon.material = fellowIconMaterial;
         SetMemory();
@@ -124,11 +117,6 @@ public class FollowChara : Character,IDamageble,ITargetSearch
     // Update is called once per frame
     void Update()
     {
-        if (ragdoll != null)
-        {
-            //　一定時間経過したら削除
-            Destroy(ragdoll, deleteTime);
-        }
         if (!isDeath)
         {
             TargetToWalk();
@@ -150,7 +138,7 @@ public class FollowChara : Character,IDamageble,ITargetSearch
     /// <param name="attackPoint">攻撃力</param>
     /// <param name="defencePoint">防御力</param>
     /// <param name="hp">体力</param>
-    public void StatusInitialization(int attackPoint,int defencePoint,int hp,int maxHP)
+    public void StatusInitialization(int attackPoint,int defencePoint,int hp,int maxHP,IGameManager IgameManager)
     {
         //攻撃力
         attackP = attackPoint;
@@ -160,6 +148,15 @@ public class FollowChara : Character,IDamageble,ITargetSearch
         currentHP = hp;
         //最高体力
         currentMaxHP = maxHP;
+        //ゲームマネージャー引継ぎ
+        gameManager = IgameManager;
+        int index = (int)Ability.Attach.Speciality.Convert;
+        specialityController.SpecialityBases[index].AddFellow(gameObject);
+        if (searchCharacter != null)
+        {
+            //索敵変更
+            searchCharacter.TargetSearch = this;
+        }
         //体力ゲージに設定
         followGauge.GaugeReduction(0, currentHP, currentMaxHP);
     }
@@ -373,8 +370,9 @@ public class FollowChara : Character,IDamageble,ITargetSearch
         //　敵のHPがなくなったらゲームオブジェクトの削除と飛ばす方向を設定
         if (currentHP <= 0)
         {
+            int index = (int)Ability.Attach.Speciality.Convert;
             //味方消去
-            specialityController.SpecialityBases[(int)Ability.Attach.Speciality.Convert].RemoveFellow(this);
+            specialityController.SpecialityBases[index].RemoveFellow(this);
             animator.SetTrigger(animDeathHash);
             //正面取得
             dieDirection = transform.root.forward;
