@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Goblin
   m_EditorClassIdentifier: 
   enemyName: Goblin
-  maxHP: 6000
-  attackP: 15000
+  maxHP: 60000
+  attackP: 30000
   defenceP: 15000
   agentWalkSpeed: 18.5
   agentAngularSpeed: 120

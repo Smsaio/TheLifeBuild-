@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Wolf
   m_EditorClassIdentifier: 
   enemyName: Wolf
-  maxHP: 8000
-  attackP: 17000
+  maxHP: 65000
+  attackP: 37750
   defenceP: 17500
   agentWalkSpeed: 23
   agentAngularSpeed: 120

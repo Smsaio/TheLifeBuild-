@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Boss
   m_EditorClassIdentifier: 
   enemyName: "\u30C8\u30E9\u30A6\u30DE\u304C\u5177\u73FE\u5316\u3057\u305F\u5B58\u5728"
-  maxHP: 20000
-  attackP: 20000
-  defenceP: 20000
-  agentWalkSpeed: 22.5
+  maxHP: 300000
+  attackP: 41000
+  defenceP: 27500
+  agentWalkSpeed: 20
   agentAngularSpeed: 120
   agentAcceleration: 20
   enemyNo: 10
-  startEXP: 700
+  startEXP: 18400

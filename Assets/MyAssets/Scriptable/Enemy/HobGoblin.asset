@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: HobGoblin
   m_EditorClassIdentifier: 
   enemyName: HobGoblin
-  maxHP: 6500
-  attackP: 16000
+  maxHP: 62500
+  attackP: 32500
   defenceP: 15000
   agentWalkSpeed: 18
   agentAngularSpeed: 120

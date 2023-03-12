@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Skelton
   m_EditorClassIdentifier: 
   enemyName: Skelton
-  maxHP: 6000
-  attackP: 13000
+  maxHP: 45000
+  attackP: 27500
   defenceP: 13000
   agentWalkSpeed: 17.5
   agentAngularSpeed: 120

@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: EXP
   m_EditorClassIdentifier: 
   enemyName: EXPEnemy
-  maxHP: 1500
+  maxHP: 11000
   attackP: 0
-  defenceP: 20000
+  defenceP: 50000
   agentWalkSpeed: 30
   agentAngularSpeed: 120
   agentAcceleration: 20
   enemyNo: 9
-  startEXP: 120
+  startEXP: 5120

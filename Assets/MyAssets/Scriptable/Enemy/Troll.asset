@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Troll
   m_EditorClassIdentifier: 
   enemyName: Troll
-  maxHP: 7000
-  attackP: 17000
+  maxHP: 66000
+  attackP: 38500
   defenceP: 17000
   agentWalkSpeed: 10
   agentAngularSpeed: 120

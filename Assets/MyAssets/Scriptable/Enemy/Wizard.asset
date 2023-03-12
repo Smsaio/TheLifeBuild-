@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Wizard
   m_EditorClassIdentifier: 
   enemyName: Wolf
-  maxHP: 7500
-  attackP: 17500
+  maxHP: 55000
+  attackP: 37000
   defenceP: 17500
   agentWalkSpeed: 17.5
   agentAngularSpeed: 120
