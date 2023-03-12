@@ -6,6 +6,9 @@ using UnityEngine;
 using Zenject;
 using UniRx;
 
+/// <summary>
+/// レベルアップしたときのテキスト制御
+/// </summary>
 public class TextScaleChange : ReactivePropertyController
 {
     //レベルアップという文字を表示するだけのテキスト

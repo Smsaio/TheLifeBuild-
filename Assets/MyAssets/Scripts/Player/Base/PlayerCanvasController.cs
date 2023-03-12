@@ -8,7 +8,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 using UniRx;
-//[RequireComponent(typeof(GameLifetimeScope))]
+/// <summary>
+/// プレイヤー関係のキャンバス制御
+/// </summary>
 public class PlayerCanvasController : ReactivePropertyController
 {
     [Header("ステータス表示テキスト")]

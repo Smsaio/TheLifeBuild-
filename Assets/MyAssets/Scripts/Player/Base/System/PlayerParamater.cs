@@ -10,4 +10,6 @@ public class PlayerParamater : ScriptableObject
     public int maxHP;
     /// <summary> プレイヤーの最大防御力 </summary>
     public int maxDefencePoint;
+    /// <summary> プレイヤーの歩行速度 </summary>
+    public float moveSpeed = 18.0f;
 }

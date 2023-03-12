@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,54 +6,57 @@ using UnityEngine.InputSystem;
 
 namespace PlayerSpace
 {
+    /// <summary>
+    /// ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼å…¥åŠ›ã‚„ç§»å‹•é–¢ä¿‚(éŠƒå£«)
+    /// </summary>
     public class GunnerPlayerMove : PlayerMove
     {
 
         public enum GunType : int
         {
             None = -1,
-            Rifle = 0, //ƒ‰ƒCƒtƒ‹
-            ShotGun,   //ƒVƒ‡ƒbƒgƒKƒ“
-            Pistol,    //ƒsƒXƒgƒ‹
+            Rifle = 0, //ãƒ©ã‚¤ãƒ•ãƒ«
+            ShotGun,   //ã‚·ãƒ§ãƒƒãƒˆã‚¬ãƒ³
+            Pistol,    //ãƒ”ã‚¹ãƒˆãƒ«
         }
-        [Header("emê—p•Ï”")]
-        //”š’e”­Ë—p‚ÌƒNƒ‰ƒX
+        [Header("éŠƒå£«å°‚ç”¨å¤‰æ•°")]
+        //çˆ†å¼¾ç™ºå°„ç”¨ã®ã‚¯ãƒ©ã‚¹
         [SerializeField] private ShootBomb bomb;
-        //Š´“x
-        [SerializeField, Range(0.01F, 5.0F), Tooltip("Š´“x")] private float sensitivity = 1.0f;
+        //æ„Ÿåº¦
+        [SerializeField, Range(0.01F, 5.0F), Tooltip("æ„Ÿåº¦")] private float sensitivity = 1.0f;
 
-        //e‚Ìí—Ş
+        //éŠƒã®ç¨®é¡
         [SerializeField] private GameObject[] gunVariation = new GameObject[4];
-        //Œ»İŠ‚µ‚Ä‚¢‚ée‚Ì”Ô†
+        //ç¾åœ¨æ‰€æŒã—ã¦ã„ã‚‹éŠƒã®ç•ªå·
         [SerializeField] private GunType[] haveGunIndex = { GunType.Rifle, GunType.None };
-        //e‚Ìí—Ş‚²‚Æ‚Ì‰¹
-        [NamedArray(new string[] { "ƒ‰ƒCƒtƒ‹", "ƒVƒ‡ƒbƒgƒKƒ“", "ƒsƒXƒgƒ‹" })]
+        //éŠƒã®ç¨®é¡ã”ã¨ã®éŸ³
+        [NamedArray(new string[] { "ãƒ©ã‚¤ãƒ•ãƒ«", "ã‚·ãƒ§ãƒƒãƒˆã‚¬ãƒ³", "ãƒ”ã‚¹ãƒˆãƒ«" })]
         [SerializeField] private AudioClip[] gunSounds = new AudioClip[Enum.GetValues(typeof(GunType)).Length - 1];
-        //e‚ÌˆÊ’uİ’è
+        //éŠƒã®ä½ç½®è¨­å®š
         [SerializeField] private Transform gunTransform;
-        //“Š±‚Ì“y‘ä(˜r)
+        //æŠ•æ“²ã®åœŸå°(è…•)
         [SerializeField] private Transform throwBase;
-        //’eƒIƒuƒWƒFƒNƒg
+        //å¼¾ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
         [SerializeField] private GameObject bulletObject;
-        //”­ËêŠ
+        //ç™ºå°„å ´æ‰€
         [SerializeField] private Transform shotPoint;
-        //ƒ}ƒYƒ‹ƒtƒ‰ƒbƒVƒ…
+        //ãƒã‚ºãƒ«ãƒ•ãƒ©ãƒƒã‚·ãƒ¥
         [SerializeField] private GameObject flashObject;
-        //e‚µ‚Ü‚¤êŠ
+        //éŠƒã—ã¾ã†å ´æ‰€
         [SerializeField] private Transform backHolster;
-        //”š’e‚ğ“Š‚°‚é‚Æ‚«‚Ì•ú•¨üŒvZ—pƒNƒ‰ƒX
+        //çˆ†å¼¾ã‚’æŠ•ã’ã‚‹ã¨ãã®æ”¾ç‰©ç·šè¨ˆç®—ç”¨ã‚¯ãƒ©ã‚¹
         [SerializeField] private DrawArc drawArc;
 
-        //“Š±‰ŠúˆÊ’u
+        //æŠ•æ“²åˆæœŸä½ç½®
         [SerializeField] private GameObject throwPoint;
         public GameObject ThrowPoint { get { return throwPoint; } }
-        //e“ü‚ê‘Ö‚¦
+        //éŠƒå…¥ã‚Œæ›¿ãˆ
         private bool isGunChange = false;
-        //e‚ÌŒ³‚Ìƒ\ƒPƒbƒg
+        //éŠƒã®å…ƒã®ã‚½ã‚±ãƒƒãƒˆ
         private Transform gunSocket;
-        //e‚ğ‚µ‚Ü‚Á‚Ä‚¢‚é‚Æ‚«
+        //éŠƒã‚’ã—ã¾ã£ã¦ã„ã‚‹ã¨ã
         private bool isBack;
-        //Še‚Ìí—Ş‚Ìw’è
+        //æ‰€æŒéŠƒã®ç¨®é¡ã®æŒ‡å®š
         private int gunNumber = 0;
         private Vector2 throwMove = Vector2.zero;
         private Vector2 initMousePos;
@@ -91,21 +94,23 @@ namespace PlayerSpace
             base.FixedUpdate();
         }
 
-        //”­ËêŠ‚ÌŠp“x‚ğ‚¸‚ç‚·Û‚Ì‘€ì
+        //ç™ºå°„å ´æ‰€ã®è§’åº¦ã‚’ãšã‚‰ã™éš›ã®æ“ä½œ
         private void OnThrowPointMove(InputAction.CallbackContext context)
         {
             throwMove = context.ReadValue<Vector2>();
             if (context.canceled)
                 throwMove = Vector2.zero;
         }
-
+        /// <summary>
+        /// å¿…æ®ºæŠ€ã®çˆ†å¼¾ã‚’æŠ•ã’ã‚‹ä½ç½®è¨­å®š
+        /// </summary>
         private void SetThrowPoint()
         {
             Vector2 value = Vector3.zero;
-            //•KE‹Z‚Ì
+            //å¿…æ®ºæŠ€ã®æ™‚
             if (isDeathBlow)
             {
-                //Š´“x‚àl—¶
+                //æ„Ÿåº¦ã‚‚è€ƒæ…®
                 value.x = (initMousePos.x - throwMove.x) * sensitivity;
                 value.y = (initMousePos.y - throwMove.y) * sensitivity;
                 var qot1 = Quaternion.AngleAxis(value.x, new Vector3(0, 1, 0));
@@ -127,21 +132,30 @@ namespace PlayerSpace
                 DeathBlowFire();
             }
         }
+        /// <summary>
+        /// å¼¾ç™ºå°„ã—çµ‚ãˆãŸ
+        /// </summary>
         private void ShotDone()
         {
             flashObject.SetActive(false);
         }
+        /// <summary>
+        /// éŠƒã®éŸ³
+        /// </summary>
         private void PlayGunSound()
         {
             audioSourceManager.PlaySE(gunSounds[(int)haveGunIndex[gunNumber]]);
         }
 
-        //e’e”­Ë
+        /// <summary>
+        /// éŠƒå¼¾ç™ºå°„
+        /// </summary>
         private void BulletFire()
         {
             var spawnBullet = bulletObject;
             var bullet = Instantiate(spawnBullet, shotPoint.position, transform.rotation);
             var damage = bullet.GetComponent<WeaponDamageStock>();
+            PlayGunSound();
             if (damage != null)
             {
                 flashObject.SetActive(true);
@@ -151,17 +165,19 @@ namespace PlayerSpace
             }
         }
 
-        //e‚ğ•Ï‚¦‚é‚Æ‚«
+        /// <summary>
+        /// éŠƒã‚’å¤‰ãˆã‚‹ã¨ã
+        /// </summary>
         void GunChange()
         {
-            //e‚ğ•ÏX‚·‚éê‡
+            //éŠƒã‚’å¤‰æ›´ã™ã‚‹å ´åˆ
             if (isGunChange)
             {
-                //¡‚Ì—v‘f”Ô†‚ğ•Û‘¶
+                //ä»Šã®è¦ç´ ç•ªå·ã‚’ä¿å­˜
                 int currentNum = gunNumber;
-                //Ÿ‚Ì”Ô†‚ğŒvZ
+                //æ¬¡ã®ç•ªå·ã‚’è¨ˆç®—
                 int nextNum = gunNumber < gunVariation.Length - 1 ? gunNumber + 1 : 0;
-                //Ÿ‚Ì‚ ‚éê‡
+                //æ¬¡ã®ã‚ã‚‹å ´åˆ
                 if (haveGunIndex[nextNum] >= 0)
                 {
                     gunVariation[currentNum].SetActive(false);
@@ -183,7 +199,7 @@ namespace PlayerSpace
             base.DeathBlowStart();
             gunVariation[gunNumber].SetActive(false);
         }
-        //em•KE‹Z
+        //éŠƒå£«å¿…æ®ºæŠ€
         public override void DeathBlowFire()
         {
             base.DeathBlowFire();

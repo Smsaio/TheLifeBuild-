@@ -27,34 +27,8 @@ public class PlayerSpecialityController : MonoBehaviour
     [Header("各特技使用可能かどうか"), SerializeField] private bool[] canSP = new bool[Enum.GetValues(typeof(Attach.Speciality)).Length];
     public bool[] CanSP { get { return canSP; } }
      [NamedArray(new string[] { "記憶停滞", "記憶拒絶", "記憶転換" })]
-    [Header("特技の最高有効時間"), SerializeField, Range(10, 30)] private float[] specialityValidMaxTime = new float[Enum.GetValues(typeof(Attach.Speciality)).Length];
+    [Header("特技の最高有効時間"), SerializeField, Range(0, 30)] private float[] specialityValidMaxTime = new float[Enum.GetValues(typeof(Attach.Speciality)).Length];
     public float[] SpecialityValidMaxTime { get { return specialityValidMaxTime; } }
-
-    ////敵を止めてるときにダメージを与えた時の合計
-    //[Header("敵を止めている間に与えられた合計ダメージ")]
-    //protected int damageStock;
-
-    //[Header("特技：記憶拒絶")]
-    ////記憶拒絶関連
-    //[SerializeField] private GameObject refusalArea;
-    //public GameObject RefusalArea { set { refusalArea = value; } get { return refusalArea; } }
-    //[Header("拒絶で減る速度の割合"), Range(0.1f, 0.5f), SerializeField] private float refusalLimitSlowSpeed = 0.2f;
-    //public float RefusalLimitSlowSpeed { get { return refusalLimitSlowSpeed; } }
-
-    ////味方になった敵をプレイヤーに集める
-    //protected bool fellowAssembly = false;
-    //public bool FellowAssembly { get { return fellowAssembly; } set { fellowAssembly = value; } }
-
-    ////味方になった敵の番号0からスタート
-    //protected int fellowCount = 0;
-    //public int FellowCount { get { return fellowCount; } }
-    ////味方になった敵の配列
-    //protected List<FollowChara> followCharaList = new List<FollowChara>();
-    //public List<FollowChara> FollowCharaList { get { return followCharaList; } }
-    ////転換で出した武器のオブジェクト
-    //private GameObject spawnAnuvisObject;
-    ////出現する位置
-    //private Vector3 spawnPosition = Vector3.zero;
     //特技のクールタイムの時間
     private float[] specialityCoolMaxTime = new float[Enum.GetValues(typeof(Attach.Speciality)).Length];
     public float[] SpecialityCoolMaxTime { get { return specialityCoolMaxTime; } }
@@ -101,7 +75,8 @@ public class PlayerSpecialityController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentSpeciality = (int)attachSpeciality;    
+        currentSpeciality = (int)attachSpeciality;   
+        //特技の最高発動時間の適用
         for (int i = 0; i < specialityValidMaxTime.Length; i++)
         {
             if (specialityValidMaxTime[i] > 0)
@@ -109,7 +84,7 @@ public class PlayerSpecialityController : MonoBehaviour
                 specialityValidTime[i] = specialityValidMaxTime[i];
             }
         }
-
+        //クールタイムは特技発動時間の倍
         for (int i = 0; i < specialityCoolMaxTime.Length; i++)
         {
             if (specialityCoolMaxTime[i] >= 0)
@@ -118,10 +93,6 @@ public class PlayerSpecialityController : MonoBehaviour
                 specialityCoolTime[i] = specialityCoolMaxTime[i];
             }
         }
-        //for(int i = 0; i < specialityBases.Length; i++)
-        //{
-        //    specialityBases[i].Role = role;
-        //}
     }
 
     // Update is called once per frame
@@ -190,7 +161,7 @@ public class PlayerSpecialityController : MonoBehaviour
         if (!isChange) return;
         searchNextSpeciality = false;
         int searchSpeciality;
-        //左にずらしている
+        //左にさしている
         if (inputMove.x > 0)
         {
             searchSpeciality = (int)Attach.Speciality.Convert;
@@ -199,7 +170,7 @@ public class PlayerSpecialityController : MonoBehaviour
                 nextSpeciality = searchSpeciality;
             }
         }
-        //右にずらしている
+        //右にさしている
         else if (inputMove.x < 0)
         {
             searchSpeciality = (int)Attach.Speciality.Stagnation;
@@ -208,6 +179,7 @@ public class PlayerSpecialityController : MonoBehaviour
                 nextSpeciality = searchSpeciality;
             }
         }
+        //上をさしている
         if (inputMove.z > 0)
         {
             searchSpeciality = (int)Attach.Speciality.Refusal;

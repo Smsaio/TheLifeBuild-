@@ -36,8 +36,6 @@ namespace PlayerSpace
         #region Serialize
         // 地面判定に使うレイヤー
         [Header("地面判定関係"),SerializeField] protected LayerMask groundLayers;
-        //逆時間最高回数
-        [SerializeField] protected int maxReverceCount = 5;
         //壁で重力技が敵に利かないようにする時のレイヤー
         [SerializeField] protected int wallLayer = 12;
         
@@ -134,8 +132,6 @@ namespace PlayerSpace
         protected bool isContinue = false;
         //まだ死んだアニメーションをしていない
         protected bool nonDownAnim = false;
-        //逆時間の経過時間
-        protected int reverceCount = 0;
 
         //　HPを一度減らしてからの経過時間
         protected float countTime = 0f;
@@ -268,20 +264,20 @@ namespace PlayerSpace
         ///<summary>
         ///ステータス初期化
         ///</summary>
-        public void StatusInitialization()
+        public void StatusInitialization(PlayerParamater paramater)
         {
             if (curLevel <= maxLevel)
             {
                 float currentLevel = curLevel < maxLevel ? curLevel / (float)maxLevel : 1;
                 //攻撃力
-                attackP = Mathf.CeilToInt(role.PlayerParamaters[role.RoleNumber].maxAttackPoint * currentLevel) + plusAttackP;
+                attackP = Mathf.CeilToInt(paramater.maxAttackPoint * currentLevel) + plusAttackP;
                 //防御力
-                defenceP = Mathf.CeilToInt(role.PlayerParamaters[role.RoleNumber].maxDefencePoint * currentLevel) + plusDefenceP;
+                defenceP = Mathf.CeilToInt(paramater.maxDefencePoint * currentLevel) + plusDefenceP;
                 //体力初期化
                 //体力
-                currentMaxHP = Mathf.CeilToInt(role.PlayerParamaters[role.RoleNumber].maxHP * currentLevel) + plusHP;
+                currentMaxHP = Mathf.CeilToInt(paramater.maxHP * currentLevel) + plusHP;
                 currentHP = currentMaxHP;
-
+                playerMove.MoveSpeed = paramater.moveSpeed;
                 //現在の体力を適応
                 DamageHPGauge(0);
             }
@@ -371,7 +367,7 @@ namespace PlayerSpace
                         //音を鳴らす
                         audioSourceManager.PlaySE(statusUPSE);
                         //ステータス対応
-                        StatusInitialization();
+                        StatusInitialization(role.PlayerParamaters[role.RoleNumber]);
                         //レベルを保持する
                         LevelSet();
                         //レベルアップ中
@@ -391,7 +387,7 @@ namespace PlayerSpace
                 totalExp = overExp;
                 if (isGetEXP)
                 {
-                    StatusInitialization();
+                    StatusInitialization(role.PlayerParamaters[role.RoleNumber]);
                 }
                 //まだレベルアップの余地があるかどうかを調べるもの
                 int over = needExp - curExp;
@@ -457,14 +453,15 @@ namespace PlayerSpace
         private void ReverceTime()
         {
             //逆時間の特技を使用したか、逆時間出来るか
-            if (!isReverce) return;
-            //リバースを使った場合使用回数が最大に達していないとき
-            reverceTime += Time.deltaTime;
-            reverceCount++;
-            if (reverceTime >= maxReverceTime)
+            if (isReverce)
             {
-                reverceTime = 0;
-                isReverce = false;
+                //リバースを使った場合使用回数が最大に達していないとき
+                reverceTime += Time.deltaTime;
+                if (reverceTime >= maxReverceTime)
+                {
+                    reverceTime = 0;
+                    isReverce = false;
+                }
             }
         }
         //逆時間を使用
@@ -497,6 +494,7 @@ namespace PlayerSpace
                 //攻撃でダメージを与えられた
                 if (!isBodyHit)
                 {
+                    //防御力にランダムにプラスする
                     float defencePercent = UnityEngine.Random.Range(defenceP / 5, defenceP / 4);
                     float damage = attackPoint - (defencePercent + defenceP);
                     int minDamage = UnityEngine.Random.Range(7, 20);
@@ -567,8 +565,7 @@ namespace PlayerSpace
                             isDown = true;
                         }
                         //死亡処理とゲームオーバーへの移行
-                        gameManager.SetGameMode(GameMode.GameOver);
-                        audioSourceManager.BGMChange();
+                        gameManager.SetGameMode(GameMode.GameOver);                        
                         plusHP = 0;
                     }
                 }

@@ -11,13 +11,15 @@ using System;
 
 namespace PlayerSpace
 {
+    /// <summary>
+    /// プレイヤー入力や移動関係
+    /// </summary>
     public class PlayerMove : MonoBehaviour
     {
         #region Serialize
         [SerializeField] protected PlayerSpecialityController specialityController;
         [SerializeField] protected Player player;
-        //歩行スピード
-        [Header("歩く速度"), SerializeField] protected float moveSpeed = 5f;
+        
         // 地面判定に使うレイヤー
         [Header("地面判定関係"), SerializeField] protected LayerMask groundLayers;
         //地面判定用の有効範囲
@@ -51,6 +53,9 @@ namespace PlayerSpace
         //メニューを開く
         [SerializeField] private MenuManager menuManager;
         #endregion
+        //歩行スピード
+        protected float moveSpeed = 5f;
+        public float MoveSpeed { set { moveSpeed = value; } get { return moveSpeed; } }
         protected Animator anim;
         public Animator Animator { get { return anim; } }
 
@@ -335,13 +340,13 @@ namespace PlayerSpace
                     isFire = true;
                 //攻撃中
                 isAttack = true;
-                rb.velocity = Vector3.zero;
                 NormalAttack();
                 Observable.Timer(TimeSpan.FromSeconds(attackQuit), Scheduler.MainThreadIgnoreTimeScale).Subscribe(_ =>
                 {
-                //攻撃してから0.3秒後に切る。攻撃終了
-                isAttack = false;
+                    //攻撃してから0.3秒後に切る。攻撃終了
+                    isAttack = false;
                 }).AddTo(this);
+                inputMove = Vector2.zero;
             }
         }
 
@@ -411,8 +416,11 @@ namespace PlayerSpace
         }
         public virtual void DamageAnimation()
         {
-            if (!isAttack)
+            if (!isAttack || !isDeathBlow)
+            {
+                //攻撃しているか必殺技以外の時に、アニメーション発動
                 anim.SetTrigger(damageAnimName);
+            }
         }
         //-----コントローラー系------
         /// <summary>

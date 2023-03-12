@@ -4,7 +4,7 @@ using UnityEngine;
 using PlayerSpace;
 
 /// <summary>
-/// 銃士の必殺技の爆弾
+/// 銃士の必殺技で放つ爆弾
 /// </summary>
 public class Bomb : MonoBehaviour
 {

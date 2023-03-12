@@ -1,11 +1,14 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// å„çˆ†å¼¾
+/// </summary>
 public class BombObject : MonoBehaviour
 {
-    //”š”­ƒIƒuƒWƒFƒNƒg
-    [Header("”š”­ƒGƒtƒFƒNƒg")]
+    //çˆ†ç™ºã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
+    [Header("çˆ†ç™ºã‚¨ãƒ•ã‚§ã‚¯ãƒˆ")]
     [SerializeField] private GameObject explosionObject;
     // Start is called before the first frame update
     void Start()

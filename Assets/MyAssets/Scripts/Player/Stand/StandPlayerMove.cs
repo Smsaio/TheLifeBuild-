@@ -1,28 +1,31 @@
-using PlayerSpace;
+ï»¿using PlayerSpace;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 namespace PlayerSpace
 {
+    /// <summary>
+    /// ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼å…¥åŠ›ã‚„ç§»å‹•é–¢ä¿‚(æ‚ªé­”æ†‘ã)
+    /// </summary>
     public class StandPlayerMove : PlayerMove
     {
 
-        [Header("ˆ«–‚œß‚«ê—p•Ï”")]
+        [Header("æ‚ªé­”æ†‘ãå°‚ç”¨å¤‰æ•°")]
         [SerializeField] private StandPlayer standPlayer;
-        //•KE‹Z‚ÅƒXƒLƒƒƒ“‚·‚é‚ÌƒIƒuƒWƒFƒNƒg
+        //å¿…æ®ºæŠ€ã§ã‚¹ã‚­ãƒ£ãƒ³ã™ã‚‹æ™‚ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
         [SerializeField] private GameObject scanObject;
-        //oŒ»‚³‚¹‚éƒXƒ^ƒ“ƒh
+        //å‡ºç¾ã•ã›ã‚‹ã‚¹ã‚¿ãƒ³ãƒ‰
         [SerializeField] private GameObject standObject;
         public GameObject StandObject { get { return standObject; } }
-        //ˆ«–‚‚Ì’èˆÊ’uƒvƒƒpƒeƒB
+        //æ‚ªé­”ã®å®šä½ç½®ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£
         [SerializeField] private Transform standTransform;
         public Transform StandTransform { get { return standTransform; } }
 
         private StandMove standMove;
         public StandMove SpawnStandMove { get { return standMove; } }
 
-        //ˆ«–‚‚ğo‚µ‚½‚©‚Ç‚¤‚©
+        //æ‚ªé­”ã‚’å‡ºã—ãŸã‹ã©ã†ã‹
         private bool isStand = false;
         private int castAnim = Animator.StringToHash("Cast");
         protected override void Awake()
@@ -45,9 +48,9 @@ namespace PlayerSpace
             standMove = standObject.GetComponent<StandMove>();
             standMove.StandPlayer = this;
             standMove.SPlayer = player;
-            //ƒXƒ^ƒ“ƒh‚Æ•KE‹Z‚ğ”ñ•\¦‚É
+            //ã‚¹ã‚¿ãƒ³ãƒ‰ã¨å¿…æ®ºæŠ€ã‚’éè¡¨ç¤ºã«
             standObject.SetActive(false);
-            //ˆ«–‚‹N“®
+            //æ‚ªé­”èµ·å‹•
             playerInputs.Player.RoleSkillOne.performed += OnStand;
         }
 
@@ -65,7 +68,7 @@ namespace PlayerSpace
             scanObject.SetActive(true);
         }
         /// <summary>
-        /// ˆ«–‚‚ğo‚·ˆ—B
+        /// æ‚ªé­”ã‚’å‡ºã™å‡¦ç†ã€‚
         /// </summary>
         /// <param name="context"></param>
         private void OnStand(InputAction.CallbackContext context)
@@ -102,19 +105,19 @@ namespace PlayerSpace
         {
 
         }
-        //ƒRƒ“ƒ{UŒ‚
+        //ã‚³ãƒ³ãƒœæ”»æ’ƒ
         public override void DeathBlowFire()
         {
             base.DeathBlowFire();
         }
 
         /// <summary>
-        /// ˆ«–‚Œ°Œ»
+        /// æ‚ªé­”é¡•ç¾
         /// </summary>
-        /// <param name="isFire">ƒXƒ^ƒ“ƒh‚ğo‚µ‚Ä‚¢‚È‚©‚Á‚½ê‡‚ÉUŒ‚‚ğ‚µ‚½</param>
+        /// <param name="isFire">ã‚¹ã‚¿ãƒ³ãƒ‰ã‚’å‡ºã—ã¦ã„ãªã‹ã£ãŸå ´åˆã«æ”»æ’ƒã‚’ã—ãŸ</param>
         private void StandManifestation(bool isFire = false)
         {
-            //ˆ«–‚‚ğ‚¾‚µ‚Ä‚¢‚½‚çÁ‚·Ao‚Ä‚È‚©‚Á‚½‚ço‚·B
+            //æ‚ªé­”ã‚’ã ã—ã¦ã„ãŸã‚‰æ¶ˆã™ã€å‡ºã¦ãªã‹ã£ãŸã‚‰å‡ºã™ã€‚
             isStand = isFire ? isFire : !isStand;
             var rot = transform.rotation;
             standObject.transform.position = standTransform.position;

@@ -124,7 +124,6 @@ public class WeaponDamageStock : ReactivePropertyController
                     }
                     else
                     {
-                        Debug.Log("銃弾");
                         //遠距離攻撃
                         //敵の体力がある場合
                         if (enemyBase.CurrentHP > 0)

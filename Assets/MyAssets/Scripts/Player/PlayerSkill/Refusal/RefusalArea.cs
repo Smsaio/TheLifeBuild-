@@ -1,4 +1,4 @@
-using EnemySpace;
+ï»¿using EnemySpace;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,11 +6,14 @@ using Zenject;
 
 namespace Ability
 {
+    /// <summary>
+    /// è¨˜æ†¶æ‹’çµ¶ã®ç¯„å›²åˆ¶å¾¡
+    /// </summary>
     public class RefusalArea : MonoBehaviour
     {
-        //‚«”ò‚Î‚·—Í
+        //å¹ãé£›ã°ã™åŠ›
         [SerializeField] protected float force = 20;
-        //ã‚É”ò‚Ô—Í
+        //ä¸Šã«é£›ã¶åŠ›
         [SerializeField] protected float upwards = 0;
         // Start is called before the first frame update
         void Start()
@@ -28,15 +31,16 @@ namespace Ability
             if (other.gameObject.CompareTag("Search") || !this.gameObject.activeSelf) return;
             if (other.transform.root.gameObject.CompareTag("Enemy") || other.transform.root.gameObject.CompareTag("Boss"))
             {
-                //æ“¾‚µ‚Ä
+                //å–å¾—ã—ã¦
                 var enemyBase = other.transform.root.gameObject.GetComponent<EnemyBase>();
-                //æ“¾‚Å‚«‚½A“G‚ª‹L‰¯‹‘â‚É‚Ü‚¾“ü‚Á‚Ä‚¢‚È‚¢ê‡
+                //å–å¾—ã§ããŸã€æ•µãŒè¨˜æ†¶æ‹’çµ¶ã«ã¾ã å…¥ã£ã¦ã„ãªã„å ´åˆ
                 if (enemyBase != null)
                 {
                     var rb = other.transform.root.GetComponent<Rigidbody>();
+                    Debug.Log(rb);
                     if (rb != null)
                     {
-                        //üˆÍ‚É‚«”ò‚Î‚·
+                        //å‘¨å›²ã«å¹ãé£›ã°ã™
                         rb.isKinematic = false;
                         rb.AddExplosionForce(force, transform.position, transform.localScale.x, upwards, ForceMode.Impulse);
                     }
@@ -48,12 +52,12 @@ namespace Ability
         private void OnTriggerStay(Collider other)
         {
             if (other.gameObject.CompareTag("Search") || !this.gameObject.activeSelf) return;
-            //‚à‚¤‚·‚Å‚É‹‘â”ÍˆÍ“à‚É‚¢‚½ê‡A‘¬“x‚ğ’x‚­‚·‚é
+            //ã‚‚ã†ã™ã§ã«æ‹’çµ¶ç¯„å›²å†…ã«ã„ãŸå ´åˆã€é€Ÿåº¦ã‚’é…ãã™ã‚‹
             if (other.transform.root.gameObject.CompareTag("Enemy") || other.transform.root.gameObject.CompareTag("Boss"))
             {
-                //æ“¾‚µ‚Ä
+                //å–å¾—ã—ã¦
                 var enemyBase = other.transform.root.gameObject.GetComponent<EnemyBase>();
-                //æ“¾‚Å‚«‚½A“G‚ª‹L‰¯‹‘â‚É‚Ü‚¾“ü‚Á‚Ä‚¢‚È‚¢ê‡
+                //å–å¾—ã§ããŸã€æ•µãŒè¨˜æ†¶æ‹’çµ¶ã«ã¾ã å…¥ã£ã¦ã„ãªã„å ´åˆ
                 if (enemyBase != null)
                 {
                     if (!enemyBase.IsHitRefusal)

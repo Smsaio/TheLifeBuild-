@@ -1,9 +1,12 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace PlayerSpace
 {
+    /// <summary>
+    /// プレイヤー入力や移動関係(剣士)
+    /// </summary>
     public class SwordPlayerMove : PlayerMove
     {
         protected override void Awake()
@@ -47,7 +50,7 @@ namespace PlayerSpace
             base.DeathBlowStart();
         }
         ///<summary>
-        ///���ł̕K�E�Z
+        ///剣での必殺技
         ///</summary>
         public override void DeathBlowFire()
         {
