@@ -94,6 +94,7 @@ public class StartSceneManager : MonoBehaviour
             examplePlayerList[i].SetActive(false);
         }
         demonImage.SetActive(false);
+        audioSourceManager.BGMChange(GameMode.Title);
     }
     // Update is called once per frame
     void Update()
@@ -155,7 +156,6 @@ public class StartSceneManager : MonoBehaviour
         gameManager.SetGameMode(GameMode.Game);
         onStart = true;
         NonActive(menuPanel);
-        audioSourceManager.BGMChange();
         StartCoroutine(LoadScene());
     }
     /// <summary>

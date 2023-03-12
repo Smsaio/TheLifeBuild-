@@ -17,11 +17,16 @@ public class DestinationController : MonoBehaviour
     [SerializeField] private Route route;
     //目的地
     private Vector3 destination;
-
+    //順番にプラスして進んでいる
+    private bool isPlus = true;
 
     void Start()
     {
         CreateDestination();
+    }
+    private void Update()
+    {
+        
     }
     /// <summary>
     /// 目的地設定
@@ -45,17 +50,25 @@ public class DestinationController : MonoBehaviour
     private void CreateInOrderDestination()
     {
         //周回、最大であれば0から
-        if (order < targets.Length - 1)
+        if (isPlus)
         {
             //順番に目的地へ進む
             SetDestination(new Vector3(targets[order].transform.position.x, transform.position.y, targets[order].transform.position.z));
             ++order;
+            if (order >= targets.Length - 1)
+            {
+                isPlus = false;
+            }
         }
         else
         {
             //最終地点に着いた場合はマイナスされていく
             SetDestination(new Vector3(targets[order].transform.position.x, transform.position.y, targets[order].transform.position.z));
             --order;
+            if (order <= 0)
+            {
+                isPlus = true;
+            }
         }
     }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using EnemySpace;
 /// <summary>
-/// キャンバスの回転補正
+/// キャンバスの回転補正(見えないなら無駄なので消す。)
 /// </summary>
 public class RotCorrection : MonoBehaviour
 {

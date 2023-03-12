@@ -7,7 +7,7 @@ using System;
 using Ability;
 using PlayerSpace;
 using TMPro;
-
+using Zenject;
 
 namespace GameManagerSpace
 {
@@ -32,7 +32,12 @@ namespace GameManagerSpace
         public bool IsGameOver { get { return isGameOver; } }
         private bool isStageClear = false;
         public bool IsStageClear { get { return isStageClear; } set { isStageClear = value; } }
-        
+        protected IAudioSourceManager audioSourceManager = default;
+        [Inject]
+        public void Construct(IAudioSourceManager IaudioSourceManager)
+        {
+            audioSourceManager = IaudioSourceManager;
+        }
         private void OnEnable()
         {
 
@@ -73,6 +78,7 @@ namespace GameManagerSpace
                 isStageClear = true;
             }
             GameStateText(gameMode);
+            audioSourceManager.BGMChange(mode);
         }
         private void GameStateText(GameMode gameMode)
         {
@@ -82,6 +88,10 @@ namespace GameManagerSpace
                 case GameMode.Game:
                     currentPurPoseText.text = gameModeScriptable[(int)GameMode.Game].gameModeText;
                     currentPurPoseText.color = Color.yellow;
+                    break;
+                case GameMode.BossDefeat:
+                    currentPurPoseText.text = gameModeScriptable[(int)GameMode.BossDefeat].gameModeText;
+                    currentPurPoseText.color = Color.blue;
                     break;
                 case GameMode.GameClear:
                     currentPurPoseText.text = gameModeScriptable[(int)GameMode.GameClear].gameModeText;

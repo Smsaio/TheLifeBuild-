@@ -6,6 +6,8 @@ using PlayerSpace;
 using System;
 using UniRx;
 using TMPro;
+using GameManagerSpace;
+using Zenject;
 
 namespace PlayerSpace
 {
@@ -54,16 +56,26 @@ namespace PlayerSpace
         //役割が変わったか
         private bool isRoleChange = false;
         public bool IsRoleChange { set { isRoleChange = value; } get { return isRoleChange; } }
+        private IGameManager gameManager;
+
+        [Inject]
+        public void Construct(IGameManager IgameManager)
+        {
+            gameManager = IgameManager;
+        }
 
         void Awake()
-        {            
-            InitializeLevel();
-            InitializeRole();            
-            ActiveInitialization();
+        {
+            if (gameManager.CurrentGameMode == GameMode.Game)
+            {
+                InitializeLevel();
+                InitializeRole();
+                ActiveInitialization();
+            }
         }
         void Update()
         {
-            Debug.Log(currentPlayerLevel.Value);
+            
         }
         //役割適応
         public void InitializeRole()
@@ -75,7 +87,7 @@ namespace PlayerSpace
                 if (playerObjects[i] != null)
                 {
                     players[i] = playerObjects[i].GetComponent<Player>();
-                    players[i].StatusInitialization();
+                    players[i].StatusInitialization(playerParamaters[roleNum]);
                     playerMoves[i] = playerObjects[i].GetComponent<PlayerMove>();
                     playerSpecialityControllers[i] = playerObjects[i].GetComponent<PlayerSpecialityController>();
                 }

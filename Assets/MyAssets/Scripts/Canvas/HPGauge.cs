@@ -52,6 +52,7 @@ public class HPGauge : MonoBehaviour
         valueFrom = (float)currentHP / currentMaxHP;
         //減った後の体力
         valueTo = (currentHP - reducationValue) / currentMaxHP;
+        //どの部分も0.25fが最大なので、4倍にする
         float mul = 4.0f;
         //体力があった場合
         if (0 <= currentHP && Time.time > 0.01f)

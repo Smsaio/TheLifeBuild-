@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
@@ -7,9 +7,9 @@ using GameManagerSpace;
 [RequireComponent(typeof(AudioSource))]
 public class AudioSourceManager : MonoBehaviour,IAudioSourceManager
 {
-    //Šeê–Ê‚²‚Æ‚ÌBGM
-    [NamedArray(new string[] { "Title", "Game", "GameOver", "GameClear" }), Header("Šeƒ‚[ƒh‚²‚Æ‚ÌBGM"),SerializeField]
-    private AudioSource[] BGMLists;
+    //å„å ´é¢ã”ã¨ã®BGM
+    [NamedArray(new string[] { "Title", "Game","BossDefeat", "GameOver", "GameClear" }),
+        Header("å„ãƒ¢ãƒ¼ãƒ‰ã”ã¨ã®BGM"),SerializeField] private AudioSource[] BGMLists;
     private AudioSource audioSource;
     IGameManager gameManager = default;
 
@@ -22,7 +22,10 @@ public class AudioSourceManager : MonoBehaviour,IAudioSourceManager
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        BGMChange();
+        if (gameManager.CurrentGameMode == GameMode.Game)
+        {
+            BGMChange(GameMode.Game);
+        }
     }
 
     // Update is called once per frame
@@ -31,7 +34,7 @@ public class AudioSourceManager : MonoBehaviour,IAudioSourceManager
         
     }
     ///<summary>
-    ///SE‚ğ–Â‚ç‚·
+    ///SEã‚’é³´ã‚‰ã™
     ///</summary> 
     ///<param name="clip"></param>
     public void PlaySE(AudioClip clip)
@@ -42,11 +45,11 @@ public class AudioSourceManager : MonoBehaviour,IAudioSourceManager
         }
         else
         {
-            Debug.Log("ƒI[ƒfƒBƒIƒ\[ƒX‚ªİ’è‚³‚ê‚Ä‚È‚¢");
+            Debug.Log("ã‚ªãƒ¼ãƒ‡ã‚£ã‚ªã‚½ãƒ¼ã‚¹ãŒè¨­å®šã•ã‚Œã¦ãªã„");
         }
     }
     ///<summary>
-    ///SE‚ğ–Â‚ç‚·
+    ///SEã‚’é³´ã‚‰ã™
     ///</summary> 
     public void StopSE()
     {
@@ -56,15 +59,15 @@ public class AudioSourceManager : MonoBehaviour,IAudioSourceManager
         }
         else
         {
-            Debug.Log("ƒI[ƒfƒBƒIƒ\[ƒX‚ªİ’è‚³‚ê‚Ä‚È‚¢");
+            Debug.Log("ã‚ªãƒ¼ãƒ‡ã‚£ã‚ªã‚½ãƒ¼ã‚¹ãŒè¨­å®šã•ã‚Œã¦ãªã„");
         }
     }
-    public void BGMChange()
+    public void BGMChange(GameMode gameMode)
     {
         for(int i=0; i < BGMLists.Length; i++)
         {
             BGMLists[i].Stop();
         }
-        BGMLists[(int)gameManager.CurrentGameMode].Play();
+        BGMLists[(int)gameMode].Play();
     }
 }

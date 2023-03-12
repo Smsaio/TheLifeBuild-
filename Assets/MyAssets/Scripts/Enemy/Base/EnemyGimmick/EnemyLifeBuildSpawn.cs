@@ -12,7 +12,8 @@ public class EnemyLifeBuildSpawn : MonoBehaviour
     [Header("召喚させるか判断するレンダラー"),SerializeField] private Renderer fadeRenderer;
     //人生の記憶の結晶
     [Header("召喚させるライフビルド"),SerializeField] private GameObject lifeBuildObject;
-    
+    //地面のレイヤー
+    [SerializeField]  private LayerMask groundLayer;
     [Header("ライフビルドを召喚するレンダラーの透明度"),Range(0.0f,0.35f),SerializeField] private float spawnDuration = 0.0f;
     //このオブジェクトが司っている負の記憶
     private MemoryType.NegativeMemory lifeBuildInMemory = MemoryType.NegativeMemory.Hatred;
@@ -24,7 +25,10 @@ public class EnemyLifeBuildSpawn : MonoBehaviour
     //マテリアルのパラメータ
     private string progressParamName = "_Progress";
     //レンダラーのマテリアル
-    private Material[] mats; 
+    private Material[] mats;
+    //召喚する位置
+    private Vector3 spawnPos;
+
     private void Start()
     {
         mats = fadeRenderer.materials;
@@ -37,6 +41,13 @@ public class EnemyLifeBuildSpawn : MonoBehaviour
             {
                 progressParamName = dissolve.ProgressParamName;
             }
+        }
+        Ray ray = new(transform.position, -transform.up);
+        RaycastHit hit;
+        //下にレイを発射して確認
+        if (Physics.Raycast(ray, out hit,groundLayer))
+        {
+            spawnPos = hit.point;
         }
     }
     private void Update()
@@ -55,7 +66,7 @@ public class EnemyLifeBuildSpawn : MonoBehaviour
             {
                 if(mats[i].GetFloat(progressParamName) <= spawnDuration)
                 {
-                    Spawn();
+                    Spawn(7);
                 }
             }
         }        
@@ -63,11 +74,10 @@ public class EnemyLifeBuildSpawn : MonoBehaviour
     /// <summary>
     /// ライフビルドを出現させる
     /// </summary>
-    private void Spawn()
+    private void Spawn(float plusY=6)
     {
-        var pos = transform.position;
         //ライフビルドのオブジェクトを召喚
-        var lifeObject = Instantiate(lifeBuildObject, new Vector3(pos.x, pos.y + 5, pos.z), Quaternion.identity);
+        var lifeObject = Instantiate(lifeBuildObject, new Vector3(spawnPos.x, spawnPos.y + plusY, spawnPos.z), Quaternion.identity);
         var lifeBuild = lifeObject.GetComponent<LifeBuild>();
         //ライフビルドの管理クラスを取得出来た
         if (lifeBuild != null)

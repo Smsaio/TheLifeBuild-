@@ -64,7 +64,6 @@ namespace EnemySpace
             {
                 SetState(CharacterState.Death);
             }
-            Debug.Log("EXP"+state);
         }
         protected override void TakeDamage(int damage, bool playDamageAnim)
         {

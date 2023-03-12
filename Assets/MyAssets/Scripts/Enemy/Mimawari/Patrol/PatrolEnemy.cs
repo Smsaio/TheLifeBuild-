@@ -45,8 +45,6 @@ namespace EnemySpace
             arrival = false;
             elapsedTime = 0f;
             freezeTime = waitTime * 1.25f;
-            destinationController.CreateDestination();
-            agent.SetDestination(destinationController.GetDestination());
             SetState(CharacterState.Move);
         }
 

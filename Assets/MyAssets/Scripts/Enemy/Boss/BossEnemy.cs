@@ -41,9 +41,7 @@ namespace EnemySpace
         //スタン中のダメージ音
         [SerializeField] private AudioClip stanDamageSE;
         //チャージに至る割合
-        [Range(1,9),Header("チャージになる割合"),SerializeField] private int chargePercent = 9;
-        //出現したボスのレベルをプラスする
-        [Header("プラスするレベル"),Range(5,20),SerializeField] private int plusLevel = 10;
+        [Range(1,9),Header("チャージになる割合"),SerializeField] private int chargePercent = 9;        
         [Header("必殺技の時の索敵サイズ"), Range(20, 40), SerializeField] private float deathBlowSearchColliderSize = 40;
         //攻撃した
         private bool doAttack = false;
@@ -124,9 +122,21 @@ namespace EnemySpace
             {
                 SetState(CharacterState.Death);
             }
-            Debug.Log(curLevel);
         }
-
+        public override void TargetFind(GameObject obj)
+        {
+            //　敵キャラクターが追いかけられる状態であれば追いかけるに変更
+            if (enemyState != CharacterState.Chase && enemyState != CharacterState.Freeze && enemyState != CharacterState.Charge
+                 && !Physics.Linecast(transform.position + Vector3.up, obj.transform.position + Vector3.up, obstacleLayer))
+            {
+                if (!isTargetFind)
+                {
+                    findMark.SetSize();
+                }
+                SetState(CharacterState.Chase, target);
+                isTargetFind = true;
+            }
+        }
         /// <summary>
         /// 状態設定
         /// </summary>
@@ -182,6 +192,7 @@ namespace EnemySpace
                         animator.SetTrigger(chargeAnim);
                         if(!doCharge)
                             doCharge = true;
+                        elapsedTime = 0;
                     }
                     arrival = true;
                     agent.velocity = Vector3.zero;
@@ -236,10 +247,6 @@ namespace EnemySpace
                     animator.SetTrigger(deathAnim);
                     agent.isStopped = true;
                     Destroy(gameObject);
-                    Observable.Timer(TimeSpan.FromSeconds(0.1f), Scheduler.MainThreadIgnoreTimeScale).Subscribe(_ =>
-                    {
-                        audioSourceManager.BGMChange();
-                    });
                 }
             }
         }
@@ -297,10 +304,6 @@ namespace EnemySpace
                     //　待ち時間を越えたら次の目的地を設定もしくは、奥義をチャージする
                     if (elapsedTime > waitTime || isTargetFind)
                     {
-                        if (isTargetFind)
-                        {
-                            elapsedTime = 0f;
-                        }
                         MoveState();
                     }
                 }
@@ -394,15 +397,18 @@ namespace EnemySpace
         /// </summary>
         void MoveState()
         {
-            int max = 10;
-            int ran = UnityEngine.Random.Range(0, max);
-            int percent = max - chargePercent;
+            int ran = UnityEngine.Random.Range(0,11);
             if (isTargetFind)
             {
                 //プレイヤーが範囲内にいたら、確率でチャージする。
-                if (ran >= percent)
+                if (ran >= chargePercent)
                 {
                     SetState(CharacterState.Charge);
+                    return;
+                }
+                else
+                {
+                    SetState(CharacterState.Move);
                     return;
                 }
             }
@@ -475,8 +481,8 @@ namespace EnemySpace
         
         protected override void DeathState()
         {
-            gameManager.SetGameMode(GameMode.BossDefeat);
             base.DeathState();
+            gameManager.SetGameMode(GameMode.BossDefeat);
         }
         //------------アニメーションイベント-----------------------
         /// <summary>

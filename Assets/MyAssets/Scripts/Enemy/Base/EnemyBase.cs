@@ -49,7 +49,7 @@ namespace EnemySpace
         #region Serialize
 
 
-        [SerializeField] private FindMark findMark;
+        [SerializeField] protected FindMark findMark;
         //敵の体力バー
         [SerializeField] protected HPGauge enemyGauge;
         //ダメージのUI
@@ -95,13 +95,16 @@ namespace EnemySpace
         [Range(-1.0f, 1.0f), SerializeField] private float flashPeriod = 0.4f;
         //攻撃する距離
         [Header("攻撃する距離"),Range(1.0f, 10.0f), SerializeField] protected float attackDistance = 4.0f;
+
+        //出現したレベルをプラスする
+        [Header("プラスするレベル"), Range(5, 20), SerializeField] protected int plusLevel = 10;
         //このオブジェクトが司っている負の記憶の種類
         [SerializeField]
         private MemoryType.NegativeMemory memory = MemoryType.NegativeMemory.Hatred;
         [SerializeField] private CharacterType characterType;
         public CharacterType MyCharacterType { get { return characterType; } }
         //調べる対象のレイヤー
-        [Header("障害物のレイヤー"), SerializeField] private LayerMask obstacleLayer = 7;
+        [Header("障害物のレイヤー"), SerializeField] protected LayerMask obstacleLayer = 7;
         //死んだ後のラグドール
         [SerializeField] protected GameObject enemyRagdoll;
         public GameObject EnemyRagDoll { get { return enemyRagdoll; } }
@@ -209,11 +212,11 @@ namespace EnemySpace
         //前のサイズ
         private Vector3 beforeScale;
         protected IAudioSourceManager audioSourceManager = default;
-        public IAudioSourceManager AudioSourceManager { set { audioSourceManager = value; } }
+        public IAudioSourceManager AudioSourceManager { set { audioSourceManager = value; } get { return audioSourceManager; } }
         protected IGameManager gameManager = default;
         public IGameManager GameManager { set { gameManager = value; } }
         [Inject]
-        public void Construct(IAudioSourceManager IaudioSourceManager,IGameManager IgameManager,IRole Irole)
+        public void Construct(IAudioSourceManager IaudioSourceManager,IGameManager IgameManager)
         {
             audioSourceManager = IaudioSourceManager;
             gameManager = IgameManager;
@@ -244,14 +247,14 @@ namespace EnemySpace
         public virtual void TargetFind(GameObject obj)
         {            
             //　敵キャラクターが追いかけられる状態であれば追いかけるに変更
-            if (enemyState != CharacterState.Chase && enemyState != CharacterState.Freeze && enemyState != CharacterState.Charge
+            if (enemyState != CharacterState.Chase && enemyState != CharacterState.Charge
                  && !Physics.Linecast(transform.position + Vector3.up, obj.transform.position + Vector3.up, obstacleLayer))
             {
                 if (!isTargetFind)
                 {
-                    SetState(CharacterState.Chase, target);
                     findMark.SetSize();
                 }
+                SetState(CharacterState.Chase, target);
                 isTargetFind = true;
             }
         }
@@ -283,6 +286,8 @@ namespace EnemySpace
         private void SetInitialize()
         {
             SetNegativeMemory();
+            var level = UnityEngine.Random.Range(playerLevel, playerLevel + plusLevel);
+            curLevel = level;
             //味方になる敵である場合
             if (!notCanFellow)
             {
@@ -706,8 +711,6 @@ namespace EnemySpace
                     //2倍になる
                     meshFade.KeepEXP = exp * mul;
                 }
-                //ラグドールを吹き飛ばす
-                ragdoll.GetComponent<Rigidbody>().AddForce((transform.forward) * -7, ForceMode.Impulse);
                 Destroy(gameObject);
             }
         }

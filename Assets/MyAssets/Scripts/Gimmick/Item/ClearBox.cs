@@ -35,9 +35,9 @@ public class ClearBox : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.transform.root.gameObject.CompareTag("Player"))
         {
-            if (gameManager.CurrentGameMode == GameMode.GameClear)
+            if (gameManager.CurrentGameMode == GameMode.BossDefeat)
             {
                 gameManager.SetGameMode(GameMode.GameClear);
             }

@@ -15,12 +15,6 @@ public class ProcessEnemyAnim : MonoBehaviour
     private EnemyBase enemyBase;
     //味方かどうか
     private bool isFellow = false;
-    private IAudioSourceManager audioSourceManager;
-    [Inject]
-    public void Construct(IAudioSourceManager IaudioSourceManager)
-    {
-        audioSourceManager = IaudioSourceManager;
-    }
     protected virtual void Start()
     {
         enemyBase = GetComponent<EnemyBase>();
@@ -75,6 +69,6 @@ public class ProcessEnemyAnim : MonoBehaviour
     protected virtual void AttackSE(AudioClip attackSound = null)
     {
         var sound = attackSound == null ? attackSE : attackSound;
-        audioSourceManager.PlaySE(sound);
+        enemyBase.AudioSourceManager.PlaySE(sound);
     }
 }

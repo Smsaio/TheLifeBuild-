@@ -57,7 +57,6 @@ namespace EnemySpace
                     //　プレイヤーキャラクターを発見
                     if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Fellow"))
                     {
-                        Debug.Log("索敵中");
                         targetSearch.TargetFind(other.gameObject);
                     }
                 }

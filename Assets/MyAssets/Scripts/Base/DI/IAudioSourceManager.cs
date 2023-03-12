@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface IAudioSourceManager 
 {
-    public void BGMChange();
+    public void BGMChange(GameManagerSpace.GameMode gameMode);
     public void PlaySE(AudioClip clip);
     public void StopSE();
 }

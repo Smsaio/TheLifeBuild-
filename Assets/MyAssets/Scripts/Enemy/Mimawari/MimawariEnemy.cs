@@ -188,7 +188,6 @@ namespace EnemySpace
                 {
                     //攻撃
                     animator.SetTrigger(attackAnim);
-                    Debug.Log("攻撃した。");
                     agent.velocity = Vector3.zero;
                     agent.isStopped = true;
                 }
