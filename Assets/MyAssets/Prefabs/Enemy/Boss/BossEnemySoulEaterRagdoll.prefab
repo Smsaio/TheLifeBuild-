@@ -835,8 +835,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2587261248811560398}
-  m_LocalRotation: {x: 0.030924408, y: 0.70643026, z: 0.030924408, w: 0.70643026}
-  m_LocalPosition: {x: -0, y: 2.3169668, z: -1.344518}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -846,7 +846,7 @@ Transform:
   - {fileID: 4047739548096444741}
   m_Father: {fileID: 4027595525516728422}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &2587261248811560396
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1829,7 +1829,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5478868405588282519}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 227, y: -28.79, z: 57.78}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1868,7 +1868,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeRenderer: {fileID: 3783621093356888313}
   lifeBuildObject: {fileID: 959575823147371674, guid: 0ca6865b547c0014ba34a19e605d67a8, type: 3}
-  progressParamName: _Progress
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
   spawnDuration: 0
 --- !u!114 &28073359359603300
 MonoBehaviour:
@@ -1887,6 +1889,7 @@ MonoBehaviour:
   effectDuration: 3
   effectEase: 1
   progressParamName: _Progress
+  fadeType: 1
 --- !u!1 &6012180851078443881
 GameObject:
   m_ObjectHideFlags: 0
@@ -2216,7 +2219,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6859355473110307502}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -226.65565, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children: []

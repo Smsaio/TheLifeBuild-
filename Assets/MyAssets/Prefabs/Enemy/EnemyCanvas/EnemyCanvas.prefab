@@ -1177,7 +1177,7 @@ GameObject:
   - component: {fileID: 6618707233409142056}
   - component: {fileID: 8363356554566306526}
   - component: {fileID: 4464800592454333088}
-  - component: {fileID: 7460918656980269818}
+  - component: {fileID: 821036654397654187}
   m_Layer: 10
   m_Name: EnemyCanvas
   m_TagString: Untagged
@@ -1270,7 +1270,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &7460918656980269818
+--- !u!114 &821036654397654187
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

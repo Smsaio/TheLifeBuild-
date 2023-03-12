@@ -285,7 +285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyStatus: {fileID: 11400000, guid: fe9fffe05dcf98342a761bb7b9c2b5af, type: 2}
   notCanFellow: 0
-  findMark: {fileID: 4218943754764248156}
+  findMark: {fileID: 6224778962305112589}
   enemyGauge: {fileID: 8466230203417404775}
   damageUI: {fileID: 2156712815686803756, guid: 9cff6f1b2a6a4604389a1c418110676b, type: 3}
   meshRenderer:
@@ -309,6 +309,7 @@ MonoBehaviour:
   flashCount: 6
   flashPeriod: 0.4
   attackDistance: 8
+  plusLevel: 7
   memory: 0
   characterType: 0
   obstacleLayer:
@@ -26222,7 +26223,7 @@ PrefabInstance:
     - target: {fileID: 7285856409153158748, guid: db7aff792b5260442987181d19a44e20, type: 3}
       propertyPath: findMark
       value: 
-      objectReference: {fileID: 4218943754764248156}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db7aff792b5260442987181d19a44e20, type: 3}
 --- !u!114 &3953061961281535561 stripped
@@ -26383,17 +26384,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8543515990398406356, guid: 2241f9a1e8fa98d4b9cd14a2592ce268, type: 3}
   m_PrefabInstance: {fileID: 6703101173994872486}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4218943754764248156 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7460918656980269818, guid: 2241f9a1e8fa98d4b9cd14a2592ce268, type: 3}
-  m_PrefabInstance: {fileID: 6703101173994872486}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3140866598691590258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 862659f106f679d44a03b02ad35d5824, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4492565054333245819 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7160440960011864029, guid: 2241f9a1e8fa98d4b9cd14a2592ce268, type: 3}
@@ -26414,6 +26404,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6224778962305112589 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 821036654397654187, guid: 2241f9a1e8fa98d4b9cd14a2592ce268, type: 3}
+  m_PrefabInstance: {fileID: 6703101173994872486}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3140866598691590258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 862659f106f679d44a03b02ad35d5824, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &8466230203417404772 stripped

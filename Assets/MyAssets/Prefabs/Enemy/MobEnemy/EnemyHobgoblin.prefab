@@ -48995,7 +48995,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 8
+  m_Radius: 12
   m_Center: {x: -3.77, y: 0.4, z: 10.61}
 --- !u!114 &2226166766509164246
 MonoBehaviour:
@@ -50199,7 +50199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyStatus: {fileID: 11400000, guid: aed912ff8766c754ebc2a69ec4526cd1, type: 2}
   notCanFellow: 0
-  findMark: {fileID: 2444689781519756156}
+  findMark: {fileID: 5549316441034265901}
   enemyGauge: {fileID: 7935321761136044615}
   damageUI: {fileID: 2156712815686803756, guid: 9cff6f1b2a6a4604389a1c418110676b, type: 3}
   meshRenderer:
@@ -50223,6 +50223,7 @@ MonoBehaviour:
   flashCount: 6
   flashPeriod: 0.4
   attackDistance: 4
+  plusLevel: 7
   memory: 0
   characterType: 0
   obstacleLayer:
@@ -50428,7 +50429,7 @@ PrefabInstance:
     - target: {fileID: 7285856409153158748, guid: db7aff792b5260442987181d19a44e20, type: 3}
       propertyPath: findMark
       value: 
-      objectReference: {fileID: 2444689781519756156}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db7aff792b5260442987181d19a44e20, type: 3}
 --- !u!4 &1721904966853601692 stripped
@@ -50739,17 +50740,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2241f9a1e8fa98d4b9cd14a2592ce268, type: 3}
---- !u!114 &2444689781519756156 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7460918656980269818, guid: 2241f9a1e8fa98d4b9cd14a2592ce268, type: 3}
-  m_PrefabInstance: {fileID: 5073245170580296070}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3528397810992324434}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 862659f106f679d44a03b02ad35d5824, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2682235010455279195 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7160440960011864029, guid: 2241f9a1e8fa98d4b9cd14a2592ce268, type: 3}
@@ -50766,6 +50756,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8543515990398406356, guid: 2241f9a1e8fa98d4b9cd14a2592ce268, type: 3}
   m_PrefabInstance: {fileID: 5073245170580296070}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5549316441034265901 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 821036654397654187, guid: 2241f9a1e8fa98d4b9cd14a2592ce268, type: 3}
+  m_PrefabInstance: {fileID: 5073245170580296070}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3528397810992324434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 862659f106f679d44a03b02ad35d5824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6260908651305419871 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1190356187747276249, guid: 2241f9a1e8fa98d4b9cd14a2592ce268, type: 3}

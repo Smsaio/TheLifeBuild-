@@ -2589,7 +2589,6 @@ MonoBehaviour:
   groundLayers:
     serializedVersion: 2
     m_Bits: 64
-  maxReverceCount: 5
   wallLayer: 6
   startExp: 60
   maxLevel: 50
@@ -2600,7 +2599,6 @@ MonoBehaviour:
   damageTransform: {fileID: 6950961437250333824}
   screamParticle: {fileID: 963201379292935791}
   lifeBuildGetEffect: {fileID: 4093528411339521579}
-  headTopTransform: {fileID: 677494692541322814}
   playerGauge: {fileID: 0}
   weekMemory: 2
 --- !u!114 &4332774508288293518
@@ -2616,7 +2614,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bombPrefab: {fileID: 521303933215072458, guid: d17e21b88f4cfb04eb933b3c9cb565c1, type: 3}
-  shootingSpeed: 30
+  shootingSpeed: 50
 --- !u!114 &5516644111766525781
 MonoBehaviour:
   m_ObjectHideFlags: 0

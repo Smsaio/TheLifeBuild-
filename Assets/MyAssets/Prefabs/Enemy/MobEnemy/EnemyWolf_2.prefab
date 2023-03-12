@@ -1461,7 +1461,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyStatus: {fileID: 11400000, guid: 6da8c4c1073713f48a54df95b6f1105b, type: 2}
   notCanFellow: 0
-  findMark: {fileID: 2860711771777189077}
+  findMark: {fileID: 5430535976077818500}
   enemyGauge: {fileID: 7512548768546096622}
   damageUI: {fileID: 2156712815686803756, guid: 9cff6f1b2a6a4604389a1c418110676b, type: 3}
   meshRenderer:
@@ -1484,7 +1484,8 @@ MonoBehaviour:
   flashMaterial: {fileID: 2100000, guid: 8e26238082f635543b31d630fe8a7467, type: 2}
   flashCount: 6
   flashPeriod: 0.4
-  attackDistance: 6
+  attackDistance: 9
+  plusLevel: 7
   memory: 0
   characterType: 0
   obstacleLayer:
@@ -25831,9 +25832,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2860711771777189077 stripped
+--- !u!1 &3938786315717013755 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8543515990398406356, guid: 2241f9a1e8fa98d4b9cd14a2592ce268, type: 3}
+  m_PrefabInstance: {fileID: 4627954177839627823}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5430535976077818500 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7460918656980269818, guid: 2241f9a1e8fa98d4b9cd14a2592ce268, type: 3}
+  m_CorrespondingSourceObject: {fileID: 821036654397654187, guid: 2241f9a1e8fa98d4b9cd14a2592ce268, type: 3}
   m_PrefabInstance: {fileID: 4627954177839627823}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3938786315717013755}
@@ -25842,11 +25848,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 862659f106f679d44a03b02ad35d5824, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &3938786315717013755 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8543515990398406356, guid: 2241f9a1e8fa98d4b9cd14a2592ce268, type: 3}
-  m_PrefabInstance: {fileID: 4627954177839627823}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &5817865028790332406 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1190356187747276249, guid: 2241f9a1e8fa98d4b9cd14a2592ce268, type: 3}
@@ -26145,7 +26146,7 @@ PrefabInstance:
     - target: {fileID: 7285856409153158748, guid: db7aff792b5260442987181d19a44e20, type: 3}
       propertyPath: findMark
       value: 
-      objectReference: {fileID: 2860711771777189077}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db7aff792b5260442987181d19a44e20, type: 3}
 --- !u!114 &2023444194824459996 stripped
