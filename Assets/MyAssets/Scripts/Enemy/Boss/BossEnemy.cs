@@ -163,10 +163,9 @@ namespace EnemySpace
                 if (tempState == CharacterState.Move)
                 {
                     arrival = false;
-                    agent.speed = agentSpeed;
+                    agent.isStopped = false;
                     setPosition.CreateRandomPosition();
                     agent.SetDestination(setPosition.GetDestination());
-                    agent.isStopped = false;
                 }
                 else if (tempState == CharacterState.Chase)
                 {
@@ -183,6 +182,8 @@ namespace EnemySpace
                 {
                     if (tempState == CharacterState.Stan)
                     {
+                        agent.velocity = Vector3.zero;
+                        agent.isStopped = true;
                         animator.SetBool(stanAnim, true);
                         chargeCount = 0;
                         chargeSpanTime = 0;

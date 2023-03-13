@@ -90,7 +90,7 @@ public class PlayerCanvasController : MonoBehaviour,IReactiveProperty
             statusUPText[i].gameObject.SetActive(false);
         }
         stagnationPanel.SetActive(false);
-        ReactivePlayer(role);
+        //ReactivePlayer(role);
     }
 
     // Update is called once per frame

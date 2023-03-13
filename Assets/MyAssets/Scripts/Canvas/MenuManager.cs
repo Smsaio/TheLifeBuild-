@@ -30,9 +30,6 @@ public class MenuManager : MonoBehaviour
     //操作説明へのボタン
     [Header("操作説明のボタン")]
     [SerializeField] private Button tutorialButton;
-    //メニューを開いている
-    private bool openMenu = false;
-    public bool OpenMenu { get { return openMenu; } set { openMenu = value; } }
     protected IGameManager gameManager = default;
     [Inject]
     public void Construct(IGameManager IgameManager)
@@ -56,7 +53,7 @@ public class MenuManager : MonoBehaviour
         tutorialButton.onClick.AddListener(TutorialPanel);
         gameManager.IsMenu
             .SkipLatestValueOnSubscribe()
-            .Subscribe(isMenu => { openMenu = isMenu; Menu(); }).AddTo(this);
+            .Subscribe(isMenu => { menuButtonPanel.SetActive(isMenu); }).AddTo(this);
         statusPanel.SetActive(false);
         menuButtonPanel.SetActive(false);
     }
@@ -73,14 +70,6 @@ public class MenuManager : MonoBehaviour
     private void PanelActive(GameObject obj,bool isActive)
     {
         obj.SetActive(isActive);
-    }
-    /// <summary>
-    /// メニューオンオフ
-    /// </summary>
-    public void Menu()
-    {
-        //メニューを開いていたら閉じる、閉じているなら開く
-        menuButtonPanel.SetActive(!menuButtonPanel.activeSelf);
     }
     /// <summary>
     /// リターンボタンに付与する

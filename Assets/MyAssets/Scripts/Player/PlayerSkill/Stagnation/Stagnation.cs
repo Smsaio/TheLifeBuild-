@@ -9,7 +9,7 @@ namespace Ability
     /// 記憶停滞の際に用いる特技のクラス
     /// </summary>
     public class Stagnation : SpecialityBase
-    {
+    {        
         // Start is called before the first frame update
         void Start()
         {

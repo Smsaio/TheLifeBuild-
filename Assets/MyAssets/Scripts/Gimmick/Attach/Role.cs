@@ -43,6 +43,7 @@ namespace PlayerSpace
         private ReactiveProperty<int> currentPlayerLevel = new();
         public ReactiveProperty<int> CurrentPlayerLevel { get { return currentPlayerLevel; } set { currentPlayerLevel = value; } }
         
+
         private ReactiveProperty<Player> currentPlayer = new();
         public ReactiveProperty<Player> CurrentPlayer { get { return currentPlayer; } }
 
@@ -71,9 +72,14 @@ namespace PlayerSpace
             if (gameManager.CurrentGameMode == GameMode.Game)
             {
                 InitializeLevel();
+
                 InitializeRole();
                 ActiveInitialization();
             }
+        }
+        void Start()
+        {
+            
         }
         void Update()
         {
@@ -104,6 +110,12 @@ namespace PlayerSpace
             currentPlayerMove.Value = playerMoves[roleNum];
             currentPlayerSpController.Value = playerSpecialityControllers[roleNum];
             currentPlayerTransform.Value = playerObjects[roleNum].transform;
+            //個別にやっているが、一括で取得して関数を実行した方がいいのかは迷い中
+            var list = GameExtensions.FindObjectOfInterfaces<IReactiveProperty>();
+            for (int i = 0; i < list.Length; i++)
+            {
+                list[i].ReactivePlayer(this);
+            }
         }
         /// <summary>
         /// 役割をテキストに反映
@@ -160,6 +172,7 @@ namespace PlayerSpace
         /// </summary>
         public void RoleChange()
         {
+            isRoleChange = true;
             //役割を変えようとしているとき
             if (isRoleChange)
             {

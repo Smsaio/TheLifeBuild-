@@ -142,7 +142,7 @@ public class FollowCameraNIS : MonoBehaviour,IReactiveProperty
     }
     void Start()
     {
-        ReactivePlayer(role);
+        //ReactivePlayer(role);
         //縦と横の角度設定
         Vector3 angles = transform.eulerAngles;
         horizontalAngle = angles.x;

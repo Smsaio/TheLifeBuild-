@@ -5580,7 +5580,7 @@ SphereCollider:
   m_Enabled: 0
   serializedVersion: 2
   m_Radius: 10
-  m_Center: {x: 0, y: 0, z: -15.97}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &3158513111686454063
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -31000,6 +31000,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3531422151514277343, guid: 2241f9a1e8fa98d4b9cd14a2592ce268, type: 3}
+      propertyPath: enemyBase
+      value: 
+      objectReference: {fileID: 7636215104693907020}
+    - target: {fileID: 3531422151514277343, guid: 2241f9a1e8fa98d4b9cd14a2592ce268, type: 3}
+      propertyPath: followChara
+      value: 
+      objectReference: {fileID: 4688015707044458151}
     - target: {fileID: 4279828007169176241, guid: 2241f9a1e8fa98d4b9cd14a2592ce268, type: 3}
       propertyPath: m_fontSize
       value: 60

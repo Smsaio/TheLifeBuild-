@@ -11,7 +11,6 @@ namespace PlayerSpace
     /// </summary>
     public class GunnerPlayerMove : PlayerMove
     {
-
         public enum GunType : int
         {
             None = -1,

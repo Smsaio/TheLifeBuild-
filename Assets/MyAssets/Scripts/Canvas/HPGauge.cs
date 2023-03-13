@@ -4,6 +4,8 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections;
 using Zenject;
+using UniRx;
+using PlayerSpace;
 
 /// <summary>
 /// 体力ゲージ管理、制御クラス
@@ -21,22 +23,16 @@ public class HPGauge : MonoBehaviour
     [SerializeField] private Slider hpSlider;
     //dotween(後ろの体力のアニメーション)
     private Tween backGaugeTween;
-    private float valueFrom = 1;
-    private float valueTo = 1;
+    protected float valueFrom = 1;
+    protected float valueTo = 1;
     private float alpha_Sin = 0;
     //変化するスピード
-    private float sinSpeed = 4;
-    private IRole role = default;
-    [Inject]
-    public void Construct(IRole Irole)
-    {
-        role = Irole;
-    }
+    private float sinSpeed = 4;   
     void Start()
     {
-
+        
     }
-    private void Update()
+    protected virtual void Update()
     {
         //危険なら点滅させる
         if (valueTo < 0.2f && isFlash)
@@ -49,11 +45,9 @@ public class HPGauge : MonoBehaviour
     /// <summary>
     /// 体力バーの設定
     /// </summary>
-    /// <param name="reducationValue">ダメージ値</param>    
-    /// <param name="currentHP">現在の体力</param>
-    /// <param name="currentMaxHP">現在の最大体力</param>
+    /// <param name="reducationValue">ダメージ値</param>
     /// <param name="delayTime">背中で減る体力バーの遅延時間</param>
-    public void GaugeReduction(float reducationValue, int currentHP, int currentMaxHP, float delayTime = 0.5f)
+    public virtual void GaugeReduction(float reducationValue,int currentHP,int currentMaxHP,float delayTime = 0.5f)
     {
         //現在の体力
         valueFrom = (float)currentHP / currentMaxHP;
@@ -94,7 +88,6 @@ public class HPGauge : MonoBehaviour
             valueTo,
             delayTime
         );
-
     }
     //体力バーを点滅
     void ColorCoroutine()

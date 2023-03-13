@@ -38,7 +38,7 @@ public class TextScaleChange : MonoBehaviour,IReactiveProperty
     {
         //前のサイズを格納
         beforeSize = levelUPText.fontSize;
-        ReactivePlayer(role);
+        //ReactivePlayer(role);
     }
 
     // Update is called once per frame

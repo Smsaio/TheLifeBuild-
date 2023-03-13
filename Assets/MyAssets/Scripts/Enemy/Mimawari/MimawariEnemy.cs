@@ -158,7 +158,6 @@ namespace EnemySpace
                 {
                     //歩行
                     arrival = false;
-                    agent.speed = agentSpeed;
                     agent.isStopped = false;
                     setPosition.CreateRandomPosition();
                     agent.SetDestination(setPosition.GetDestination());

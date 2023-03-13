@@ -1,18 +1,11 @@
+using AttackProcess;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IProcessAnim : MonoBehaviour
+public interface IProcessAnim
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public void AttackStart();
+    public void AttackEnd();
+    public void AttackSE(AudioClip attackSound = null);
 }

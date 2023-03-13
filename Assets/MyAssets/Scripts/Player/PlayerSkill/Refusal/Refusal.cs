@@ -9,6 +9,9 @@ namespace Ability
     /// </summary>
     public class Refusal : SpecialityBase
     {
+        //敵の速度が減速する早さ
+        [Header("敵の速度が減速する早さ"),SerializeField] private float minusSpeed = 0.1f;
+        public float MinusSpeed { get { return minusSpeed; } }
         private Transform playerTransform;
         private GameObject SpawnRefusalArea;
         // Start is called before the first frame update

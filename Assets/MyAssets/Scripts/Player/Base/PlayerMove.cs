@@ -377,12 +377,8 @@ namespace PlayerSpace
             // 発動の障害になる何かの途中では起きないように
             if (specialityController.IsSpecialityCool[specialityController.CurrentSpeciality] || specialityController.IsSpeciality || isDeathBlow || isAttack || player.IsDamage || player.IsLevelUP || player.IsLevelUPContinue) return;
             //まだ役割を変えようとしていないとき
-            if (!role.IsRoleChange)
-            {
-                role.IsRoleChange = true;
-                role.RoleChange();
-                RoleChangeAfter();
-            }
+            role.RoleChange();
+            RoleChangeAfter();
         }
 
         ///<summary>

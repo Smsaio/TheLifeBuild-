@@ -111,7 +111,6 @@ public class FollowChara : Character,IDamageble,ITargetSearch
         }
         //アイコンのマテリアルを変える
         minimapIcon.material = fellowIconMaterial;
-        SetMemory();
     }
 
     // Update is called once per frame
@@ -159,38 +158,7 @@ public class FollowChara : Character,IDamageble,ITargetSearch
         }
         //体力ゲージに設定
         followGauge.GaugeReduction(0, currentHP, currentMaxHP);
-    }
-    /// <summary>
-    /// いい記憶に変換
-    /// </summary>
-    private void SetMemory()
-    {
-        //味方になった時に負の記憶に合わせた変化が起きる
-        switch (goodMemory)
-        {
-            case MemoryType.GoodMemory.Affection:
-                memoryText.text = "情愛";
-                break;
-            case MemoryType.GoodMemory.Laugh:
-                memoryText.text = "笑う";
-                break;
-            case MemoryType.GoodMemory.Satisfaction:
-                memoryText.text = "満足";
-                break;
-            case MemoryType.GoodMemory.Delight:
-                memoryText.text = "歓喜";
-                break;
-            case MemoryType.GoodMemory.Hope:
-                memoryText.text = "希望";
-                break;
-            case MemoryType.GoodMemory.Peaceofmind:
-                memoryText.text = "安心";
-                break;
-            default:
-                Debug.Log("いい記憶に設定されている値は想定されていません。");
-                break;
-        }
-    }
+    }   
     /// <summary>
     /// ターゲット設定
     /// </summary>

@@ -19,7 +19,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0.36666667
-        value: {x: -2.944, y: 0.208, z: 111.723}
+        value: {x: -2.944, y: 86.259, z: 111.723}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -36,7 +36,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0.36666667
-        value: {x: 0.21, y: 0.43, z: 0.77}
+        value: {x: -0.03, y: -0.17, z: 0.77341795}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -47178,7 +47178,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0.36666667
-        value: 0.208
+        value: 86.259
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -47216,7 +47216,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0.36666667
-        value: 0.21
+        value: -0.03
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -47235,7 +47235,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0.36666667
-        value: 0.43
+        value: -0.17
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -47254,7 +47254,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0.36666667
-        value: 0.77
+        value: 0.77341795
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -47310,7 +47310,7 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0.36666667
-    functionName: PlayAttackSE
+    functionName: AttackSE
     data: 
     objectReferenceParameter: {fileID: 8300000, guid: 2dfaf8eaf44be78409f3151387e01a7c, type: 3}
     floatParameter: 0

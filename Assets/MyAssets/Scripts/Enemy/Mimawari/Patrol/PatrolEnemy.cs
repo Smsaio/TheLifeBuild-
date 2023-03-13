@@ -144,7 +144,6 @@ namespace EnemySpace
             {
                 //歩行
                 arrival = false;
-                agent.speed = agentSpeed;
                 destinationController.CreateDestination();
                 agent.SetDestination(destinationController.GetDestination());
                 agent.isStopped = false;
@@ -172,9 +171,9 @@ namespace EnemySpace
             else if (tempState == CharacterState.Attack)
             {
                 //攻撃
-                animator.SetFloat(animWalkSpeed, 0f);
-                animator.SetTrigger("Attack");
+                animator.SetTrigger(attackAnim);
                 agent.isStopped = true;
+                agent.velocity = Vector3.zero;
             }
             else if (tempState == CharacterState.Freeze)
             {
@@ -182,12 +181,10 @@ namespace EnemySpace
                 elapsedTime = 0f;
                 walkTime = 0;
                 animator.SetFloat(animWalkSpeed, 0f);
-                animator.ResetTrigger("Attack");
             }
             else if (tempState == CharacterState.Damage)
             {
                 //ダメージ
-                animator.ResetTrigger("Attack");
                 animator.SetTrigger("Damage");
                 agent.isStopped = true;
             }

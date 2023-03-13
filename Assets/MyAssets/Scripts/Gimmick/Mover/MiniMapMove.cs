@@ -19,7 +19,7 @@ public class MiniMapMove : MonoBehaviour,IReactiveProperty
     }
     private void Start()
     {
-        ReactivePlayer(role);
+        //ReactivePlayer(role);
     }
     private void Update()
     {

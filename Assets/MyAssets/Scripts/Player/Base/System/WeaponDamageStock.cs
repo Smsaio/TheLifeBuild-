@@ -60,10 +60,10 @@ public class WeaponDamageStock : MonoBehaviour,IReactiveProperty
             followChara = transform.root.GetComponent<FollowChara>();
             transform.tag = "PlayerAttack";
         }
-        if (!isBullet)
-        {
-            ReactivePlayer(role);
-        }
+        //if (!isBullet)
+        //{
+        //    ReactivePlayer(role);
+        //}
     }
     private void Update()
     {

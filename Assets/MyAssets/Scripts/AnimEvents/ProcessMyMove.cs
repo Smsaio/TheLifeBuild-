@@ -100,7 +100,7 @@ namespace AttackProcess
         /// <summary>
         /// 攻撃のコライダーオン
         /// </summary>
-        private void AttackStart()
+        public void AttackStart()
         {
             attackCollider.enabled = true;
         }
@@ -114,13 +114,11 @@ namespace AttackProcess
         /// <summary>
         /// 攻撃音
         /// </summary>
-        /// <param name="slashType">スラッシュの動きの種類</param>
-        private void PlayAttackSE(AttackEffectType slashType = AttackEffectType.None)
+        /// <param name="attackSound">アニメーションイベントの攻撃音(入れなくてもいい)</param>
+        public void AttackSE(AudioClip attackSound = null)
         {
-            if (slashType == AttackEffectType.None)
-                audioSourceManager.PlaySE(attackSE[index]);
-            else
-                audioSourceManager.PlaySE(attackSE[(int)slashType]);
+            var sound = attackSound == null ? attackSE[index] : attackSound;
+            audioSourceManager.PlaySE(sound);
         }
     }
 }

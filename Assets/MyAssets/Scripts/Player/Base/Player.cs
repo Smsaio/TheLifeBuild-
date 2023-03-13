@@ -60,7 +60,7 @@ namespace PlayerSpace
         //ライフビルド入手エフェクト
         [SerializeField] private ParticleSystem lifeBuildGetEffect;
         //体力ゲージのクラス
-        [SerializeField] private HPGauge playerGauge;
+        [SerializeField] private PlayerGauge playerGauge;
         //自分の弱点の記憶分類
         [SerializeField] private MemoryType.MemoryClassification weekMemory = MemoryType.MemoryClassification.Painful;
         public MemoryType.MemoryClassification WeekMemory { get { return weekMemory; } }
@@ -120,6 +120,10 @@ namespace PlayerSpace
         //今の経験値
         protected int curExp;
         public int CurrentEXP { get { return curExp; } }
+
+        // 次のレベルに必要な経験値
+        protected int needExp = 0;
+        public int NeedEXP { get { return needExp; } }
         #endregion
         #region protected
 
@@ -161,9 +165,6 @@ namespace PlayerSpace
         protected int getExp;
         // 前のレベルに必要だった経験値
         protected int prevNeedExp = 0;
-        // 次のレベルに必要な経験値
-        protected int needExp = 0;
-        public int NeedEXP { get { return needExp; } }
         //次のレベルに至るよりも多く経験値をもらっていた場合
         protected int overExp = 0;
         //累計経験値
@@ -206,7 +207,10 @@ namespace PlayerSpace
         //ダメージを体力に反映
         public void DamageHPGauge(int damagePoint = 0)
         {
-            playerGauge.GaugeReduction(damagePoint, currentHP, currentMaxHP);
+            if (playerGauge != null)
+            {
+                playerGauge.GaugeReduction(damagePoint, currentHP, currentMaxHP);
+            }
         }
         /// <summary>
         /// 経験値表
@@ -529,8 +533,6 @@ namespace PlayerSpace
                             damagePoint *= weekMul;
                             //ダメージを受けた時は止まる
                             rb.velocity = Vector3.zero;
-                            //体力バーへの反映体力を減らした後にさらに減らす形になってしまうため、
-                            //必ず体力を減らす前に体力ゲージに反映させなければならない
                             DamageHPGauge(damagePoint);
                             //体力が最大
                             if (currentHP > 0 && currentHP <= currentMaxHP)
@@ -542,9 +544,9 @@ namespace PlayerSpace
                             {
                                 currentHP = currentMaxHP;
                             }
-                            //0以下であれば0に
-                            if(currentHP <= 0)
+                            else if(currentHP <= 0)
                             {
+                                //0以下であれば0に
                                 currentHP = 0;
                             }
                             Observable.Timer(TimeSpan.FromSeconds(invinsibilityTime), Scheduler.MainThreadIgnoreTimeScale).Subscribe(_ =>

@@ -47,7 +47,6 @@ public class ContinuityAttack : StateMachineBehaviour
 		if (myMove != null)
 		{
 			myMove.AttackEnd();
-			myMove.EffectOff();
 		}
 	}
 	// OnStateMove is called right after Animator.OnAnimatorMove(). Code that processes and affects root motion should be implemented here

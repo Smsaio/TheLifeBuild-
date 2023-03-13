@@ -44203,7 +44203,7 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0.33333334
-    functionName: PlayAttackSE
+    functionName: AttackSE
     data: 
     objectReferenceParameter: {fileID: 8300000, guid: ba8dca5b9f51f54429277d08919e5eb2, type: 3}
     floatParameter: 0

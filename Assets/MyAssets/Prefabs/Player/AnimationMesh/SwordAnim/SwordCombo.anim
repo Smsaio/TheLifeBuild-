@@ -111903,7 +111903,7 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 1.1333333
-    functionName: PlayAttackSE
+    functionName: AttackSE
     data: 
     objectReferenceParameter: {fileID: 8300000, guid: 587d1ffb627303a489aa2c8687186367, type: 3}
     floatParameter: 0
@@ -111931,7 +111931,7 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 2.0666666
-    functionName: PlayAttackSE
+    functionName: AttackSE
     data: 
     objectReferenceParameter: {fileID: 8300000, guid: 587d1ffb627303a489aa2c8687186367, type: 3}
     floatParameter: 0
@@ -111959,7 +111959,7 @@ AnimationClip:
     intParameter: 1
     messageOptions: 0
   - time: 3.0666666
-    functionName: PlayAttackSE
+    functionName: AttackSE
     data: 
     objectReferenceParameter: {fileID: 8300000, guid: 587d1ffb627303a489aa2c8687186367, type: 3}
     floatParameter: 0

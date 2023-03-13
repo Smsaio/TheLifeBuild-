@@ -77,11 +77,7 @@ namespace EnemySpace
         [SerializeField] private GameObject refusalEffect;
         [Header("負の記憶をランダムにするかどうか")]
         [SerializeField] private bool isMemoryRandom = false;
-        //負の感情の記憶テキスト
-        [Header("負の記憶表示用とレベルのテキスト")]
-        [SerializeField] private TextMeshProUGUI memoryText;
-        //レベルテキスト
-        [SerializeField] private TextMeshProUGUI levelText;
+        
         //味方の時のマテリアル(メッシュレンダラー)このメッシュならこのマテリアルにするものを入れる
         [Header("このメッシュならこのマテリアルにというふうにする。味方になった時のマテリアル")]
         [SerializeField] private MaterialTable fellowMaterial;
@@ -101,6 +97,7 @@ namespace EnemySpace
         //このオブジェクトが司っている負の記憶の種類
         [SerializeField]
         private MemoryType.NegativeMemory memory = MemoryType.NegativeMemory.Hatred;
+        public MemoryType.NegativeMemory Memory { get { return memory; } }
         [SerializeField] private CharacterType characterType;
         public CharacterType MyCharacterType { get { return characterType; } }
         //調べる対象のレイヤー
@@ -128,7 +125,7 @@ namespace EnemySpace
         public bool InAnuvisArea { set { inAnuvisArea = value; } }
         //敵がプレイヤーの味方になったかどうか
         protected bool onFellow = false;
-        public bool OnFellow { set { onFellow = value; } get { return onFellow; } }
+        public bool OnFellow { get { return onFellow; } }
 
         //ダメージを食らったか
         protected bool isDamage = false;
@@ -229,7 +226,7 @@ namespace EnemySpace
 
         protected virtual void Start()
         {
-            ReactivePlayer(role);
+            //ReactivePlayer(role);
         }
 
         protected virtual void Update()
@@ -313,6 +310,8 @@ namespace EnemySpace
             //記憶停滞で使う敵停止を追加
             gameObject.AddComponent<Pauser>();
             agent.speed = enemyStatus.agentWalkSpeed;
+            agent.acceleration = enemyStatus.agentAcceleration;
+            agent.angularSpeed = enemyStatus.agentAngularSpeed;
             refusalEffect.SetActive(false);
             //エージェント速さ格納
             startAgentspeed = agent.speed;
@@ -347,46 +346,7 @@ namespace EnemySpace
             //負の記憶の種類設定
             if(isMemoryRandom)
                 memory = (MemoryType.NegativeMemory)UnityEngine.Random.Range(0, Enum.GetValues(typeof(MemoryType.NegativeMemory)).Length - 2);
-            //記憶の種類に応じてテキストの色を変える。
-            //テキストを司っている記憶に変換
-            switch (memory)
-            {
-                case MemoryType.NegativeMemory.Hatred:
-                    memoryText.text = "憎悪";
-                    memoryText.color = Color.red;
-                    break;
-                case MemoryType.NegativeMemory.Angry:
-                    memoryText.text = "怒り";
-                    memoryText.color = Color.red;
-                    break;
-                case MemoryType.NegativeMemory.Tragic:
-                    memoryText.text = "悲壮感";
-                    memoryText.color = Color.blue;
-                    break;
-                case MemoryType.NegativeMemory.Sorrowful:
-                    memoryText.text = "悲哀";
-                    memoryText.color = Color.blue;
-                    break;
-                case MemoryType.NegativeMemory.Despair:
-                    memoryText.text = "絶望";
-                    memoryText.color = Color.yellow;
-                    break;
-                case MemoryType.NegativeMemory.Uneasiness:
-                    memoryText.text = "不安感";
-                    memoryText.color = Color.yellow;
-                    break;
-                case MemoryType.NegativeMemory.Trauma:
-                    memoryText.text = "トラウマ";
-                    memoryText.color = Color.white;
-                    break;
-                case MemoryType.NegativeMemory.Darkhistory:
-                    memoryText.text = "黒歴史";
-                    memoryText.color = Color.black;
-                    break;
-                default:
-                    Debug.Log("負の記憶が設定されていません。");
-                    break;
-            }
+            
             //この敵オブジェクトは味方化可能か
             if (!notCanFellow)
             {
@@ -783,7 +743,6 @@ namespace EnemySpace
             exp = between == 0 ? enemyStatus.startEXP : enemyStatus.startEXP + Mathf.FloorToInt((enemyStatus.startEXP * between) / divPercent);
             currentHP = currentMaxHP;
             MemoryStatus();
-            levelText.text = "LV. " + curLevel.ToString();
         }
         //ダメージパーティクル再生
         private void DamageParticlePlay(Vector3 relativePoint,float stopTime = 0.5f)

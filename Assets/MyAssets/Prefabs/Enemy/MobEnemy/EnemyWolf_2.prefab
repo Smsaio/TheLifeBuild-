@@ -1484,7 +1484,7 @@ MonoBehaviour:
   flashMaterial: {fileID: 2100000, guid: 8e26238082f635543b31d630fe8a7467, type: 2}
   flashCount: 6
   flashPeriod: 0.4
-  attackDistance: 9
+  attackDistance: 5
   plusLevel: 7
   memory: 0
   characterType: 0

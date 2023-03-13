@@ -24,19 +24,12 @@ namespace Ability
         //現在味方に変えた人数
         private int changeFellowCount = 0;
         private PlayerSpecialityController specialityController;
-        private IRole role = default;
-        [Inject]
-        public void Construct(IRole Irole)
-        {
-            role = Irole;
-        }
 
         // Start is called before the first frame update
 
         void Start()
         {
             rb = GetComponent<Rigidbody>();
-            ReactivePlayer(role);
         }
         // Update is called once per frame
         void Update()

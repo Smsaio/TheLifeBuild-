@@ -11,7 +11,7 @@ namespace AttackProcess
     /// <summary>
     /// アニメーションイベントコライダーなどのオンオフ関連
     /// </summary>
-    public class ProcessStandMove : MonoBehaviour
+    public class ProcessStandMove : MonoBehaviour,IProcessAnim
     {
         //攻撃のタイプ
         public enum StandAttackType
@@ -26,8 +26,6 @@ namespace AttackProcess
         [SerializeField] private ParticleSystem standAttackEffect;
         //攻撃するプレイヤー
         private StandMove standMove;
-        //要素番号
-        private int index = 0;
         IAudioSourceManager audioSourceManager = default;
 
         [Inject]
@@ -40,7 +38,6 @@ namespace AttackProcess
             standMove = GetComponent<StandMove>();
             //攻撃のコライダー
             attackCollider.enabled = false;
-            int length = Enum.GetValues(typeof(AttackEffectType)).Length - 1;
             //出現させて止める
             standAttackEffect.Stop();
             standAttackEffect.gameObject.SetActive(false);
@@ -49,9 +46,8 @@ namespace AttackProcess
         /// <summary>
         /// エフェクト表示
         /// </summary>
-        private void EffectOn(StandAttackType attackType = StandAttackType.RotSlash)
+        public void EffectOn()
         {
-            index = (int)attackType;
             standAttackEffect.gameObject.SetActive(true);
             //エフェクトを表示する
             standAttackEffect.Play();
@@ -69,7 +65,7 @@ namespace AttackProcess
         /// <summary>
         /// 攻撃のコライダーオン
         /// </summary>
-        private void AttackStart()
+        public void AttackStart()
         {
             //攻撃のコライダー起動
             attackCollider.enabled = true;
@@ -95,9 +91,10 @@ namespace AttackProcess
         /// <summary>
         /// 攻撃音
         /// </summary>
-        private void PlayAttackSE()
+        public void AttackSE(AudioClip attackSound = null)
         {
-            audioSourceManager.PlaySE(attackSE);
+            var sound = attackSound == null ? attackSE : attackSound;
+            audioSourceManager.PlaySE(sound);
         }
     }
 }
