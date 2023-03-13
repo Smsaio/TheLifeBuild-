@@ -24,7 +24,7 @@ namespace EnemySpace
 /// <summary>
 /// 敵と味方とプレイヤーの基本変数や関数
 /// </summary>
-public class Character : MonoBehaviour,IReactiveProperty
+public class Character : MonoBehaviour,IReactiveProperty,ICharacter
 {
     protected int currentHP = 0;
     public int CurrentHP { get { return currentHP; } set { currentHP = value; } }

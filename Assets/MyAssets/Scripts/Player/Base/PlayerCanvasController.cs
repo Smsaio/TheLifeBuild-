@@ -109,7 +109,11 @@ public class PlayerCanvasController : MonoBehaviour,IReactiveProperty
         role.CurrentPlayerSpController.Subscribe(playerSp => { specialityController = playerSp; }).AddTo(this);
         role.CurrentPlayerMove.Subscribe(move => { playerMove = move; }).AddTo(this);
         role.CurrentPlayerLevel.Subscribe(level => { currentPlayerLevel = level; }).AddTo(this);
-        role.CurrentPlayer.Subscribe(player => { currentPlayer = player; }).AddTo(this);
+        role.CurrentPlayer.Subscribe(player => 
+        {
+            currentPlayer = player;
+            EXPSliderInitialize();
+        }).AddTo(this);
     }
     /// <summary>
     /// 使用した特技表示

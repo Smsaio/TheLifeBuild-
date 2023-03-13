@@ -10,7 +10,7 @@ using PlayerSpace;
 /// <summary>
 /// 体力ゲージ管理、制御クラス
 /// </summary>
-public class HPGauge : MonoBehaviour
+public class HPGauge : MonoBehaviour,IHPGauge
 {
     //色を変化させるオブジェクトと色
     [SerializeField] private Image hpBarFill;

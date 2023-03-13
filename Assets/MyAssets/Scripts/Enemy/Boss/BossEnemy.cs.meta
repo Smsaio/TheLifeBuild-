@@ -3,7 +3,24 @@ guid: d08a856fec013a441842f3f666931e41
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - enemyStatus: {fileID: 11400000, guid: 320768682ab549e479f0688b3eed6dc3, type: 2}
+  - findMark: {instanceID: 0}
+  - enemyGauge: {instanceID: 0}
+  - damageUI: {instanceID: 0}
+  - damageSE: {instanceID: 0}
+  - searchCharacter: {instanceID: 0}
+  - damageParticle: {instanceID: 0}
+  - damageTransform: {instanceID: 0}
+  - damageUITransform: {instanceID: 0}
+  - refusalEffect: {instanceID: 0}
+  - flashMaterial: {instanceID: 0}
+  - enemyRagdoll: {instanceID: 0}
+  - fireballObject: {instanceID: 0}
+  - fireBallTransform: {instanceID: 0}
+  - chargeSlider: {instanceID: 0}
+  - stanSE: {instanceID: 0}
+  - stanDamageSE: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

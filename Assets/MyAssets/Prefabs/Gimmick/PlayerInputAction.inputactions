@@ -42,24 +42,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "SpecialityOne",
-                    "type": "Button",
-                    "id": "13a016d4-1de0-4dba-b322-2010575648b9",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "SpecialityTwo",
-                    "type": "Button",
-                    "id": "b377a8f3-3401-4f03-8c0e-28d1097b2410",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Jump",
                     "type": "Button",
                     "id": "f501b65a-663d-49c6-b437-97a93e023b84",
@@ -75,15 +57,6 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "RoleSkillOne",
-                    "type": "Button",
-                    "id": "38524d75-92f8-411a-9a6b-edbffc5d6b8b",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "Press",
                     "initialStateCheck": false
                 },
                 {
@@ -608,39 +581,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Menu",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "b37846d7-8084-4830-a0d2-4a42971ca38b",
-                    "path": "<Keyboard>/o",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "RoleSkillOne",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "78cf4540-0697-4667-b41f-7aa07acaccd7",
-                    "path": "<Keyboard>/u",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "SpecialityOne",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "aee7a765-33b6-4292-b5fe-acc1d5c1387d",
-                    "path": "<Keyboard>/c",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "SpecialityTwo",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

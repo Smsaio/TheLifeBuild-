@@ -43,9 +43,6 @@ public class FollowChara : Character,IDamageble,ITargetSearch
     //味方の要素番号(集合した時に要素番号を参照するため)
     private int fellowCount = 0;
     public int MyFellowCount { set { fellowCount = value; } get { return fellowCount; } }
-    //プレイヤーから招集をかけられた場合
-    private bool isAssembly = false;
-    public bool IsAssembly { get { return isAssembly; } set { isAssembly = value; } }
 
     private bool targetFind = false;
     public bool IsTargetFind { get { return targetFind; } set { targetFind = value; } }
@@ -102,7 +99,6 @@ public class FollowChara : Character,IDamageble,ITargetSearch
         agent = GetComponent<NavMeshAgent>();
         attackPoint.enabled = true;
         myCollisionRadius = GetComponent<CapsuleCollider>().radius;
-        targetFind = false;
         agentSpeed = agent.speed;
         //攻撃箇所
         for (int i = 0; i < attackTransform.Length; i++)
@@ -164,32 +160,41 @@ public class FollowChara : Character,IDamageble,ITargetSearch
     /// </summary>
     public void TargetToWalk()
     {
-        //敵を見つけていないとき
-        if (!targetFind || isAssembly)
+        if (animator != null)
         {
-            //目的地を最初であればプレイヤーそれ以外では自分より一個前の味方を追う
-            target = fellowCount == 0 ? playerTransform : specialityController.SpecialityBases[(int)Ability.Attach.Speciality.Convert].FollowCharaList[fellowCount - 1].transform;
-            agent.speed = agentSpeed;
-            //自分がagentが動かなくなる範囲内にいないか
-            if (agent.remainingDistance < followDistance)
+            if (!agent.isStopped)
             {
-                agent.isStopped = true;
-                Debug.Log("追従停止");
-                animator.SetFloat(animWalkSpeedHash, 0f);
+                animator.SetFloat(animWalkSpeedHash, agent.desiredVelocity.magnitude);
             }
-            //プレイヤーに追従する距離
             else
             {
-                agent.isStopped = false;
-                Debug.Log("追従中");
+                animator.SetFloat(animWalkSpeedHash, 0f);
             }
-            Debug.Log("追従");
+        }
+        //敵を見つけていないとき
+        if (!targetFind)
+        {
+            int index = (int)Ability.Attach.Speciality.Convert;
+            //目的地を最初であればプレイヤーそれ以外では自分より一個前の味方を追う
+            if(fellowCount == 0)
+            {
+                target = playerTransform;
+            }
+            else
+            {
+                //自分の前に味方はいるか
+                if(specialityController.SpecialityBases[index].FollowCharaList[fellowCount - 1] != null)
+                {
+                    target = specialityController.SpecialityBases[index].FollowCharaList[fellowCount - 1].transform;
+                }
+            }
+            agent.speed = agentSpeed;
+            //自分がagentが動かなくなる範囲内にいないか
+
+            agent.isStopped = agent.remainingDistance < followDistance;
             TargetSettings();
         }
-        else
-        {
-            AttackMagnitude();
-        }
+        AttackMagnitude();
     }
     /// <summary>
     /// ダメージ処理
@@ -207,25 +212,36 @@ public class FollowChara : Character,IDamageble,ITargetSearch
     /// <summary>
     /// 攻撃する距離になったら
     /// </summary>
-    private void AttackMagnitude()
+    private void AttackMagnitude(float magnitude=1.6f)
     {
-        if (!isAssembly)
+        //敵を発見しているとき
+        //　攻撃する距離だったら攻撃
+        if (targetFind)
         {
-            //敵を発見しているとき
-            //　攻撃する距離だったら攻撃
-            if (agent.remainingDistance < 1.2f)
+            //攻撃できる距離にいたら停止して攻撃
+            if (agent.remainingDistance <= magnitude)
             {
                 agent.velocity = Vector3.zero;
                 agent.isStopped = true;
                 animator.SetTrigger(animAttackHash);
+                Debug.Log("攻撃");
             }
             else
             {
                 agent.isStopped = false;
                 agent.speed = agentFindSpeed;
             }
+            if (targetEnemy != null)
+            {
+                //目標の敵が味方に変わったもしくは、死んだ
+                if (targetEnemy.CurrentHP <= 0 || targetEnemy.OnFellow)
+                {
+                    //目標を見失った
+                    targetFind = false;
+                }
+            }
+            Debug.Log("敵追跡");
         }
-        animator.SetFloat(animWalkSpeedHash, agent.desiredVelocity.magnitude);
     }
     /// <summary>
     /// 目的地設定
@@ -238,10 +254,12 @@ public class FollowChara : Character,IDamageble,ITargetSearch
                 targetCollisionRadius = target.GetComponent<CapsuleCollider>().radius;
             // 方向を求める
             Vector3 directionToTarget = (target.position - transform.position).normalized;
-            animator.SetFloat(animWalkSpeedHash,agent.desiredVelocity.magnitude);
             // directionToTarget * (自分の半径+ターゲットの半径)で、自分とターゲットの半径の長さ分の向きベクトルが求められる。
             Vector3 targetPosition = target.position - directionToTarget * (myCollisionRadius + targetCollisionRadius + attackDistanceThreshold / 2);
-            agent.SetDestination(targetPosition);
+            if (agent != null)
+            {
+                agent.SetDestination(targetPosition);
+            }
         }
     }
     /// <summary>
@@ -250,31 +268,28 @@ public class FollowChara : Character,IDamageble,ITargetSearch
     /// <param name="obj">目的のオブジェクト</param>
     public void SetTarget(GameObject obj)
     {
-        //起動しているとき、FollowCharaが取得できているとき
+        //起動しているとき
         if (this.enabled)
-        {            
-            //集合をかけられていない場合
-            if (!isAssembly)
+        {
+            //敵が索敵範囲に入ったかと敵をすでに見つけていないか
+            if (obj.CompareTag("Enemy"))
             {
-                //敵が索敵範囲に入ったかと敵をすでに見つけていないか
-                if (obj.CompareTag("Enemy"))
+                targetEnemy = obj.GetComponent<EnemyBase>();
+                //敵を取得出来た
+                if (targetEnemy != null)
                 {
-                    targetEnemy = obj.GetComponent<EnemyBase>();
-                    //敵を取得出来た
-                    if (targetEnemy != null)
-                    {                       
-                        //敵の体力がまだあるとき
-                        if (targetEnemy.CurrentHP > 0)
+                    //敵の体力がまだあるとき
+                    if (targetEnemy.CurrentHP > 0)
+                    {
+                        //その敵が味方に変わっていないとき
+                        if (!targetEnemy.OnFellow)
                         {
-                            //その敵が味方に変わっていないとき
-                            if (!targetEnemy.OnFellow)
-                            {
-                                //敵を発見した
-                                targetFind = true;
-                                target = obj.transform;
-                                Debug.Log("敵検知" + target);
-                                TargetSettings();
-                            }
+                            //敵を発見した
+                            targetFind = true;
+                            target = obj.transform;
+                            Debug.Log("敵検知" + target);
+                            Debug.Log(targetFind);
+                            TargetSettings();
                         }
                     }
                 }
@@ -286,14 +301,17 @@ public class FollowChara : Character,IDamageble,ITargetSearch
     /// </summary>
     void OnAnimatorIK()
     {
-        var weight = Vector3.Dot(transform.forward, target.position - transform.position);
-
-        if (weight < 0)
+        if (target != null)
         {
-            weight = 0;
+            var weight = Vector3.Dot(transform.forward, target.position - transform.position);
+
+            if (weight < 0)
+            {
+                weight = 0;
+            }
+            animator.SetLookAtWeight(weight, 0.3f, 1f, 0f, 0.5f);
+            animator.SetLookAtPosition(target.position + Vector3.up * 1.5f);
         }
-        animator.SetLookAtWeight(weight, 0.3f, 1f, 0f, 0.5f);
-        animator.SetLookAtPosition(target.position + Vector3.up * 1.5f);
     }
     /// <summary>
     /// ダメージを受ける

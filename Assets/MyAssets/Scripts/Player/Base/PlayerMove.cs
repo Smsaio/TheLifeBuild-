@@ -224,9 +224,6 @@ namespace PlayerSpace
             playerInputs.Player.CameraRotOn.performed += OnCameraRotOn;
             playerInputs.Player.CameraRotOn.canceled += OnCameraRotOn;
 
-            //特技に小技がある場合
-            //playerInputs.Player.SpecialityOne.performed += OnSpecialityOne;
-
             playerInputs.Player.RoleChange.performed += OnRoleChange;
         }
 
@@ -262,28 +259,6 @@ namespace PlayerSpace
                     specialityController.UseSpeciality();
                 }
                 isSpecialityOn = false;
-            }
-        }
-        /// <summary>
-        /// 特技の中の小技1
-        /// </summary>
-        /// <param name="context"></param>
-        private void OnSpecialityOne(InputAction.CallbackContext context)
-        {
-            //発動の障害になる何かの途中では起きないように
-            if (!context.performed || specialityController.IsSpecialityCool[specialityController.CurrentSpeciality] || player.IsDamage  || player.IsDown) return;
-            if (specialityController.AttachSpeciality == Attach.Speciality.Convert)
-            {
-                //味方がいれば
-                if (specialityController.SpecialityBases[(int)Attach.Speciality.Convert].FellowCount > 0)
-                {
-                    //味方を集合させる
-                    specialityController.SpecialityBases[(int)Attach.Speciality.Convert].Assembly();
-                }
-                else
-                {
-                    Debug.Log("味方がいなかった");
-                }
             }
         }
         /// <summary>

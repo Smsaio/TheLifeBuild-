@@ -7,24 +7,19 @@ using UnityEngine;
 public class EnemyCanvas : MonoBehaviour
 {
     [SerializeField] private EnemyBase enemyBase;
-    [SerializeField] private FollowChara followChara;
     //負の感情の記憶テキスト
     [Header("負の記憶表示用とレベルのテキスト")]
     [SerializeField] private TextMeshProUGUI memoryText;
     //レベルテキスト
     [SerializeField] private TextMeshProUGUI levelText;
     //敵か味方か
-    private bool isEnemy = false;
+    private bool isEnemy = true;
     // Start is called before the first frame update
     void Start()
     {
         if(enemyBase == null)
         {
             enemyBase = transform.root.GetComponent<EnemyBase>();
-        }
-        if(followChara == null)
-        {
-            followChara = transform.root.GetComponent<FollowChara>();
         }
         SetNegativeMemory(enemyBase.Memory);
         LevelText(enemyBase.CurrentLevel);
@@ -35,7 +30,7 @@ public class EnemyCanvas : MonoBehaviour
     {
         if(enemyBase != null)
         {
-            if (!enemyBase.OnFellow && isEnemy)
+            if (enemyBase.OnFellow && isEnemy)
             {
                 isEnemy = false;
                 SetGoodMemory((MemoryType.GoodMemory)enemyBase.Memory);

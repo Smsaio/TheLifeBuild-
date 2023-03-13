@@ -1474,8 +1474,6 @@ MonoBehaviour:
   damageUITransform: {fileID: 5182521352184873561}
   refusalEffect: {fileID: 7467791687572542686}
   isMemoryRandom: 1
-  memoryText: {fileID: 2551065797292227058}
-  levelText: {fileID: 5817865028790332406}
   fellowMaterial:
     list:
     - Key: {fileID: 3643148046532577582}
@@ -25848,17 +25846,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 862659f106f679d44a03b02ad35d5824, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5817865028790332406 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1190356187747276249, guid: 2241f9a1e8fa98d4b9cd14a2592ce268, type: 3}
-  m_PrefabInstance: {fileID: 4627954177839627823}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &6947543428108874254 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2329322247487818785, guid: 2241f9a1e8fa98d4b9cd14a2592ce268, type: 3}
@@ -26146,7 +26133,11 @@ PrefabInstance:
     - target: {fileID: 7285856409153158748, guid: db7aff792b5260442987181d19a44e20, type: 3}
       propertyPath: findMark
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5430535976077818500}
+    - target: {fileID: 7285856409153158748, guid: db7aff792b5260442987181d19a44e20, type: 3}
+      propertyPath: enemyBase
+      value: 
+      objectReference: {fileID: 420137192881274260}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db7aff792b5260442987181d19a44e20, type: 3}
 --- !u!114 &2023444194824459996 stripped

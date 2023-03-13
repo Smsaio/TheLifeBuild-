@@ -192,7 +192,7 @@ namespace PlayerSpace
         #endregion
         private void OnEnable()
         {
-            
+            DamageHPGauge(0);
         }
         protected virtual void Start()
         {

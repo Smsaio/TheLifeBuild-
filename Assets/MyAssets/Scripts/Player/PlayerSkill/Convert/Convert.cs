@@ -63,7 +63,7 @@ namespace Ability
         /// </summary>
         public override void RemoveFellow(FollowChara followChara)
         {
-            //死んだ味方の要素番号で指定した部分を消す(nullにする)
+            //死んだ味方の要素番号で指定した部分を消す
             bool valid = followCharaList.Contains(followChara);
             if (valid)
             {
@@ -88,27 +88,6 @@ namespace Ability
             }
             //味方の数反映
             fellowCount = followCharaList.Count;
-        }
-        /// <summary>
-        /// 味方を集合させる
-        /// </summary>
-        public override void Assembly()
-        {
-            fellowAssembly = true;
-            //集合させる
-            if (fellowAssembly)
-            {
-                //味方の数、
-                for (int i = 0; i < followCharaList.Count; i++)
-                {
-                    //敵発見強制解除
-                    followCharaList[i].IsTargetFind = false;
-                    followCharaList[i].IsAssembly = true;
-                    //ターゲットをプレイヤーに連なった列に設定
-                    followCharaList[i].TargetSettings();
-                }
-                fellowAssembly = false;
-            }
         }
         public override void ReactivePlayer(IRole role)
         {

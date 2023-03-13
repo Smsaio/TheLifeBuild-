@@ -103,13 +103,6 @@ namespace Ability
 
         }
         /// <summary>
-        /// 集合する
-        /// </summary>
-        public virtual void Assembly()
-        {
-
-        }
-        /// <summary>
         /// 特技終了時に実行される
         /// </summary>
         public virtual void DoneSpeciality()

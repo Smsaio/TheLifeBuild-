@@ -85,10 +85,6 @@ namespace EnemySpace
                     {
                         targetSearch.TargetFind(other.gameObject);
                     }
-                    else
-                    {
-                        targetSearch.TargetLost();
-                    }
                 }
             }
 
